@@ -9,7 +9,7 @@
    CONFIGURAÇÃO
    ========================================================= */
 
-const ARTIST_API_BASE = "/api/v1";
+const ARTIST_API_BASE = "https://yoka-d1e1.onrender.com/api/v1";
 
 const DEFAULT_AVATAR =
     "./assets/images/default-avatar.svg";
