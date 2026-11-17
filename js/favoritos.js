@@ -358,10 +358,8 @@ const genero = escapeHtml(
                  * que a música deve tentar começar
                  * automaticamente.
                  */
-
-                window.location.href =
-                    "/song.html?id=" +
-                    encodeURIComponent(songId) +
+window.location.href =
+    "./song.html?id=" +
                     "&autoplay=1";
 
             }
