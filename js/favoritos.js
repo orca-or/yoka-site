@@ -360,7 +360,7 @@ const genero = escapeHtml(
                  */
 
 window.location.href =
-    "/song.html?id=" +
+    "./song.html?id=" +
     encodeURIComponent(songId) +
     "&autoplay=1";
 
