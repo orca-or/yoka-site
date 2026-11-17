@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yoka.it.ao/sitemap.xml

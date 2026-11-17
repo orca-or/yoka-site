@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+    <meta name="monetag" content="3ec8a8f6dfbcf48960206351eabef32c">
+    <meta name="google-adsense-account" content="ca-pub-3493043807965757">
+   <meta name="description" content="Conheça a Yoka, uma plataforma dedicada à música e aos artistas.Um mundo completo de ritmos únicos e contagiante para se.">
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X3BSWYJ2TR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X3BSWYJ2TR');
+</script> 
+
+<title>Yoka </title>
+
+<link
+    rel="stylesheet"
+    href="./css/style.css"
+>
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#101010">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Yoka">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<style>
+
+
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-page {
+    flex: 1 0 auto;
+    padding-bottom: 50px;
+}
+
+.site-footer {
+    position: relative;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+    
+/* =========================================================
+   YOKA — CONTAINER DOS CARDS
+========================================================= */
+
+.songs-container {
+    width: calc(100% - 40px);
+    max-width: 1400px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(220px, 1fr)
+);
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   YOKA — RESPONSIVIDADE
+   HEADER + CARDS
+========================================================= */
+
+
+/* =========================================================
+   TABLET / TELAS MÉDIAS
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-inner {
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    .header-search {
+        width: 300px;
+        max-width: 38%;
+    }
+
+    .main-nav {
+        gap: 14px;
+        margin-left: 10px;
+    }
+
+    .main-nav a {
+        font-size: 13px;
+    }
+
+
+    /* =========================================
+       CARDS — 2 POR LINHA
+    ========================================= */
+
+    .songs-container {
+        width: calc(100% - 40px);
+
+        margin-left: auto;
+        margin-right: auto;
+
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+        gap: 16px;
+    }
+}
+
+
+/* =========================================================
+   TABLET PEQUENO
+   2 CARDS POR LINHA
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        height: auto;
+        min-height: 58px;
+    }
+
+    .header-inner {
+        min-height: 58px;
+        height: auto;
+
+        padding: 10px 14px;
+
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .header-search {
+        order: 3;
+
+        width: 100%;
+        max-width: none;
+
+        margin: 4px 0 0;
+    }
+
+    .header-search input,
+    .header-search button {
+        height: 40px;
+    }
+
+    .header-user {
+        margin-left: auto;
+    }
+
+
+    /* =========================================
+       CARDS
+    ========================================= */
+
+    .songs-container {
+        width: calc(100% - 30px);
+
+        margin-left: auto;
+        margin-right: auto;
+
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+        gap: 14px;
+    }
+
+
+    .song-card {
+        border-radius: 12px;
+    }
+
+    .song-card-info {
+        padding: 18px 12px 13px;
+    }
+
+    .song-card-title {
+        font-size: 22px;
+    }
+
+    .song-card-description {
+        font-size: 20px;
+    }
+
+    .song-card-meta {
+        font-size: 18px;
+        gap: 8px;
+    }
+
+    .song-play,
+    .song-play-button {
+        width: 40px;
+        height: 40px;
+
+        right: 9px;
+        bottom: 9px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   TELEMÓVEL
+   1 CARD POR LINHA
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        min-height: 58px;
+    }
+
+    .header-inner {
+        padding: 9px 12px;
+        gap: 9px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .header-user {
+        gap: 6px;
+    }
+
+    .notification-container {
+        margin-right: 2px;
+    }
+
+    .notification-button {
+        width: 37px;
+        height: 37px;
+        font-size: 17px;
+    }
+
+    .favorite-button {
+        margin-right: 2px;
+    }
+
+    .favorite-icon {
+        width: 19px;
+        height: 19px;
+    }
+
+    .user-avatar-button {
+        width: 37px;
+        height: 37px;
+    }
+
+    .header-search {
+        width: 100%;
+        margin-top: 2px;
+    }
+
+    .header-search input {
+        height: 38px;
+        padding: 0 13px;
+        font-size: 13px;
+    }
+
+    .header-search button {
+        width: 46px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+
+    /* =========================================
+       CARDS — 1 POR LINHA
+    ========================================= */
+
+    .songs-container {
+        width: calc(100% - 24px) !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 14px;
+    }
+
+
+    .song-card {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .song-card-info {
+        padding: 9px;
+    }
+
+    .song-card-title {
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
+
+    .song-card-description {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .song-card-meta {
+        font-size: 18px;
+        gap: 6px;
+    }
+
+    .song-card-date {
+        font-size: 9px;
+    }
+
+    .song-play,
+    .song-play-button {
+        width: 36px;
+        height: 36px;
+
+        right: 7px;
+        bottom: 7px;
+
+        font-size: 14px;
+    }
+
+    .search-results {
+        top: calc(100% + 6px);
+        max-height: 350px;
+    }
+}
+
+
+/* =========================================================
+   TELEMÓVEL MUITO PEQUENO
+   1 CARD POR LINHA
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .header-inner {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .header-user {
+        gap: 3px;
+    }
+
+    .notification-button,
+    .user-avatar-button {
+        width: 34px;
+        height: 34px;
+    }
+
+    .favorite-icon {
+        width: 17px;
+        height: 17px;
+    }
+
+
+    .songs-container {
+        width: calc(100% - 20px) !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 12px;
+    }
+
+    .song-card {
+        width: 100%;
+    }
+
+    .song-card-title {
+        font-size: 22px;
+    }
+
+    .song-card-description {
+        font-size: 20px;
+    }
+
+    .song-card-meta {
+        font-size: 18px;
+    }
+
+    .song-play,
+    .song-play-button {
+        width: 40px;
+        height: 40px;
+
+        right: 9px;
+        bottom: 9px;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE / TOQUE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .login-button {
+        min-height: 36px;
+
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .notification-button,
+    .user-avatar-button,
+    .header-search button,
+    .song-play,
+    .song-play-button {
+        touch-action: manipulation;
+    }
+}
+
+
+/* =========================================================
+   YOKA — SLIDERS RESPONSIVOS DE PUBLICIDADE
+========================================================= */
+
+.yoka-index-ads {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.yoka-index-ads-title {
+    margin: 0;
+    color:white;
+    font-size: 16px;
+}
+
+.yoka-index-ad {
+    width: 100%;
+    aspect-ratio: 6 / 5;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .12);
+    box-sizing: border-box;
+    
+}
+
+.yoka-ad-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    isolation: isolate;
+    background: #fff;
+}
+
+.yoka-ad-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    pointer-events: none;
+
+    transition:
+        opacity 1.2s ease-in-out,
+        visibility 1.2s ease-in-out;
+}
+
+.yoka-ad-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+
+/* Ocultar o slider até recuperar a imagem guardada */
+.yoka-ad-slider:not(.yoka-ad-slider-ready) {
+    visibility: hidden;
+}
+
+/* Evitar transições durante a inicialização */
+.yoka-ad-slider:not(.yoka-ad-slider-ready) .yoka-ad-slide {
+    transition: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+.yoka-ad-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.yoka-ad-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 32px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .55);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: .85;
+}
+
+.yoka-ad-arrow:hover {
+    background: rgba(0, 0, 0, .8);
+}
+
+.yoka-ad-arrow.prev {
+    left: 6px;
+}
+
+.yoka-ad-arrow.next {
+    right: 6px;
+}
+
+.yoka-ad-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+}
+
+.yoka-ad-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .35);
+    cursor: pointer;
+}
+
+.yoka-ad-dot.active {
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .35);
+}
+
+/* COMPUTADOR */
+@media (min-width: 1200px) {
+    .home-page {
+        padding-right: 340px;
+    }
+
+    .yoka-index-ads {
+        position: fixed;
+        top: 90px;
+        right: 20px;
+        width: 300px;
+    }
+
+    #yokaIndexAd2 {
+        display: block;
+    }
+}
+
+/* TABLET */
+@media (min-width: 601px) and (max-width: 1199px) {
+    .home-page {
+        padding-right: 0;
+    }
+
+    .yoka-index-ads {
+        position: static;
+        width: calc(100% - 30px);
+        max-width: 800px;
+        margin: 15px auto 25px;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+   
+    .yoka-index-ad {
+        width: calc((100% - 15px) / 2);
+        flex: 1 1 0;
+    }
+
+    #yokaIndexAd2 {
+        display: block;
+    }
+}
+
+/* TELEMÓVEL */
+@media (max-width: 600px) {
+    .home-page {
+        padding-right: 0;
+    }
+
+    .yoka-index-ads {
+        position: static;
+        width: calc(100% - 20px);
+        margin: 10px auto 18px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+  
+
+    .yoka-index-ad {
+        width: 100%;
+        aspect-ratio: 6 / 5;
+        border-radius: 8px;
+    }
+
+    #yokaIndexAd2 {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .yoka-index-ads {
+        width: calc(100% - 16px);
+        margin: 8px auto 15px;
+    }
+}
+
+/* Mostrar setas ao passar o rato; mantê-las acessíveis ao toque */
+@media (hover: hover) and (pointer: fine) {
+    .yoka-ad-arrow {
+        opacity: 0;
+        transition: opacity .2s ease;
+    }
+
+    .yoka-ad-slider:hover .yoka-ad-arrow,
+    .yoka-ad-slider:focus-within .yoka-ad-arrow {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+/* Manter favoritos visível no cabeçalho mobile */
+@media (max-width: 700px) {
+    .favorite-button {
+        display: flex !important;
+        flex-shrink: 0;
+    }
+
+    .header-user {
+        gap: 3px;
+    }
+
+    .notification-container {
+        margin-right: 0;
+    }
+}
+
+
+    /* =========================================================
+   YOKA — HEADER COM PESQUISA NO TOPO EM TODOS OS ECRÃS
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .header-inner {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 7px;
+        flex-wrap: nowrap;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .logo {
+        order: initial;
+        font-size: 20px;
+        white-space: nowrap;
+    }
+
+    .header-search {
+        order: initial;
+        display: flex;
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        margin: 0;
+    }
+
+    .header-search input {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        height: 36px;
+        padding: 0 8px;
+        font-size: 12px;
+    }
+
+    .header-search button {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .header-user {
+        order: initial;
+        display: flex;
+        flex-shrink: 0;
+        min-width: 0;
+        gap: 3px;
+        margin: 0;
+    }
+
+    .notification-container {
+        flex-shrink: 0;
+        margin-right: 0;
+    }
+
+    .notification-button,
+    .user-avatar-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .favorite-button {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-inner {
+        gap: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .header-search input {
+        padding: 0 5px;
+        font-size: 11px;
+    }
+
+    .header-search button {
+        flex-basis: 30px;
+        width: 30px;
+    }
+
+    .header-user {
+        gap: 2px;
+    }
+
+    .notification-button,
+    .user-avatar-button {
+        width: 29px;
+        height: 29px;
+    }
+}
+
+
+
+/* =========================================================
+   YOKA — ESPAÇO ENTRE OS CARDS E O RODAPÉ
+   ========================================================= */
+
+.home-page {
+    padding-bottom: 50px;
+}
+
+.home-section {
+    margin-bottom: 30px;
+}
+
+.site-footer {
+    position: relative;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+/* Telemóveis */
+@media (max-width: 600px) {
+    .home-page {
+        padding-bottom: 35px;
+    }
+
+    .home-section {
+        margin-bottom: 20px;
+    }
+
+    .site-footer {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+ #instalarYokaBtn {
+        position: fixed !important;
+        right: 20px !important;
+        bottom: 20px !important;
+        left: auto !important;
+        top: auto !important;
+        z-index: 2147483647 !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+
+        padding: 13px 20px;
+        border: none;
+        border-radius: 30px;
+
+        background: red;
+        color: #ffffff;
+
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
+
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    #instalarYokaBtn:hover {
+        background: #1b1b1b;
+    }
+
+    #instalarYokaBtn:focus-visible {
+        outline: 3px solid #ffffff;
+        outline-offset: 3px;
+    }
+
+    #instalarYokaBtn:disabled {
+        opacity: .7;
+        cursor: wait;
+    }
+
+   @media (display-mode: standalone) {
+    #instalarYokaBtn {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+}
+
+
+.yoka-index-ad-label {
+       color: black;
+ }
+
+
+
+
+
+
+
+#yokaIndexAd2 {
+    overflow: hidden;
+}
+
+#yokaIndexAd2 .yoka-ad-fixed {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#yokaIndexAd2 .yoka-ad-fixed img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+
+
+
+
+
+
+</style>
+<body>
+
+
+<header class="site-header">
+
+<div class="header-inner">
+
+
+    <a
+        href="./index.html"
+        class="logo"
+    >
+        Yoka
+    </a>
+
+    <button
+    type="button"
+    id="toggleHeaderSearch"
+    class="toggle-header-search"
+    aria-label="Abrir pesquisa"
+    aria-expanded="false"
+>
+    <span aria-hidden="true">⌕</span>
+</button>
+
+    <!-- PESQUISA -->
+
+    <div class="header-search">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Pesquisar músicas ou artistas"
+            autocomplete="off"
+        >
+
+        <button
+            id="searchButton"
+            type="button"
+            aria-label="Pesquisar"
+        >
+            🔍
+        </button>
+
+    </div>
+
+
+    
+
+
+    <!-- UTILIZADOR -->
+<div id="headerUser" class="header-user">
+
+    <!-- NOTIFICAÇÕES -->
+    <div id="notificationContainer" class="notification-container">
+
+<a
+    href="./favoritos.html"
+    class="notification-button favorite-button"
+    aria-label="Favoritos"
+    title="Favoritos"
+>
+    <svg
+        class="favorite-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.56l-5.91 3.1 1.13-6.57-4.77-4.65 6.6-.96L12 2.5z"
+        />
+    </svg>
+</a>
+
+        <button
+            id="notificationButton"
+            class="notification-button"
+            type="button"
+            aria-label="Notificações"
+        >
+            🔔
+            <span
+                id="notificationBadge"
+                class="notification-badge hidden"
+            >
+                0
+            </span>
+        </button>
+
+        <div
+            id="notificationDropdown"
+            class="notification-dropdown hidden"
+        >
+
+            <div class="notification-header">
+                <strong>Notificações</strong>
+
+                <button
+                    id="markAllNotificationsRead"
+                    type="button"
+                >
+                    Marcar todas como lidas
+                </button>
+            </div>
+
+            <div
+                id="notificationList"
+                class="notification-list"
+            >
+                <div class="notification-empty">
+                    Carregando notificações...
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+ <a
+    href="./login.html"
+    id="loginButton"
+    class="login-button hidden"
+>
+    Entrar
+</a>
+
+<a
+    href="./register.html"
+    id="registerButton"
+    class="login-button hidden"
+>
+    Criar conta
+</a>
+    <div
+        id="userMenu"
+        class="user-menu hidden"
+    >
+
+        <button
+            id="userAvatarButton"
+            class="user-avatar-button"
+            type="button"
+            aria-label="Abrir menu do utilizador"
+        >
+            <img
+                id="headerAvatar"
+                class="header-avatar"
+                src="./assets/images/default-avatar.svg"
+                alt="Perfil"
+            >
+        </button>
+
+        <div
+            id="userDropdown"
+            class="user-dropdown hidden"
+        >
+
+            <a
+    href="#"
+    id="profileMenuLink"
+    class="user-dropdown-item"
+>
+    Perfil
+</a>
+
+            <button
+                id="logoutButton"
+                class="user-dropdown-item logout-item"
+                type="button"
+            >
+                Sair
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</header>
+
+<!-- =========================================================
+     ANÚNCIO FIXO — CANTO SUPERIOR DIREITO
+========================================================= -->
+<!-- =========================================================
+     YOKA — SLIDERS DE PUBLICIDADE
+========================================================= -->
+
+<div class="yoka-index-ads">
+
+    <h2 class="yoka-index-ads-title">Patrocinado</h2>
+
+    <!-- SLIDER 1 -->
+    <div class="yoka-index-ad" id="yokaIndexAd">
+
+        <div class="yoka-ad-slider" data-interval="10000">
+
+            <a
+                class="yoka-ad-slide "
+                href="https://kubeta.ao/r/12c464f36d"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="./assets/images/como -desenvolver.png"
+                    alt="Publicidade da Kubeta"
+                >
+            </a>
+
+            <a
+                class="yoka-ad-slide"
+                href="https://sshortly1.com/6b6919e"
+              target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="./assets/images/construtor.png"
+                    alt="Curso"
+                >
+            </a>
+
+
+               <a
+                class="yoka-ad-slide"
+                href="https://kambachat.com/api/digital/affiliates/4064899882/click"
+                 target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="./assets/images/ia.png"
+                    alt="Curso de ia"
+
+                >
+            </a>
+
+            <button class="yoka-ad-arrow prev" type="button"
+                aria-label="Anúncio anterior">‹</button>
+
+            <button class="yoka-ad-arrow next" type="button"
+                aria-label="Anúncio seguinte">›</button>
+
+            <div class="yoka-ad-dots" aria-label="Navegação dos anúncios"></div>
+
+        </div>
+    </div>
+
+    <!-- SLIDER 2 -->
+    
+<div class="yoka-index-ad" id="yokaIndexAd2">
+    <a
+        href="https://sshortly1.com/84c0431"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="yoka-ad-fixed"
+    >
+        <img
+            src="./assets/images/bantu.png"
+            alt="Publicidade da Kubeta"
+        >
+    </a>
+</div>
+
+
+</div>
+<!-- =========================================================
+     CONTEÚDO PRINCIPAL
+========================================================= -->
+
+<main class="home-page">
+
+<section class="home-section">
+
+    <div class="section-header">
+
+        <div>
+
+            
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="featuredSongsContainer"
+        class="songs-container"
+    >
+
+        <div class="loading-message">
+            Carregando músicas...
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <p>
+                © <span id="currentYear"></span>
+                Yoka. Todos os direitos reservados.
+            </p>
+
+            <div class="footer-legal">
+               
+<a href="/termos">Termos e Condições</a>
+
+<span class="footer-separator">|</span>
+
+<a href="/privacidade">Política de Privacidade</a>
+
+<span class="footer-separator">|</span>
+
+<a href="/sobre">Sobre</a>
+
+<span class="footer-separator">|</span>
+
+<a href="/contacto">Contacto</a>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+<script src="./js/index.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/notifications.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/artist.js"></script>
+<script src="./js/ad-sliders.js" ></script>
+<script src="./js/register-service-worker.js" ></script>
+
+
+<script src="./js/instalar-yoka.js" defer></script>
+
+<!-- =====================================================
+     YOKA — BOTÃO DE INSTALAÇÃO PWA
+===================================================== -->
+<button id="instalarYokaBtn" type="button">
+    <span aria-hidden="true">⬇</span>
+    Baixar App 
+</button>
+
+
+
+</body>
+
+</html>

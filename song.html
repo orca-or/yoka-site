@@ -1,0 +1,3968 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta name="monetag" content="3ec8a8f6dfbcf48960206351eabef32c">
+<meta name="google-adsense-account" content="ca-pub-3493043807965757">
+    <title>Música - Yoka</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+</head>
+<style>
+
+/* SIDEBAR — TÍTULO, ARTISTA E GÉNERO */
+
+.sidebar-song-title {
+  margin-top: 10px
+}
+
+.sidebar-song-artist {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+    
+/* =========================================================
+YOKA — SONG PAGE
+RESPONSIVIDADE COMPLETA
+========================================================= */
+
+/* =========================================================
+
+1. BASE DA PÁGINA
+   ========================================================= */
+
+html,
+body {
+width: 100%;
+max-width: 100%;
+overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+img,
+svg,
+video {
+max-width: 100%;
+}
+
+/* =========================================================
+2. HEADER
+========================================================= */
+
+.site-header {
+width: 100%;
+}
+
+.header-inner {
+width: 100%;
+max-width: 1400px;
+margin: 0 auto;
+padding-left: 20px;
+padding-right: 20px;
+
+
+display: flex;
+align-items: center;
+gap: 20px;
+
+
+}
+
+.logo {
+flex-shrink: 0;
+}
+
+.header-search {
+min-width: 0;
+flex: 1;
+}
+
+.header-search input {
+width: 100%;
+min-width: 0;
+}
+
+.main-nav {
+flex-shrink: 0;
+}
+
+.header-user {
+flex-shrink: 0;
+}
+
+/* =========================================================
+3. PÁGINA PRINCIPAL
+========================================================= */
+
+.song-page {
+width: calc(100% - 40px);
+max-width: 1400px;
+margin: 30px auto 60px auto;
+
+
+display: grid;
+grid-template-columns: minmax(0, 1fr) 340px;
+gap: 30px;
+
+align-items: start;
+
+
+}
+
+.song-main-column {
+width: 100%;
+min-width: 0;
+}
+
+.song-sidebar {
+width: 100%;
+min-width: 0;
+}
+
+/* =========================================================
+4. CONTEÚDO DA MÚSICA
+========================================================= */
+
+.song-content {
+width: 100%;
+min-width: 0;
+}
+
+.song-cover-container {
+position: relative;
+width: 100%;
+max-width: 900px;
+margin: 0 auto;
+
+
+overflow: hidden;
+border-radius: 12px;
+
+aspect-ratio: 1 / 1;
+
+
+}
+
+.song-cover {
+display: block;
+
+
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+
+
+}
+
+/* =========================================================
+5. ANÚNCIO SOBRE A CAPA
+========================================================= */
+
+.song-ad {
+position: absolute;
+inset: 0;
+
+
+width: 100%;
+height: 100%;
+
+display: none;
+
+align-items: center;
+justify-content: center;
+
+z-index: 10;
+
+overflow: hidden;
+
+
+}
+
+.song-ad-content {
+position: relative;
+
+
+width: 100%;
+height: 100%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+text-align: center;
+
+
+}
+
+.song-ad-label {
+position: absolute;
+color: white;
+
+left: 10px;
+background-color: #222;
+
+
+font-size: 30px;
+line-height: 1;
+
+
+}
+
+.song-ad-container {
+width: 100%;
+height: 100%;
+
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+overflow: hidden;
+
+
+}
+
+/* =========================================================
+6. INFORMAÇÕES DA MÚSICA
+========================================================= */
+
+.song-info {
+width: 100%;
+min-width: 0;
+
+
+margin-top: 24px;
+
+
+}
+
+.song-artist-row {
+width: 100%;
+min-width: 0;
+}
+
+.song-artist-link {
+min-width: 0;
+max-width: 100%;
+}
+
+.song-artist-link h2 {
+margin: 0;
+overflow-wrap: anywhere;
+}
+
+.song-artist-info {
+min-width: 0;
+}
+
+.song-artist-row > .song-artist-row {
+width: 100%;
+
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+gap: 15px;
+
+
+}
+
+.artist-followers-count,
+.artist-followers-label {
+white-space: nowrap;
+}
+
+.song-follow-button {
+flex-shrink: 0;
+}
+
+#songTitle {
+width: 100%;
+max-width: 100%;
+
+
+overflow-wrap: anywhere;
+word-break: break-word;
+
+
+}
+
+.song-description-row {
+width: 100%;
+min-width: 0;
+
+
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+
+gap: 20px;
+
+
+}
+
+.song-description {
+min-width: 0;
+overflow-wrap: anywhere;
+word-break: break-word;
+}
+
+.song-publication-date {
+flex-shrink: 0;
+white-space: nowrap;
+}
+
+/* =========================================================
+7. PLAYER
+========================================================= */
+
+.song-player {
+width: 100%;
+min-width: 0;
+
+
+margin-top: 20px;
+
+
+}
+
+.yoka-player {
+width: 100%;
+min-width: 0;
+
+
+display: flex;
+align-items: center;
+
+gap: 15px;
+
+
+}
+
+.player-play-button {
+flex-shrink: 0;
+}
+
+.player-center {
+min-width: 0;
+flex: 1;
+}
+
+.player-progress-container {
+width: 100%;
+min-width: 0;
+
+
+display: flex;
+align-items: center;
+
+gap: 10px;
+
+
+}
+
+.player-progress {
+width: 100%;
+min-width: 0;
+flex: 1;
+}
+
+.player-time {
+flex-shrink: 0;
+white-space: nowrap;
+}
+
+.player-volume {
+min-width: 0;
+
+
+display: flex;
+align-items: center;
+
+gap: 8px;
+
+flex-shrink: 0;
+
+
+}
+
+.player-volume-range {
+width: 90px;
+max-width: 90px;
+}
+
+/* =========================================================
+8. AÇÕES
+========================================================= */
+
+.song-actions {
+width: 100%;
+min-width: 0;
+
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+gap: 15px;
+
+flex-wrap: wrap;
+
+
+}
+
+.song-actions-left {
+min-width: 0;
+
+
+display: flex;
+align-items: center;
+
+gap: 12px;
+
+flex-wrap: wrap;
+
+
+}
+
+.song-stats {
+min-width: 0;
+}
+
+.song-like-button,
+.song-favorite-button,
+.song-share-button {
+flex-shrink: 0;
+
+
+white-space: nowrap;
+
+}
+
+.song-share-wrapper {
+position: relative;
+flex-shrink: 0;
+}
+
+/* =========================================================
+9. MENU DE PARTILHA
+========================================================= */
+
+.song-share-menu {
+position: absolute;
+
+
+top: calc(100% + 8px);
+right: 0;
+
+z-index: 100;
+
+max-width: calc(100vw - 30px);
+
+display: flex;
+align-items: center;
+
+gap: 8px;
+
+flex-wrap: wrap;
+
+
+}
+
+/* =========================================================
+10. COMENTÁRIOS
+========================================================= */
+
+.comments-section {
+width: 100%;
+min-width: 0;
+
+
+margin-top: 35px;
+
+
+}
+
+.comments-header {
+width: 100%;
+}
+
+.comments-header h2 {
+overflow-wrap: anywhere;
+}
+
+.comment-form {
+width: 100%;
+}
+
+.comment-form textarea {
+width: 100%;
+max-width: 100%;
+
+
+resize: vertical;
+
+
+}
+
+#commentSubmit {
+max-width: 100%;
+}
+
+.comments-list {
+width: 100%;
+min-width: 0;
+}
+
+.comments-list * {
+max-width: 100%;
+}
+
+.comment {
+min-width: 0;
+overflow-wrap: anywhere;
+word-break: break-word;
+}
+
+/* =========================================================
+11. SIDEBAR
+========================================================= */
+
+.song-sidebar {
+display: flex;
+flex-direction: column;
+
+
+gap: 20px;
+
+
+}
+
+.sidebar-section {
+width: 100%;
+min-width: 0;
+}
+
+.sidebar-section-header {
+width: 100%;
+}
+
+.sidebar-section-header h2 {
+overflow-wrap: anywhere;
+
+}
+
+.sidebar-song-list {
+width: 100%;
+min-width: 0;
+
+display: flex;
+flex-direction: column;
+text-decoration: none;
+gap: 12px;
+
+
+}
+
+.sidebar-song-list > * {
+min-width: 0;
+max-width: 100%;
+}
+
+/* =========================================================
+12. TABLETS GRANDES
+========================================================= */
+
+@media (max-width: 1100px) {
+
+
+.header-inner {
+    gap: 15px;
+}
+
+.song-page {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 22px;
+}
+
+.player-volume-range {
+    width: 70px;
+    max-width: 70px;
+}
+
+
+}
+
+/* =========================================================
+13. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+
+.header-inner {
+    flex-wrap: wrap;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.logo {
+    order: 1;
+}
+
+.header-user {
+    order: 2;
+    margin-left: auto;
+}
+
+.header-search {
+    order: 3;
+
+    width: 100%;
+    flex-basis: 100%;
+}
+
+.main-nav {
+    order: 4;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.song-page {
+    width: calc(100% - 30px);
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 35px;
+
+    margin-top: 25px;
+}
+
+.song-main-column {
+    width: 100%;
+}
+
+.song-sidebar {
+    width: 100%;
+}
+
+.sidebar-song-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+
+.song-cover-container {
+    max-width: 700px;
+}
+
+}
+
+/* =========================================================
+14. TABLET PEQUENO
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+.header-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.main-nav {
+    gap: 15px;
+    overflow-x: auto;
+    justify-content: flex-start;
+
+    scrollbar-width: none;
+}
+
+.main-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.main-nav a {
+    flex-shrink: 0;
+}
+
+
+.song-page {
+    width: calc(100% - 24px);
+
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    gap: 28px;
+}
+
+
+.song-info {
+    margin-top: 20px;
+}
+
+
+.song-description-row {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.song-publication-date {
+    white-space: normal;
+}
+
+
+.yoka-player {
+    gap: 10px;
+}
+
+.player-volume-range {
+    width: 60px;
+    max-width: 60px;
+}
+
+
+.song-actions {
+    justify-content: flex-start;
+}
+
+.song-actions-left {
+    width: 100%;
+}
+
+
+.song-sidebar {
+    gap: 18px;
+}
+
+
+}
+
+/* =========================================================
+15. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+.header-inner {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    gap: 10px;
+}
+
+
+.logo {
+    font-size: 22px;
+}
+
+
+.header-user {
+    gap: 6px;
+}
+
+
+.header-search {
+    margin-top: 3px;
+}
+
+.header-search input {
+    min-height: 40px;
+}
+
+
+.main-nav {
+    gap: 12px;
+
+    padding-bottom: 2px;
+}
+
+.main-nav a {
+    font-size: 14px;
+}
+
+
+.song-page {
+    width: calc(100% - 16px);
+
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+    gap: 25px;
+}
+
+
+.song-cover-container {
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+
+.song-info {
+    margin-top: 16px;
+}
+
+
+.song-artist-row > .song-artist-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+#songTitle {
+    font-size: clamp(24px, 7vw, 34px);
+    line-height: 1.15;
+
+    margin-top: 12px;
+}
+
+
+.song-description {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.yoka-player {
+    flex-wrap: wrap;
+
+    padding: 10px;
+
+    gap: 10px;
+}
+
+
+.player-play-button {
+    width: 44px;
+    height: 44px;
+}
+
+
+.player-center {
+    order: 2;
+
+    width: calc(100% - 55px);
+    flex-basis: calc(100% - 55px);
+}
+
+
+.player-volume {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: flex-end;
+}
+
+
+.player-volume-range {
+    width: 100px;
+    max-width: 100px;
+}
+
+
+.player-progress-container {
+    gap: 6px;
+}
+
+
+.player-time {
+    font-size: 11px;
+}
+
+
+.song-actions-left {
+    gap: 8px;
+}
+
+
+.song-like-button,
+.song-favorite-button,
+.song-share-button {
+    min-height: 38px;
+}
+
+
+.song-share-wrapper {
+    max-width: 100%;
+}
+
+
+.song-share-menu {
+    right: 0;
+
+    max-width: calc(100vw - 20px);
+}
+
+
+.comments-section {
+    margin-top: 25px;
+}
+
+
+.comment-form textarea {
+    min-height: 100px;
+}
+
+
+#commentSubmit {
+    width: 100%;
+}
+
+
+.sidebar-song-list {
+    grid-template-columns: 1fr;
+}
+
+
+.sidebar-section {
+    width: 100%;
+}
+
+
+}
+
+/* =========================================================
+16. MOBILE PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+
+.header-inner {
+    gap: 8px;
+}
+
+
+.logo {
+    font-size: 20px;
+}
+
+
+.header-user {
+    gap: 4px;
+}
+
+
+.song-page {
+    width: calc(100% - 12px);
+}
+
+
+.song-cover-container {
+    border-radius: 8px;
+}
+
+
+.song-artist-link h2 {
+    font-size: 20px;
+}
+
+
+.artist-followers-count,
+.artist-followers-label {
+    font-size: 12px;
+}
+
+
+.song-follow-button {
+    min-height: 36px;
+}
+
+
+.song-actions-left {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+
+.song-stats {
+    grid-column: 1 / -1;
+}
+
+
+.song-like-button,
+.song-favorite-button,
+.song-share-wrapper {
+    width: 100%;
+}
+
+
+.song-like-button,
+.song-favorite-button,
+.song-share-button {
+    width: 100%;
+
+    justify-content: center;
+}
+
+
+.song-share-menu {
+    left: 0;
+    right: auto;
+
+    width: max-content;
+
+    max-width: calc(100vw - 12px);
+}
+
+
+.song-ad-label {
+    top: 7px;
+    left: 7px;
+
+    font-size: 9px;
+}
+
+
+}
+
+/* =========================================================
+17. MOBILE MUITO PEQUENO
+========================================================= */
+
+@media (max-width: 360px) {
+
+
+.header-inner {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+
+.main-nav {
+    gap: 10px;
+}
+
+.main-nav a {
+    font-size: 13px;
+}
+
+
+.song-page {
+    width: calc(100% - 10px);
+}
+
+
+#songTitle {
+    font-size: 23px;
+}
+
+
+.song-artist-link h2 {
+    font-size: 18px;
+}
+
+
+.song-actions-left {
+    grid-template-columns: 1fr;
+}
+
+
+.song-stats {
+    grid-column: auto;
+}
+
+
+.player-play-button {
+    width: 40px;
+    height: 40px;
+}
+
+
+.player-center {
+    width: calc(100% - 50px);
+    flex-basis: calc(100% - 50px);
+}
+
+
+.player-volume-range {
+    width: 80px;
+    max-width: 80px;
+}
+
+
+.comments-header h2 {
+    font-size: 21px;
+}
+
+
+}
+
+/* =========================================================
+18. CORREÇÃO DE ELEMENTOS QUE PODEM ESTOURAR A TELA
+========================================================= */
+
+.song-page input,
+.song-page textarea,
+.song-page button,
+.song-page select {
+max-width: 100%;
+}
+
+.song-page h1,
+.song-page h2,
+.song-page h3,
+.song-page p,
+.song-page span,
+.song-page a {
+overflow-wrap: anywhere;
+}
+
+.song-sidebar *,
+.song-main-column * {
+max-width: 100%;
+}
+
+/* =========================================================
+19. FOOTER
+========================================================= */
+
+.site-footer {
+width: 100%;
+}
+
+.footer-inner {
+width: 100%;
+max-width: 1400px;
+
+
+margin: 0 auto;
+
+padding-left: 20px;
+padding-right: 20px;
+
+
+}
+
+@media (max-width: 600px) {
+
+
+.footer-inner {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    text-align: center;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+YOKA — CORREÇÃO DEFINITIVA DO HEADER
+Pesquisa + avatar + responsividade
+========================================================= */
+
+/* =========================================================
+BASE
+========================================================= */
+
+.site-header {
+position: relative;
+z-index: 1000;
+
+
+width: 100%;
+min-height: 0;
+
+overflow: visible;
+
+
+}
+
+.header-inner {
+position: relative;
+
+
+width: 100%;
+min-width: 0;
+min-height: 0;
+
+display: flex;
+align-items: center;
+
+gap: 16px;
+
+
+}
+
+/* =========================================================
+LOGO
+========================================================= */
+
+.logo {
+flex: 0 0 auto;
+min-width: max-content;
+}
+
+/* =========================================================
+PESQUISA
+NÃO ALTERAR O COMPORTAMENTO ATUAL
+========================================================= */
+
+.header-search {
+    position: relative;
+
+    flex: 0 1 520px;
+
+    width: 100%;
+    min-width: 180px;
+    max-width: 520px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    z-index: 10;
+}
+
+
+
+.header-search input {
+width: 100%;
+min-width: 0;
+}
+
+/* =========================================================
+NAVEGAÇÃO
+========================================================= */
+
+.main-nav {
+flex: 0 0 auto;
+min-width: max-content;
+}
+
+/* =========================================================
+UTILIZADOR
+========================================================= */
+
+.header-user {
+position: relative;
+
+
+display: flex;
+align-items: center;
+
+flex: 0 0 auto;
+flex-shrink: 0;
+
+min-width: max-content;
+
+margin-left: auto;
+
+z-index: 20;
+
+
+}
+
+/* =========================================================
+MENU DO UTILIZADOR
+========================================================= */
+
+.user-menu {
+position: relative;
+
+
+flex: 0 0 auto;
+flex-shrink: 0;
+
+
+}
+
+/* =========================================================
+BOTÃO DO AVATAR
+========================================================= */
+
+.user-avatar-button {
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+flex: 0 0 auto;
+flex-shrink: 0;
+
+width: 40px;
+height: 40px;
+
+min-width: 40px;
+min-height: 40px;
+
+
+}
+
+/* =========================================================
+AVATAR
+========================================================= */
+
+.header-avatar {
+display: block;
+
+
+width: 40px;
+height: 40px;
+
+min-width: 40px;
+min-height: 40px;
+
+object-fit: cover;
+
+border-radius: 50%;
+
+
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+
+.header-inner {
+    gap: 12px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.logo {
+    flex: 0 0 auto;
+}
+
+
+.header-search {
+    flex: 1 1 auto;
+
+    min-width: 150px;
+    max-width: none;
+}
+
+
+.main-nav {
+    flex: 0 0 auto;
+    min-width: max-content;
+}
+
+
+.header-user {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+
+    min-width: max-content;
+
+    margin-left: 0;
+}
+
+
+.user-menu {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+}
+
+
+.user-avatar-button {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+}
+
+
+.header-avatar {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+}
+
+
+}
+
+
+/* =========================================================
+TABLET PEQUENO
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+.header-inner {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    grid-template-areas:
+        "logo user"
+        "search search"
+        "nav nav";
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 12px;
+}
+
+
+.logo {
+    grid-area: logo;
+
+    min-width: 0;
+}
+
+
+.header-user {
+    grid-area: user;
+
+    display: flex;
+
+    min-width: max-content;
+
+    margin: 0;
+
+    justify-self: end;
+}
+
+
+.header-search {
+    grid-area: search;
+
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    margin: 0;
+}
+
+
+.header-search input {
+    width: 100%;
+    min-width: 0;
+}
+
+
+.main-nav {
+    grid-area: nav;
+
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+
+    scrollbar-width: none;
+}
+
+
+.main-nav::-webkit-scrollbar {
+    display: none;
+}
+
+
+.main-nav a {
+    flex: 0 0 auto;
+}
+
+
+.header-avatar {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+}
+
+
+/*
+   IMPORTANTE:
+   o conteúdo só começa depois de todo o header.
+*/
+
+.song-page {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 25px;
+}
+
+
+}
+
+/* =========================================================
+CELULAR
+========================================================= */
+
+@media (max-width: 480px) {
+
+
+.header-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    grid-template-areas:
+        "logo user"
+        "search search"
+        "nav nav";
+
+    gap: 9px;
+
+    padding: 9px 10px;
+}
+
+
+.logo {
+    min-width: 0;
+
+    white-space: nowrap;
+}
+
+
+.header-user {
+    min-width: max-content;
+
+    display: flex;
+    align-items: center;
+
+    justify-self: end;
+}
+
+
+.header-search {
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+}
+
+
+.header-search input {
+    width: 100%;
+    min-width: 0;
+
+    height: 40px;
+}
+
+
+.main-nav {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    gap: 14px;
+}
+
+
+.header-avatar {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+    min-height: 36px;
+}
+
+
+/*
+   Mantém distância real entre o header
+   e a capa.
+*/
+
+.song-page {
+    margin-top: 28px;
+}
+
+
+}
+
+/* =========================================================
+CELULAR MUITO PEQUENO
+========================================================= */
+
+@media (max-width: 360px) {
+
+
+.header-inner {
+    padding-left: 8px;
+    padding-right: 8px;
+
+    gap: 8px;
+}
+
+
+.header-avatar {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+    min-height: 34px;
+}
+
+
+.header-search input {
+    height: 38px;
+}
+
+
+.main-nav {
+    gap: 11px;
+}
+
+
+.main-nav a {
+    font-size: 13px;
+}
+
+
+.song-page {
+    width: calc(100% - 10px);
+
+    margin-top: 25px;
+}
+
+
+}
+
+/* =========================================================
+PROTEÇÃO CONTRA DESAPARECIMENTO DO AVATAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+#headerUser {
+    visibility: visible;
+    opacity: 1;
+
+    overflow: visible;
+}
+
+
+#userMenu {
+    display: flex;
+
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#userAvatarButton {
+    display: flex;
+
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#headerAvatar {
+    display: block;
+
+    visibility: visible;
+    opacity: 1;
+}
+
+
+}
+
+/* =========================================================
+PROTEÇÃO CONTRA SOBREPOSIÇÃO
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+.site-header {
+    height: auto;
+    min-height: 0;
+
+    overflow: visible;
+}
+
+
+.header-inner {
+    height: auto;
+    min-height: 0;
+}
+
+
+.song-cover-container {
+    position: relative;
+    z-index: 1;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   HEADER MOBILE — LOGO À ESQUERDA / ÍCONES À DIREITA
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .header-inner {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr) auto;
+
+        grid-template-areas:
+            "logo user"
+            "search search"
+            "nav nav";
+
+        align-items: center;
+    }
+
+    /* LOGO — SEMPRE À ESQUERDA */
+
+    .logo {
+        grid-area: logo;
+
+        justify-self: start;
+        align-self: center;
+
+        margin: 0;
+    }
+
+
+    /* FAVORITOS + SINO + AVATAR — SEMPRE À DIREITA */
+
+    .header-user {
+        grid-area: user;
+
+        justify-self: end;
+        align-self: center;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: auto;
+        min-width: max-content;
+
+        margin: 0;
+    }
+
+
+    /* Mantém os ícones juntos */
+
+    #headerUser > * {
+        flex-shrink: 0;
+    }
+
+
+    /* Pesquisa continua na linha seguinte */
+
+    .header-search {
+        grid-area: search;
+
+        width: 100%;
+        min-width: 0;
+
+        margin: 0;
+    }
+
+
+    /* Navegação na linha seguinte */
+
+    .main-nav {
+        grid-area: nav;
+
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .header-inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .logo {
+        justify-self: start;
+    }
+
+    .header-user {
+        justify-self: end;
+        min-width: max-content;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — HEADER RESPONSIVO DEFINITIVO
+   900px PARA BAIXO
+   LOGO À ESQUERDA
+   FAVORITOS + SINO + AVATAR À DIREITA
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-inner {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr) auto;
+
+        grid-template-areas:
+            "logo user"
+            "search search"
+            "nav nav";
+
+        align-items: center;
+
+        width: 100%;
+        min-width: 0;
+
+        gap: 10px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+
+        flex-wrap: unset;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+        grid-area: logo;
+
+        order: unset;
+
+        justify-self: start;
+        align-self: center;
+
+        margin: 0;
+
+        min-width: 0;
+    }
+
+
+    /* FAVORITOS + SINO + AVATAR */
+
+    .header-user {
+        grid-area: user;
+
+        order: unset;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        justify-self: end;
+        align-self: center;
+
+        width: auto;
+        min-width: max-content;
+
+        margin: 0;
+
+        flex: 0 0 auto;
+        flex-shrink: 0;
+    }
+
+
+    /* NÃO DEIXAR OS ÍCONES QUEBRAREM */
+
+    .header-user > * {
+        flex: 0 0 auto;
+        flex-shrink: 0;
+    }
+
+
+    .notification-container {
+        flex: 0 0 auto;
+        flex-shrink: 0;
+    }
+
+
+    .user-menu {
+        flex: 0 0 auto;
+        flex-shrink: 0;
+    }
+
+
+    /* PESQUISA */
+
+    .header-search {
+        grid-area: search;
+
+        order: unset;
+
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+
+        margin: 0;
+    }
+
+
+    .header-search input {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* NAVEGAÇÃO */
+
+    .main-nav {
+        grid-area: nav;
+
+        order: unset;
+
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        white-space: nowrap;
+
+        scrollbar-width: none;
+    }
+
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .main-nav a {
+        flex: 0 0 auto;
+    }
+
+
+    /* AVATAR */
+
+    .header-avatar {
+        flex: 0 0 auto;
+        flex-shrink: 0;
+    }
+
+
+    .user-avatar-button {
+        flex: 0 0 auto;
+        flex-shrink: 0;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+
+        grid-template-areas:
+            "logo user"
+            "search search"
+            "nav nav";
+
+        gap: 8px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .logo {
+        justify-self: start;
+    }
+
+
+    .header-user {
+        justify-self: end;
+
+        min-width: max-content;
+
+        margin: 0;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .header-inner {
+        gap: 7px;
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .header-user {
+        justify-self: end;
+
+        min-width: max-content;
+    }
+}
+
+
+/* =========================================================
+   CELULAR MUITO PEQUENO
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .header-inner {
+        gap: 6px;
+
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+
+    .header-user {
+        justify-self: end;
+
+        min-width: max-content;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — HEADER MOBILE: TUDO NA MESMA LINHA
+   Logo | Pesquisa | Favoritos | Sino | Avatar
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .site-header {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .header-inner {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        min-width: 0;
+        padding: 8px;
+    }
+
+    .logo {
+        order: 0 !important;
+        flex: 0 0 auto;
+        min-width: 0;
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .header-search {
+        order: 0 !important;
+        display: flex;
+        flex: 1 1 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+
+    .header-search input {
+        width: 100%;
+        min-width: 0;
+        height: 36px;
+        padding: 0 6px;
+        font-size: 12px;
+    }
+
+    .header-search button {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 36px;
+    }
+
+    .header-user {
+        order: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 0 0 auto !important;
+        min-width: 0;
+        gap: 3px;
+        margin: 0 !important;
+    }
+
+    .notification-container {
+        display: flex;
+        align-items: center;
+        flex: 0 0 auto;
+        gap: 3px;
+        margin: 0;
+    }
+
+    .favorite-button {
+        display: flex !important;
+        visibility: visible !important;
+        flex: 0 0 auto;
+    }
+
+    .notification-button,
+    .user-avatar-button {
+        flex-shrink: 0;
+    }
+
+    .main-nav {
+        order: 1 !important;
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .header-inner {
+        gap: 4px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .header-search input {
+        padding: 0 4px;
+        font-size: 11px;
+    }
+
+    .header-search button {
+        flex-basis: 28px;
+        width: 28px;
+    }
+
+    .header-user {
+        gap: 2px;
+    }
+
+    .notification-container {
+        gap: 2px;
+    }
+}
+
+
+
+
+/* YOKA — MENU DE PARTILHA HORIZONTAL */
+.song-share-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: max-content !important;
+    height: auto !important;
+}
+
+.song-share-menu .song-share-icon-button {
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    margin: 0 !important;
+}
+
+
+
+
+
+/* YOKA — AJUSTES DO MENU DE PARTILHA */
+
+/* Manter os ícones na horizontal */
+.song-share-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: max-content !important;
+    max-width: calc(100vw - 24px) !important;
+    box-sizing: border-box !important;
+}
+
+/* Manter o tamanho dos botões */
+.song-share-menu .song-share-icon-button {
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+    height: 42px !important;
+    box-sizing: border-box !important;
+}
+
+/* Ecrãs pequenos */
+@media (max-width: 480px) {
+    .song-share-menu {
+        gap: 5px !important;
+        max-width: calc(100vw - 24px) !important;
+    }
+
+    .song-share-menu .song-share-icon-button {
+        flex-basis: 38px !important;
+        width: 38px !important;
+        min-width: 38px !important;
+        max-width: 38px !important;
+        height: 38px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* YOKA — MENSAGEM DE LINK COPIADO */
+#songShareFeedback {
+    position: fixed !important;
+    top: 50%;
+    left: 8px;
+    bottom: auto;
+    right: auto;
+    transform: translateY(-50%);
+    z-index: 999999 !important;
+
+    display: inline-block;
+    width: max-content;
+    max-width: calc(100vw - 16px);
+    padding: 8px 12px;
+    margin: 0;
+
+    color: black;
+    background: #ffffff;
+    border: 1px solid #d9eadf;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+
+    font-size: 13px;
+    line-height: 1.3;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+#songShareFeedback.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+/* =========================================================
+   YOKA — BOTÃO DENUNCIAR
+   Alinhado à direita das ações da música
+   ========================================================= */
+
+.song-report-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    margin-left: auto;
+    padding: 9px 13px;
+
+    border: 1px solid #d9534f;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #d9534f;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.song-report-button:hover {
+    background: #d9534f;
+    color: #fff;
+}
+
+.song-report-button:focus-visible {
+    outline: 2px solid #d9534f;
+    outline-offset: 3px;
+}
+
+/* Telemóveis */
+@media (max-width: 600px) {
+    .song-report-button {
+        margin-left: auto;
+        min-height: 38px;
+        padding: 8px 11px;
+        font-size: 13px;
+    }
+}
+
+
+/* YOKA — BOTÕES DE REPRODUÇÃO POR CATEGORIA */
+
+.sidebar-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sidebar-section-header h2 {
+    min-width: 0;
+    margin: 0;
+}
+
+.sidebar-play-category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid #dedee5;
+    border-radius: 20px;
+    background: #fff;
+    color: #222;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.sidebar-play-category:hover {
+    background: #222;
+    color: #fff;
+}
+
+.sidebar-play-category:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+
+
+/* Botão de reprodução por categoria */
+.sidebar-play-category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid #dedee5;
+    border-radius: 20px;
+    background: #fff;
+    color: #222;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease,
+                border-color .2s ease;
+}
+
+/* Lista ativa */
+.sidebar-play-category.ativo {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+}
+
+/* Efeito ao passar o rato */
+.sidebar-play-category:not(.ativo):hover {
+    background: #f0f0f5;
+}
+
+/* Botão indisponível */
+.sidebar-play-category:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Área total da publicidade */
+#songAd {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+/* Título patrocinado */
+#songAd .song-ad-header {
+    flex: 0 0 34px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Área da imagem: ocupa todo o espaço restante */
+#songAd .song-ad-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+/* Contentor e link ocupam toda a área */
+#songAd .song-ad-container,
+#songAd .song-ad-container a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagem inteira e responsiva */
+#songAd .song-ad-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* A área da capa define o espaço disponível */
+.song-cover-container {
+    position: relative;
+    width: 100%;
+}
+
+
+
+
+
+
+
+/* Bloco da publicidade */
+#songAd {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 10;
+    background: #fff;
+}
+
+/* Título sempre visível no topo */
+#songAd .song-ad-header {
+    position: relative;
+    display: block;
+    flex: 0 0 34px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding: 8px 10px;
+    margin: 0;
+    color: #65676b;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    z-index: 12;
+}
+
+/* Imagem ocupa todo o espaço restante */
+#songAd .song-ad-content {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 11;
+}
+
+#songAd .song-ad-container,
+#songAd .song-ad-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#songAd .song-ad-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Imagem responsiva sem cortes */
+#songAd .song-ad-container {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+#songAd .song-ad-container a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#songAd .song-ad-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+.sidebar-song-cover-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* CAPAS UNIFORMES NA SIDEBAR */
+
+.sidebar-song-cover-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #151515;
+    border-radius: 8px;
+}
+
+.sidebar-song-cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.sidebar-song-genre {
+    position: absolute;
+    top: 20px;
+    right: 6px;
+    z-index: 2;
+    max-width: calc(100% - 12px);
+    padding: 4px 6px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/* Bloco de publicidade com fundo refletido da capa */
+.song-ad {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #111;
+    border-radius: 12px;
+}
+
+/* Reflexo desfocado da capa da música */
+.song-ad::before {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    z-index: -1;
+    background-image: var(--cover-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(28px);
+    opacity: 0.8;
+}
+
+/* Conteúdo do anúncio acima do fundo */
+.song-ad-header,
+.song-ad-content {
+    position: relative;
+    z-index: 1;
+}
+
+.song-ad-content {
+    background: transparent;
+}
+
+.song-ad-container {
+    background: transparent;
+}
+
+.song-ad-container img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+.yoka-index-ad {
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+/* =========================================================
+   YOKA — PESQUISA RESPONSIVA E CABEÇALHO
+   Até 704px: pesquisa centrada abaixo do cabeçalho
+   A partir de 705px: pesquisa normal no cabeçalho
+   ========================================================= */
+
+@media (max-width: 704px) {
+
+    .header-inner {
+        position: relative;
+        overflow: visible;
+    }
+
+    /* Botão que abre a pesquisa */
+    #toggleHeaderSearch {
+        position: relative;
+        z-index: 1002;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        margin-left: 12px;
+    }
+
+    /* Pesquisa recolhida: não desloca os outros elementos */
+    .header-inner .header-search {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+
+        z-index: 1001;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        box-sizing: border-box;
+        width: 0;
+        min-width: 0;
+        max-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        background: var(--header-bg, #ffffff);
+        border: 1px solid transparent;
+        border-radius: 10px;
+
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+
+        transition:
+            width 0.25s ease,
+            opacity 0.2s ease,
+            padding 0.25s ease;
+    }
+
+    /* Pesquisa aberta e centrada */
+    .header-inner .header-search.search-open {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+
+        width: min(300px, calc(100vw - 32px));
+        min-width: 0;
+        max-width: calc(100vw - 32px);
+
+        padding: 8px;
+
+        overflow: visible;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+
+        border-color: rgba(0, 0, 0, 0.12);
+    }
+
+    /* Campo de pesquisa */
+    .header-inner .header-search input {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    /* Botão de pesquisa dentro da barra */
+    .header-inner .header-search #searchButton {
+        position: static;
+        flex: 0 0 40px;
+
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* Manter o título afastado do canto esquerdo */
+    .header-inner .logo {
+        margin-left: 12px;
+    }
+
+  .header-inner .header-user {
+    margin-left: auto !important;
+    margin-right: 8px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1002;
+}
+}
+
+/* =========================================================
+   ECRÃS MAIORES
+   ========================================================= */
+
+@media (min-width: 705px) {
+
+    #toggleHeaderSearch {
+        display: none;
+    }
+
+    .header-inner .header-search {
+        position: static;
+        left: auto;
+        right: auto;
+        transform: none;
+
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+
+        overflow: visible;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+/* =========================================================
+   YOKA — HEADER ENTRE 701px E 900px
+   LOGO | PESQUISA | ÍCONES NA MESMA LINHA
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 900px) {
+
+    .site-header {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .header-inner {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center;
+
+        width: 100%;
+        min-width: 0;
+
+        gap: 10px;
+        padding: 10px 12px !important;
+    }
+
+    /* Logótipo à esquerda */
+
+    .header-inner .logo {
+        order: 0 !important;
+
+        flex: 0 0 auto;
+        min-width: 0;
+        max-width: 22%;
+
+        margin: 0 !important;
+        white-space: nowrap;
+
+        font-size: clamp(16px, 2vw, 20px);
+    }
+
+    /* Pesquisa fixa na mesma linha */
+
+    .header-inner .header-search {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+
+        order: 0 !important;
+
+        display: flex !important;
+        align-items: center;
+
+        flex: 1 1 0 !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+
+        z-index: 10;
+    }
+
+    .header-inner .header-search input {
+        flex: 1 1 0;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        height: 38px;
+        padding: 0 8px;
+
+        font-size: 13px;
+    }
+
+    .header-inner .header-search #searchButton {
+        position: static !important;
+
+        flex: 0 0 38px;
+
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+
+        margin: 0;
+    }
+
+    /* Ocultar o botão de abrir pesquisa */
+
+    #toggleHeaderSearch {
+        display: none !important;
+    }
+
+    /* Ícones e avatar à direita */
+
+    .header-inner .header-user {
+        order: 0 !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        flex: 0 0 auto !important;
+        flex-shrink: 0;
+
+        width: auto;
+        min-width: 0;
+
+        gap: 5px;
+        margin: 0 !important;
+
+        position: relative;
+        z-index: 20;
+    }
+
+    .header-inner .header-user > *,
+    .header-inner .notification-container,
+    .header-inner .user-menu {
+        flex-shrink: 0;
+    }
+
+    .header-inner .header-avatar,
+    .header-inner .user-avatar-button {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+    }
+
+    /* Navegação numa linha separada por baixo */
+
+    .header-inner .main-nav {
+        order: 1 !important;
+
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        gap: 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+        scrollbar-width: none;
+    }
+
+    .header-inner .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .header-inner .main-nav a {
+        flex: 0 0 auto;
+    }
+}
+</style>
+<body>
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header class="site-header">
+
+<div class="header-inner">
+
+    <a
+        href="./index.html"
+        class="logo"
+    >
+        Yoka
+    </a>
+<button
+    type="button"
+    id="toggleHeaderSearch"
+    class="toggle-header-search"
+    aria-label="Abrir pesquisa"
+    aria-expanded="false"
+>
+    <span aria-hidden="true">⌕</span>
+</button>
+
+    <!-- PESQUISA -->
+
+    <div class="header-search">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Pesquisar músicas ou artistas"
+            autocomplete="off"
+        >
+
+        <button
+            id="searchButton"
+            type="button"
+            aria-label="Pesquisar"
+        >
+            🔍
+        </button>
+
+    </div>
+
+
+
+
+    <!-- UTILIZADOR -->
+<div id="headerUser" class="header-user">
+
+    <!-- NOTIFICAÇÕES -->
+    <div id="notificationContainer" class="notification-container">
+
+<a
+    href="./favoritos.html"
+    class="notification-button favorite-button"
+    aria-label="Favoritos"
+    title="Favoritos"
+>
+    <svg
+        class="favorite-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.56l-5.91 3.1 1.13-6.57-4.77-4.65 6.6-.96L12 2.5z"
+        />
+    </svg>
+</a>
+        <button
+            id="notificationButton"
+            class="notification-button"
+            type="button"
+            aria-label="Notificações"
+        >
+            🔔
+            <span
+                id="notificationBadge"
+                class="notification-badge hidden"
+            >
+                0
+            </span>
+        </button>
+
+        <div
+            id="notificationDropdown"
+            class="notification-dropdown hidden"
+        >
+
+            <div class="notification-header">
+                <strong>Notificações</strong>
+
+                <button
+                    id="markAllNotificationsRead"
+                    type="button"
+                >
+                    Marcar todas como lidas
+                </button>
+            </div>
+
+            <div
+                id="notificationList"
+                class="notification-list"
+            >
+                <div class="notification-empty">
+                    Carregando notificações...
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- UTILIZADOR -->
+ 
+ <a
+    href="./login.html"
+    id="loginButton"
+    class="login-button hidden"
+>
+    Entrar
+</a>
+
+<a
+    href="./register.html"
+    id="registerButton"
+    class="login-button hidden"
+>
+    Criar conta
+</a>
+
+    <div
+        id="userMenu"
+        class="user-menu hidden"
+    >
+
+        <button
+            id="userAvatarButton"
+            class="user-avatar-button"
+            type="button"
+            aria-label="Abrir menu do utilizador"
+        >
+            <img
+                id="headerAvatar"
+                class="header-avatar"
+                src="./assets/images/default-avatar.svg"
+                alt="Perfil"
+            >
+        </button>
+
+        <div
+            id="userDropdown"
+            class="user-dropdown hidden"
+        >
+
+            <a
+    href="#"
+    id="profileMenuLink"
+    class="user-dropdown-item"
+>
+    Perfil
+</a>
+
+            <button
+                id="logoutButton"
+                class="user-dropdown-item logout-item"
+                type="button"
+            >
+                Sair
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</header>
+
+<!-- ==========================================================
+     PÁGINA
+========================================================== -->
+
+<main class="song-page">
+
+    <!-- ======================================================
+         COLUNA PRINCIPAL
+    ======================================================= -->
+
+    <section class="song-main-column">
+
+        <!-- CARREGAMENTO -->
+
+        <section
+            id="songLoading"
+            class="song-message"
+        >
+            Carregando música...
+        </section>
+
+
+        <!-- ERRO -->
+
+        <section
+            id="songError"
+            class="song-message"
+            style="display:none;"
+        >
+            Não foi possível carregar a música.
+        </section>
+
+
+        <!-- MÚSICA -->
+
+        <section
+            id="songContent"
+            class="song-content"
+            style="display:none;"
+        >
+
+   
+<!-- CAPA DA MÚSICA -->
+<div class="song-cover-container">
+
+    <img
+        id="songCover"
+        class="song-cover"
+        src=""
+        alt="Capa da música"
+    >
+
+    <!-- PUBLICIDADE -->
+    <div id="songAd" class="song-ad" style="display: none;">
+
+        <div class="song-ad-header">
+            <span>Patrocinado</span>
+        </div>
+
+        <div class="song-ad-content">
+            <div id="songAdContainer" class="song-ad-container">
+                <a
+                    href="https://bantubet.co.ao/affiliates/?btag=2823333_l397029"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="assets/images/multipla.jpg"
+                        alt="Publicidade patrocinada"
+                    >
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+         <!-- INFORMAÇÕES -->
+
+            <div class="song-info">
+
+                <!-- ARTISTA + SEGUIR -->
+
+                <div class="song-artist-row">
+<a
+    id="songArtistLink"
+    class="song-artist-link"
+    href="#"
+>
+    <h2 id="songArtist">
+        Artista
+    </h2>
+</a>
+
+<div class="song-artist-row">
+
+    <div class="song-artist-info">
+
+       
+        <span
+            id="artistFollowersCount"
+            class="artist-followers-count"
+            data-followers-count
+        >
+            0
+        </span>
+
+        <span class="artist-followers-label">
+            seguidores
+        </span>
+
+    </div>
+
+
+    <button
+        id="songFollowButton"
+        type="button"
+        class="song-follow-button"
+        aria-pressed="false"
+        aria-label="Seguir artista"
+    >
+
+        <span class="song-follow-icon">
+     
+        </span>
+
+        <span class="song-follow-text">
+            Seguir
+        </span>
+
+    </button>
+
+</div>
+
+                </div>
+
+
+                <!-- TÍTULO -->
+<h1 id="songTitle">Sem título</h1>
+
+<div class="song-description-row">
+    <p id="songDescription" class="song-description"></p>
+
+    <span
+        id="songPublicationDate"
+        class="song-publication-date"
+    ></span>
+</div>
+
+<div class="song-player">
+
+    <!-- ÁUDIO REAL — fica escondido -->
+    <audio
+        id="songAudio"
+        preload="metadata"
+    ></audio>
+
+    <!-- PLAYER YOKA -->
+    <div class="yoka-player">
+
+        <button
+            id="playerPlayButton"
+            class="player-play-button"
+            type="button"
+            aria-label="Reproduzir"
+        >
+            ▶
+        </button>
+
+        <div class="player-center">
+
+            <div class="player-progress-container">
+
+                <span
+                    id="playerCurrentTime"
+                    class="player-time"
+                >
+                    0:00
+                </span>
+
+                <input
+                    id="playerProgress"
+                    class="player-progress"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1"
+                >
+
+                <span
+                    id="playerDuration"
+                    class="player-time"
+                >
+                    0:00
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="player-volume">
+
+            <button
+                id="playerMuteButton"
+                class="player-volume-button"
+                type="button"
+                aria-label="Volume"
+            >
+                🔊
+            </button>
+
+            <input
+                id="playerVolume"
+                class="player-volume-range"
+                type="range"
+                min="0"
+                max="1"
+                value="1"
+                step="0.01"
+            >
+
+        </div>
+
+    </div>
+
+</div>
+                <!-- AÇÕES -->
+<div class="song-actions">
+
+    <div class="song-actions-left">
+
+        <div class="song-stats">
+            <span id="songPlays">
+                Reproduções: 0
+            </span>
+        </div>
+
+
+        <!-- CURTIR -->
+
+        <button
+            id="songLikeButton"
+            type="button"
+            class="song-like-button"
+            aria-label="Curtir música"
+            aria-pressed="false"
+        >
+
+            <span
+                id="songLikeIcon"
+                class="song-like-icon"
+            >
+                ♡
+            </span>
+
+            <span id="songLikes">
+                0
+            </span>
+
+        </button>
+
+
+        <!-- FAVORITOS -->
+
+        <button
+            id="songFavoriteButton"
+            type="button"
+            class="song-favorite-button"
+        >
+
+            <span class="song-favorite-icon">
+                ☆
+            </span>
+
+            <span class="song-favorite-text">
+    Favoritos
+</span>
+
+        </button>
+
+
+        <!-- PARTILHAR -->
+<!-- PARTILHAR -->
+
+<div class="song-share-wrapper">
+
+
+<button
+    id="songShareButton"
+    type="button"
+    class="song-share-button"
+    aria-expanded="false"
+    aria-label="Partilhar música"
+>
+    <span class="song-share-icon">↗</span>
+    <span>Partilhar</span>
+</button>
+
+
+<!-- MENU DE PARTILHA -->
+
+<!-- MENU DE PARTILHA -->
+
+<div
+    id="songShareMenu"
+    class="song-share-menu"
+>
+
+
+<!-- FACEBOOK -->
+
+<button
+    type="button"
+    class="song-share-icon-button facebook"
+    data-share="facebook"
+    aria-label="Partilhar no Facebook"
+    title="Facebook"
+>
+
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.67.33-1 1-1z"
+        />
+    </svg>
+
+</button>
+
+
+<!-- WHATSAPP -->
+
+<button
+    type="button"
+    class="song-share-icon-button whatsapp"
+    data-share="whatsapp"
+    aria-label="Partilhar no WhatsApp"
+    title="WhatsApp"
+>
+
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.96L.06 24l6.28-1.65a11.88 11.88 0 0 0 5.71 1.46h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.23-6.16-3.44-8.43zM12.06 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.88 9.88 0 0 1-1.52-5.28C2.17 6.44 6.61 2 12.06 2a9.83 9.83 0 0 1 7 2.9 9.88 9.88 0 0 1 2.9 7c0 5.45-4.44 9.9-9.9 9.9zm5.43-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.09 4.5.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"
+        />
+    </svg>
+
+</button>
+
+
+<!-- X -->
+
+<button
+    type="button"
+    class="song-share-icon-button x"
+    data-share="x"
+    aria-label="Partilhar no X"
+    title="X"
+>
+
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.62l-5.18-6.78L5.02 22H1.76l7.6-8.69L1.25 2h6.79l4.68 6.19L18.244 2zm-1.16 17.8h1.8L6.98 4.08H5.05L17.084 19.8z"
+        />
+    </svg>
+
+</button>
+
+
+<!-- COPIAR LINK -->
+
+<button
+    type="button"
+    class="song-share-icon-button copy"
+    data-share="copy"
+    aria-label="Copiar link"
+    title="Copiar link"
+>
+
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"
+        />
+    </svg>
+
+</button>
+
+</div>
+
+            
+<!-- BOTÃO DENUNCIAR -->
+<button
+    id="songReportButton"
+    type="button"
+    class="song-report-button"
+    aria-label="Denunciar esta música"
+    title="Denunciar esta música"
+>
+    <span aria-hidden="true">⚑</span>
+    <span>Denunciar</span>
+</button>   
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             COMENTÁRIOS
+        =================================================== -->
+
+        <section
+            id="commentsSection"
+            class="comments-section"
+        >
+
+            <div class="comments-header">
+
+                <h2>
+
+                    Comentários
+
+                    <span
+                        id="commentsCount"
+                        class="comments-count"
+                    >
+                        0
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="comment-form">
+
+                <textarea
+                    id="commentInput"
+                    maxlength="1000"
+                    rows="3"
+                    placeholder="Escreva um comentário..."
+                ></textarea>
+
+
+                <button
+                    id="commentSubmit"
+                    type="button"
+                >
+                    Publicar comentário
+                </button>
+
+            </div>
+
+
+            <div
+                id="commentsLoading"
+                class="comments-message"
+                style="display:none;"
+            >
+                Carregando comentários...
+            </div>
+
+
+            <div
+                id="commentsError"
+                class="comments-message comments-error"
+                style="display:none;"
+            ></div>
+
+
+            <div
+                id="commentsList"
+                class="comments-list"
+            ></div>
+
+        </section>
+
+    </section>
+
+
+    <!-- ======================================================
+         COLUNA DIREITA
+    ======================================================= -->
+
+    <aside class="song-sidebar">
+
+
+        <!-- ==================================================
+             MAIS MÚSICAS DO ARTISTA
+        =================================================== -->
+
+        <section class="sidebar-section">
+  
+<div class="yoka-index-ad" id="yokaIndexAd2" >
+
+  <h2>Patrocinado</h2>
+
+  <script>(function(s){s.dataset.zone='12189058',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</div>
+
+
+            
+            <div class="sidebar-section-header">
+    <h2>Mais do artista</h2>
+
+    <button
+        type="button"
+        id="playArtistSongsButton"
+        class="sidebar-play-category"
+        title="Reproduzir apenas músicas deste artista"
+    >
+         Ouvir lista
+    </button>
+</div>
+            <div
+                id="artistSongsList"
+                class="sidebar-song-list"
+            >
+
+                <div class="sidebar-loading">
+                    Carregando...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             FAVORITOS
+        =================================================== -->
+
+        <section class="sidebar-section">
+
+            <div class="sidebar-section-header">
+    <h2>Favoritos</h2>
+
+    <button
+        type="button"
+        id="playFavoritesSongsButton"
+        class="sidebar-play-category"
+        title="Reproduzir apenas músicas favoritas"
+    >
+        Ouvir lista
+    </button>
+</div>
+
+            <div
+                id="favoritesSongsList"
+                class="sidebar-song-list"
+            >
+
+                <div class="sidebar-loading">
+                    Carregando favoritos...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             SUGESTÕES
+        =================================================== -->
+
+        <section class="sidebar-section">
+
+            <div class="sidebar-section-header">
+
+                <h2>
+                     Sugestões
+                </h2>
+
+            </div>
+
+
+            <div
+                id="suggestionsSongsList"
+                class="sidebar-song-list"
+            >
+
+                <div class="sidebar-loading">
+                    Carregando sugestões...
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </aside>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <p>
+                © <span id="currentYear"></span>
+                Yoka. Todos os direitos reservados.
+            </p>
+
+            <div class="footer-legal">
+                <a href="./termos.html">Termos e Condições</a>
+
+                <span class="footer-separator">|</span>
+
+                <a href="./privacidade.html">Política de Privacidade</a>
+
+                <span class="footer-separator">|</span>
+
+                <a href="./sobre.html">Sobre</a>
+
+                <span class="footer-separator">|</span>
+
+                <a href="./contacto.html">Contacto</a>
+            </div>
+
+        </div>
+    </footer>
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+
+
+<script src="js/song.js"></script>
+
+<script
+    src="./js/artist.js"
+    defer
+></script>
+<script src="./js/index.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/notifications.js"></script>
+</body>
+</html>
+

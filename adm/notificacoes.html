@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Notificar usuário — Yoka ADM</title>
+
+    <link
+        rel="stylesheet"
+        href="./notificacoes.css"
+    >
+    <link
+        rel="stylesheet"
+        href="./usuarios.css"
+    >
+
+</head>
+<style>
+
+
+</style>
+<body>
+
+    <div class="admin-layout">
+
+        <!-- =================================================
+             BARRA LATERAL ADM
+        ================================================== -->
+
+        <aside class="admin-sidebar">
+
+            <div class="admin-sidebar-brand">
+
+                <h1>Yoka</h1>
+
+                <span>ADM</span>
+
+            </div>
+
+
+            <nav class="admin-sidebar-nav">
+
+                <a
+                    href="./dashboard.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="./usuarios.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Usuários</span>
+                </a>
+
+
+                <a
+                    href="./musicas.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Músicas</span>
+                </a>
+
+
+                <a
+                    href="./artistas.html"
+                    class="admin-sidebar-link active"
+                >
+                    <span>Artistas</span>
+                </a>
+
+
+                <a
+                    href="./comentarios.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Comentários</span>
+                </a>
+                  <a href="./denuncias.html" class="admin-sidebar-link active">
+                <span>Denúncias</span>
+            </a>
+
+                <a
+                    href="./notificacoes.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Notificações</span>
+                </a>
+
+            </nav>
+
+
+            <div class="admin-sidebar-bottom">
+
+                           <a
+    href="#"
+    id="adminProfileLink"
+    class="admin-sidebar-link"
+>
+    <span>Voltar ao perfil</span>
+</a>
+
+
+                <button
+                    id="logoutButton"
+                    type="button"
+                    class="admin-sidebar-logout"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+    <!-- =================================================
+         ÁREA PRINCIPAL
+    ================================================== -->
+
+    <div class="admin-content">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+       
+            <div>
+
+                <h2>Notificações</h2>
+
+                <p>
+                    Gerencie as notificações enviadas na plataforma.
+                </p>
+
+            </div>
+
+
+
+<div class="admin-global-search">
+    <form id="adminSearchForm" role="search">
+        <span aria-hidden="true">⌕</span>
+
+        <input
+            type="search"
+            id="adminSearchInput"
+            placeholder="Pesquisar no painel ADM..."
+            autocomplete="off"
+            aria-label="Pesquisar no painel administrativo"
+        >
+
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <div
+        id="adminSearchResults"
+        class="admin-search-results"
+        hidden
+        role="status"
+    ></div>
+</div>
+
+<div class="admin-user">
+
+    <div class="admin-notifications">
+        <button
+            type="button"
+            id="adminNotificationButton"
+            class="admin-notification-button"
+            aria-label="Abrir notificações"
+            aria-expanded="false"
+        >
+            <span aria-hidden="true">  🔔</span>
+            <span
+                id="adminNotificationBadge"
+                class="admin-notification-badge"
+                hidden
+            >0</span>
+        </button>
+
+        <div
+            id="adminNotificationDropdown"
+            class="admin-notification-dropdown"
+            hidden
+        >
+            <div class="admin-notification-header">
+                <strong>Notificações</strong>
+                <button
+                    type="button"
+                    id="adminMarkAllRead"
+                >
+                    Marcar todas como lidas
+                </button>
+            </div>
+
+            <div
+                id="adminNotificationList"
+                class="admin-notification-list"
+                aria-live="polite"
+            >
+                A carregar notificações...
+            </div>
+        </div>
+    </div>
+
+    <span id="adminName">Administrador</span>
+
+</div>
+
+
+        </header>
+
+
+
+
+<!-- =========================================================
+     CONTEÚDO
+========================================================= -->
+
+<main class="admin-container">
+
+
+    <!-- =====================================================
+         FORMULÁRIO
+    ====================================================== -->
+
+    <section class="notification-card">
+
+        <div class="card-header">
+
+            <h2>Enviar notificação</h2>
+
+            <p>
+                Escolha o usuário e escreva a mensagem que deseja enviar.
+            </p>
+
+        </div>
+
+
+        <form id="notificationForm">
+
+
+                        <!-- USUÁRIOS -->
+            <div class="form-group">
+
+                <label>Usuários destinatários</label>
+
+                <div class="users-selection-toolbar">
+                    <label class="checkbox-label">
+                        <input
+                            type="checkbox"
+                            id="selecionarTodosUsuarios"
+                        >
+                        Selecionar todos
+                    </label>
+
+                    <span id="contadorUsuariosSelecionados">
+                        0 selecionados
+                    </span>
+                </div>
+
+                <div
+                    id="listaUsuariosCheckboxes"
+                    class="users-checkbox-list"
+                >
+                    <p>Carregando usuários...</p>
+                </div>
+
+            </div>
+            <!-- =================================================
+                 TÍTULO
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="titulo">
+                    Título
+                </label>
+
+                <input
+                    type="text"
+                    id="titulo"
+                    name="titulo"
+                    maxlength="150"
+                    placeholder="Ex.: Novidade no Yoka"
+                    required
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 MENSAGEM
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="mensagem">
+                    Mensagem
+                </label>
+
+                <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows="7"
+                    maxlength="1000"
+                    placeholder="Digite a mensagem que o usuário receberá..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTADOR
+            ================================================== -->
+
+            <div class="contador">
+
+                <span id="contadorMensagem">
+                    0 / 1000
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 MENSAGEM DE RETORNO
+            ================================================== -->
+
+            <div
+                id="notificationMessage"
+                class="notification-message"
+                hidden
+            ></div>
+
+
+            <!-- =================================================
+                 BOTÃO
+            ================================================== -->
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    id="sendNotificationButton"
+                    class="btn-enviar"
+                >
+                    Enviar notificação
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+</main>
+
+
+    <script src="./js/admin-profile.js" defer></script>
+<script src="./js/notificacoes.js"></script>
+<script src="./js/admin-notifications.js"></script>
+<script src="./js/admin-search.js"></script>
+
+</body>
+</html>

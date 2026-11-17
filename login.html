@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login - Yoka</title>
+<link
+    rel="stylesheet"
+    href="./css/style.css"
+>
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+</head>
+<style>
+
+    .form-group label {
+        color: #333;
+    }
+
+
+    </style>
+<body>
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <div class="login-header">
+
+                <h1><a href="index.html" style="color: black;text-decoration: none;">Yoka</a></h1>
+
+                <p>
+                    Entre na sua conta
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite o seu email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Digite a sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- RECUPERAR PALAVRA-PASSE -->
+
+                <div class="login-forgot-password">
+
+                    <a href="recuperar-senha.html">
+                        Esqueceu a sua palavra-passe?
+                    </a>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-login"
+                >
+                    Entrar
+                </button>
+
+
+                <div
+                    id="loginMensagem"
+                    class="login-mensagem"
+                    style="display:none;"
+                ></div>
+
+            </form>
+
+
+            <div class="login-footer">
+
+                <p>
+                    Ainda não tem uma conta?
+                </p>
+
+                <a href="register.html">
+                    Criar conta
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- API -->
+
+    <script src="js/api.js"></script>
+
+
+    <!-- Autenticação -->
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

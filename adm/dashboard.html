@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+
+<html lang="pt-AO">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Yoka ADM - Dashboard</title>
+
+<link
+    rel="stylesheet"
+    href="./usuarios.css"
+>
+```
+
+</head>
+<style>
+
+    
+/* NOTIFICAÇÕES DO PAINEL ADM */
+
+.admin-user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.admin-notifications {
+    position: relative;
+}
+
+.admin-notification-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #dedee5;
+    border-radius: 12px;
+    background: #fff;
+    color: #222;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.admin-notification-button:hover {
+    background: #f5f5f8;
+}
+
+.admin-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 19px;
+    height: 19px;
+    padding: 0 5px;
+    border-radius: 20px;
+    background: #dc2626;
+    color: #fff;
+    font-size: 11px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.admin-notification-dropdown {
+    position: absolute;
+    z-index: 1000;
+    top: calc(100% + 12px);
+    right: 0;
+    width: min(380px, calc(100vw - 32px));
+    max-height: 480px;
+    overflow-y: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #fff;
+    color: #222;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+}
+
+.admin-notification-dropdown[hidden],
+.admin-notification-badge[hidden] {
+    display: none;
+}
+
+.admin-notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-notification-header button {
+    border: 0;
+    background: transparent;
+    color: #101011;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.admin-notification-list {
+    padding: 8px;
+}
+
+.admin-notification-item {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 6px;
+    border: 0;
+    border-radius: 10px;
+    background: #fff;
+    color: #222;
+    text-align: left;
+    cursor: pointer;
+}
+
+.admin-notification-item:hover {
+    background: #f4f4f8;
+}
+
+.admin-notification-item.unread {
+    background: #eef2ff;
+}
+
+.admin-notification-item strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.admin-notification-item p {
+    margin: 0 0 7px;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.admin-notification-item small {
+    color: #777;
+    font-size: 11px;
+}
+
+.admin-notification-empty {
+    padding: 20px 12px;
+    color: #777;
+    font-size: 13px;
+    text-align: center;
+}
+
+.report-card.report-highlight {
+    outline: 3px solid #0f0f0f;
+    outline-offset: 3px;
+}
+
+
+
+
+/* =========================================================
+   PESQUISA GLOBAL — YOKA ADM
+========================================================= */
+
+.admin-global-search {
+    position: relative;
+    flex: 1;
+    max-width: 520px;
+    min-width: 220px;
+    margin: 0 24px;
+}
+
+#adminSearchForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 4px 6px 4px 12px;
+    border: 1px solid #dedee5;
+    border-radius: 12px;
+    background: #fff;
+}
+
+#adminSearchForm > span {
+    color: #777;
+    font-size: 23px;
+}
+
+#adminSearchInput {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #222;
+    font-size: 14px;
+}
+
+#adminSearchForm button {
+    padding: 9px 13px;
+    border: 0;
+    border-radius: 8px;
+    background: #1b1b1b;
+    color: #fff;
+    cursor: pointer;
+}
+
+#adminSearchForm button:hover {
+    background: #111111;
+}
+
+.admin-search-results {
+    position: absolute;
+    z-index: 2000;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+}
+
+.admin-search-results[hidden] {
+    display: none;
+}
+
+.admin-search-result {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    color: #222;
+    text-decoration: none;
+}
+
+.admin-search-result:hover,
+.admin-search-result:focus {
+    background: #f3f4f6;
+}
+
+.admin-search-result strong {
+    display: block;
+    font-size: 14px;
+}
+
+.admin-search-result small {
+    display: block;
+    margin-top: 4px;
+    color: #777;
+}
+
+.admin-search-empty {
+    padding: 14px;
+    color: #777;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .admin-header {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .admin-global-search {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+</style>
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =================================================
+         BARRA LATERAL
+    ================================================== -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-sidebar-brand">
+
+            <h1>Yoka</h1>
+
+        </div>
+
+
+        <nav class="admin-sidebar-nav">
+
+            <a
+                href="./dashboard.html"
+                class="admin-sidebar-link active"
+            >
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="./usuarios.html"
+                class="admin-sidebar-link"
+            >
+                <span>Usuários</span>
+            </a>
+
+
+            <a
+                href="./musicas.html"
+                class="admin-sidebar-link"
+            >
+                <span>Músicas</span>
+            </a>
+
+
+            <a
+                href="./artistas.html"
+                class="admin-sidebar-link"
+            >
+                <span>Artistas</span>
+            </a>
+
+
+            <a
+                href="./comentarios.html"
+                class="admin-sidebar-link"
+            >
+                <span>Comentários</span>
+            </a>
+              <a href="./denuncias.html" class="admin-sidebar-link active">
+                <span>Denúncias</span>
+            </a>
+
+            <a
+                href="./notificacoes.html"
+                class="admin-sidebar-link"
+            >
+                <span>Notificações</span>
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <a
+                href="#"
+                id="adminProfileLink"
+                class="admin-sidebar-link"
+            >
+                <span>Voltar ao perfil</span>
+            </a>
+
+
+            <button
+                id="logoutButton"
+                type="button"
+                class="admin-sidebar-logout"
+            >
+                Sair
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =================================================
+         ÁREA PRINCIPAL
+    ================================================== -->
+
+    <div class="admin-content">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <div>
+
+                <h2>
+                    Dashboard
+                </h2>
+
+                <p>
+                    Visão geral da plataforma 
+                </p>
+
+            </div>
+
+
+<div class="admin-global-search">
+    <form id="adminSearchForm" role="search">
+        <span aria-hidden="true">⌕</span>
+
+        <input
+            type="search"
+            id="adminSearchInput"
+            placeholder="Pesquisar no painel ADM..."
+            autocomplete="off"
+            aria-label="Pesquisar no painel administrativo"
+        >
+
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <div
+        id="adminSearchResults"
+        class="admin-search-results"
+        hidden
+        role="status"
+    ></div>
+</div>
+
+<div class="admin-user">
+
+    <div class="admin-notifications">
+        <button
+            type="button"
+            id="adminNotificationButton"
+            class="admin-notification-button"
+            aria-label="Abrir notificações"
+            aria-expanded="false"
+        >
+            <span aria-hidden="true">  🔔</span>
+            <span
+                id="adminNotificationBadge"
+                class="admin-notification-badge"
+                hidden
+            >0</span>
+        </button>
+
+        <div
+            id="adminNotificationDropdown"
+            class="admin-notification-dropdown"
+            hidden
+        >
+            <div class="admin-notification-header">
+                <strong>Notificações</strong>
+                <button
+                    type="button"
+                    id="adminMarkAllRead"
+                >
+                    Marcar todas como lidas
+                </button>
+            </div>
+
+            <div
+                id="adminNotificationList"
+                class="admin-notification-list"
+                aria-live="polite"
+            >
+                A carregar notificações...
+            </div>
+        </div>
+    </div>
+
+    <span id="adminName">Administrador</span>
+
+</div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             CONTEÚDO
+        ================================================== -->
+
+        <main class="admin-main">
+
+
+            <!-- =================================================
+                 MENSAGEM
+            ================================================== -->
+
+            <div
+                id="mensagem"
+                class="mensagem"
+                hidden
+            ></div>
+
+
+            <!-- =================================================
+                 USUÁRIOS
+            ================================================== -->
+
+            <section class="stats-section">
+
+                <h3>
+                    Usuários e artistas
+                </h3>
+
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Total de usuários
+                        </span>
+
+                        <strong
+                            id="totalUsuarios"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Usuários ativos
+                        </span>
+
+                        <strong
+                            id="usuariosAtivos"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Usuários inativos
+                        </span>
+
+                        <strong
+                            id="usuariosInativos"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Artistas
+                        </span>
+
+                        <strong
+                            id="totalArtistas"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 MÚSICAS
+            ================================================== -->
+
+            <section class="stats-section">
+
+                <h3>
+                    Músicas
+                </h3>
+
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Total de músicas
+                        </span>
+
+                        <strong
+                            id="totalMusicas"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Publicadas
+                        </span>
+
+                        <strong
+                            id="musicasPublicadas"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Rascunhos
+                        </span>
+
+                        <strong
+                            id="musicasRascunho"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Arquivadas
+                        </span>
+
+                        <strong
+                            id="musicasArquivadas"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ENGAJAMENTO
+            ================================================== -->
+
+            <section class="stats-section">
+
+                <h3>
+                    Engajamento
+                </h3>
+
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Reproduções
+                        </span>
+
+                        <strong
+                            id="totalReproducoes"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Curtidas
+                        </span>
+
+                        <strong
+                            id="totalCurtidas"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Seguidores
+                        </span>
+
+                        <strong
+                            id="totalSeguidores"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Comentários
+                        </span>
+
+                        <strong
+                            id="totalComentarios"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 GESTÃO DE ADMINISTRADORES
+            ================================================== -->
+
+            <section
+                id="adminManagementSection"
+                class="stats-section admin-management-section"
+                  hidden
+            >
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h3>
+                            Gestão de Administradores
+                        </h3>
+
+                        <p>
+                            Gerencie administradores e suas permissões.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="btnAdicionarAdministrador"
+                        type="button"
+                        class="admin-action-button"
+                    >
+                        + Adicionar administrador
+                    </button>
+
+                </div>
+
+
+                <!-- LISTA DE ADMINISTRADORES -->
+
+                <div
+                    id="listaAdministradores"
+                    class="administrators-list"
+                >
+
+                    <div
+                        id="administradoresLoading"
+                        class="admin-loading"
+                    >
+                        Carregando administradores...
+                    </div>
+
+                </div>
+
+
+                <!-- MENSAGEM -->
+
+                <div
+                    id="administradoresMensagem"
+                    class="mensagem"
+                    hidden
+                ></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MODAL — ADICIONAR ADMINISTRADOR
+========================================================== -->
+
+<div
+    id="modalAdicionarAdministrador"
+    class="admin-modal"
+    hidden
+>
+
+    <div
+        class="admin-modal-overlay"
+        data-close-modal="adicionar"
+    ></div>
+
+
+    <div
+        class="admin-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="tituloModalAdicionar"
+    >
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <h3 id="tituloModalAdicionar">
+                    Adicionar administrador
+                </h3>
+
+                <p>
+                    Adicione um usuário existente como administrador.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="admin-modal-close"
+                data-close-modal="adicionar"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="admin-modal-body">
+
+
+            <!-- EMAIL -->
+
+            <div class="admin-form-group">
+
+                <label for="novoAdministradorEmail">
+                    E-mail do usuário
+                </label>
+
+                <input
+                    type="email"
+                    id="novoAdministradorEmail"
+                    placeholder="exemplo@email.com"
+                    autocomplete="off"
+                >
+
+                <small>
+                    O usuário precisa estar cadastrado na Yoka.
+                </small>
+
+            </div>
+
+
+            <!-- PERMISSÕES -->
+
+            <div class="admin-permissions-section">
+
+                <div class="admin-permissions-header">
+
+                    <div>
+
+                        <h4>
+                            Permissões
+                        </h4>
+
+                        <p>
+                            Selecione as funções que este administrador poderá executar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="novasPermissoes"
+                    class="admin-permissions-grid"
+                >
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="users.view"
+                            data-permission="users.view"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Visualizar usuários
+                            </strong>
+
+                            <small>
+                                Permite visualizar os usuários da plataforma.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="users.manage"
+                            data-permission="users.manage"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Gerenciar usuários
+                            </strong>
+
+                            <small>
+                                Permite administrar usuários.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="artists.view"
+                            data-permission="artists.view"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Visualizar artistas
+                            </strong>
+
+                            <small>
+                                Permite visualizar os artistas cadastrados.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="artists.manage"
+                            data-permission="artists.manage"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Gerenciar artistas
+                            </strong>
+
+                            <small>
+                                Permite administrar perfis de artistas.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="songs.view"
+                            data-permission="songs.view"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Visualizar músicas
+                            </strong>
+
+                            <small>
+                                Permite visualizar as músicas cadastradas.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="songs.manage"
+                            data-permission="songs.manage"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Gerenciar músicas
+                            </strong>
+
+                            <small>
+                                Permite administrar músicas e publicações.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="comments.manage"
+                            data-permission="comments.manage"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Gerenciar comentários
+                            </strong>
+
+                            <small>
+                                Permite moderar e administrar comentários.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="statistics.view"
+                            data-permission="statistics.view"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Visualizar estatísticas
+                            </strong>
+
+                            <small>
+                                Permite acessar as estatísticas da Yoka.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="notifications.manage"
+                            data-permission="notifications.manage"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Gerenciar notificações
+                            </strong>
+
+                            <small>
+                                Permite administrar notificações.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="admins.manage"
+                            data-permission="admins.manage"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Gerenciar administradores
+                            </strong>
+
+                            <small>
+                                Permite adicionar, remover e configurar administradores.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="permission-checkbox">
+
+                        <input
+                            type="checkbox"
+                            value="settings.manage"
+                            data-permission="settings.manage"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Gerenciar configurações
+                            </strong>
+
+                            <small>
+                                Permite administrar configurações da plataforma.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-modal-footer">
+
+            <button
+                type="button"
+                class="admin-modal-cancel"
+                data-close-modal="adicionar"
+            >
+                Cancelar
+            </button>
+
+
+            <button
+                type="button"
+                id="btnConfirmarAdicionarAdministrador"
+                class="admin-modal-confirm"
+            >
+                Adicionar administrador
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MODAL — EDITAR PERMISSÕES
+========================================================== -->
+
+<div
+    id="modalEditarPermissoes"
+    class="admin-modal"
+    hidden
+>
+
+    <div
+        class="admin-modal-overlay"
+        data-close-modal="editar"
+    ></div>
+
+
+    <div
+        class="admin-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="tituloModalEditar"
+    >
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <h3 id="tituloModalEditar">
+                    Editar permissões
+                </h3>
+
+                <p id="editarAdministradorDescricao">
+                    Selecione as permissões deste administrador.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="admin-modal-close"
+                data-close-modal="editar"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="admin-modal-body">
+
+            <input
+                type="hidden"
+                id="editarAdministradorId"
+            >
+
+
+            <div
+                id="editarPermissoes"
+                class="admin-permissions-grid"
+            >
+
+                <!--
+                    As permissões serão carregadas
+                    pelo dashboard.js.
+                -->
+
+                <div class="admin-loading">
+                    Carregando permissões...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-modal-footer">
+
+            <button
+                type="button"
+                class="admin-modal-cancel"
+                data-close-modal="editar"
+            >
+                Cancelar
+            </button>
+
+
+            <button
+                type="button"
+                id="btnConfirmarEditarPermissoes"
+                class="admin-modal-confirm"
+            >
+                Salvar permissões
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================== -->
+
+<script
+    src="./js/admin-profile.js"
+    defer
+></script>
+
+
+<script
+    src="./js/dashboard.js"
+></script>
+
+<script src="./js/admin-search.js" ></script>
+</body>
+
+</html>

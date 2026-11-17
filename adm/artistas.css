@@ -1,0 +1,1085 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| HEADER
+|--------------------------------------------------------------------------
+*/
+
+.admin-header {
+    width: 100%;
+    min-height: 70px;
+
+    padding: 0 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #111827;
+    color: #ffffff;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-left h1 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.header-section {
+    padding-left: 20px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+    font-size: 15px;
+    color: #d1d5db;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.logout-button {
+    padding: 9px 16px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: #dc2626;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #b91c1c;
+}
+
+.logout-button:active {
+    transform: scale(0.97);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| MAIN
+|--------------------------------------------------------------------------
+*/
+
+.admin-main {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+    padding: 32px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PAGE HEADER
+|--------------------------------------------------------------------------
+*/
+
+.page-header {
+    margin-bottom: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.page-header h2 {
+    margin: 0 0 7px;
+
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.page-header p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.refresh-button {
+    padding: 10px 17px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.refresh-button:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| MENSAGENS
+|--------------------------------------------------------------------------
+*/
+
+.message-container {
+    min-height: 0;
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.message.success {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+.message.error {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| ARTIST SECTION
+|--------------------------------------------------------------------------
+*/
+
+.artists-section {
+    width: 100%;
+}
+
+.loading-container,
+.empty-container {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+.empty-container {
+    color: #9ca3af;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| GRID
+|--------------------------------------------------------------------------
+*/
+
+.artists-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CARD
+|--------------------------------------------------------------------------
+*/
+
+.artist-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| ARTIST COVER
+|--------------------------------------------------------------------------
+*/
+
+.artist-cover {
+    width: 100%;
+    height: 130px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1f2937,
+            #374151
+        );
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.artist-avatar-wrapper {
+    position: absolute;
+
+    left: 20px;
+    bottom: -40px;
+}
+
+.artist-avatar {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #ffffff;
+
+    border: 4px solid #ffffff;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CARD CONTENT
+|--------------------------------------------------------------------------
+*/
+
+.artist-content {
+    padding: 52px 20px 20px;
+}
+
+.artist-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.artist-name {
+    margin: 0;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.verified-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.artist-genre {
+    margin: 6px 0 0;
+
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.artist-location {
+    margin: 5px 0 0;
+
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| STATS
+|--------------------------------------------------------------------------
+*/
+
+.artist-stats {
+    margin-top: 20px;
+
+    padding-top: 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.artist-stat {
+    text-align: center;
+}
+
+.artist-stat-value {
+    display: block;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.artist-stat-label {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: #9ca3af;
+
+    text-transform: uppercase;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| USER INFO
+|--------------------------------------------------------------------------
+*/
+
+.artist-user {
+    margin-top: 18px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #f0f1f3;
+}
+
+.artist-user-name {
+    margin: 0 0 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.artist-user-email {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+
+    word-break: break-word;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| RESPONSIVO
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 1100px) {
+
+    .artists-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-header {
+        padding: 0 18px;
+    }
+
+    .header-left {
+        gap: 12px;
+    }
+
+    .header-left h1 {
+        font-size: 18px;
+    }
+
+    .header-section {
+        padding-left: 12px;
+        font-size: 13px;
+    }
+
+    .admin-main {
+        padding: 22px 16px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .artists-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .header-section {
+        display: none;
+    }
+
+    .artist-stats {
+        gap: 5px;
+    }
+
+}
+
+.artist-details-button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #111827;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.artist-details-button:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+.artist-details-button:active {
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   RESET
+============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #111111;
+}
+
+
+/* ============================================================
+   LAYOUT PRINCIPAL
+============================================================ */
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   BARRA LATERAL
+============================================================ */
+
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #000000;
+    color: #ffffff;
+
+    border-right: 1px solid #222222;
+
+    z-index: 1000;
+}
+
+
+/* ============================================================
+   MARCA
+============================================================ */
+
+.admin-sidebar-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    padding: 28px 24px;
+
+    border-bottom: 1px solid #222222;
+}
+
+.admin-sidebar-brand h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.admin-sidebar-brand span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #aaaaaa;
+}
+
+
+/* ============================================================
+   MENU
+============================================================ */
+
+.admin-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 12px;
+
+    gap: 4px;
+}
+
+
+.admin-sidebar-link {
+    display: flex;
+    align-items: center;
+
+    min-height: 46px;
+
+    padding: 0 16px;
+
+    color: #cccccc;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.admin-sidebar-link:hover {
+    color: #ffffff;
+    background: #1a1a1a;
+}
+
+
+.admin-sidebar-link.active {
+    color: #000000;
+    background: #ffffff;
+}
+
+
+/* ============================================================
+   PARTE INFERIOR DA BARRA
+============================================================ */
+
+.admin-sidebar-bottom {
+    margin-top: auto;
+
+    padding: 12px;
+
+    border-top: 1px solid #222222;
+}
+
+
+.admin-sidebar-logout {
+    width: 100%;
+
+    min-height: 46px;
+
+    margin-top: 4px;
+
+    padding: 0 16px;
+
+    border: 1px solid #333333;
+    border-radius: 8px;
+
+    background: #000000;
+    color: #cccccc;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.admin-sidebar-logout:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+
+/* ============================================================
+   ÁREA PRINCIPAL
+============================================================ */
+
+.admin-content {
+    width: calc(100% - 250px);
+
+    min-height: 100vh;
+
+    margin-left: 250px;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.admin-header {
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 36px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+
+.admin-header h1 {
+    margin: 0;
+
+    font-size: 25px;
+    font-weight: 700;
+    color: #111111;
+}
+
+
+.admin-header p {
+    margin-top: 5px;
+
+    font-size: 14px;
+    color: black;
+}
+
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.admin-user span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+
+
+/* ============================================================
+   MAIN
+============================================================ */
+
+.admin-main {
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 36px;
+}
+
+
+/* ============================================================
+   PAGE HEADER
+============================================================ */
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+
+.page-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.page-header p {
+    margin-top: 7px;
+
+    font-size: 14px;
+    color: #777777;
+}
+
+
+/* ============================================================
+   MENSAGEM
+============================================================ */
+
+.mensagem {
+    margin-bottom: 24px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   SEÇÕES DE ESTATÍSTICAS
+============================================================ */
+
+.stats-section {
+    margin-bottom: 36px;
+}
+
+
+.stats-section h3 {
+    margin-bottom: 16px;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   GRID DE ESTATÍSTICAS
+============================================================ */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* ============================================================
+   CARDS
+============================================================ */
+
+.stat-card {
+    min-height: 130px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.stat-card:hover {
+    border-color: #000000;
+
+    transform: translateY(-2px);
+}
+
+
+.stat-label {
+    font-size: 13px;
+    color: #777777;
+}
+
+
+.stat-value {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111111;
+}
+
+
+/* ============================================================
+   NAVEGAÇÃO DO DASHBOARD
+============================================================ */
+
+.admin-navigation {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-top: 10px;
+}
+
+
+.admin-link {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+
+    color: #111111;
+    text-decoration: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.admin-link:hover {
+    border-color: #000000;
+    background: #fafafa;
+
+    transform: translateY(-2px);
+}
+
+
+.admin-link strong {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.admin-link span {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #777777;
+}
+
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 1000px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-sidebar {
+        width: 210px;
+    }
+
+    .admin-content {
+        width: calc(100% - 210px);
+        margin-left: 210px;
+    }
+
+    .admin-main {
+        padding: 24px;
+    }
+
+    .admin-header {
+        padding: 20px 24px;
+    }
+
+    .admin-navigation {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .admin-sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+    }
+
+    .admin-layout {
+        display: block;
+    }
+
+    .admin-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .admin-sidebar-nav {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-sidebar-bottom {
+        margin-top: 0;
+    }
+
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-main {
+        padding: 20px;
+    }
+
+}

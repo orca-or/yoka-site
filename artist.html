@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X3BSWYJ2TR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X3BSWYJ2TR');
+</script>
+<title>Artista </title>
+
+<link
+    rel="stylesheet"
+    href="./css/style.css"
+>
+
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+</head>
+
+
+<style>
+/* =========================================================
+   YOKA — PERFIL DO ARTISTA
+   CSS RESPONSIVO ORGANIZADO
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   ELEMENTOS GERAIS
+   --------------------------------------------------------- */
+
+.dashboard-card-iconn {
+    color: black;
+}
+
+.statistics {
+    height: 30px;
+    padding: 8px;
+    color: black;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------
+   CARTÕES DE MÚSICA — GÉNERO SOBRE A CAPA
+   --------------------------------------------------------- */
+
+.song-card-cover {
+    position: relative;
+}
+
+.song-card-genre {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    left: auto;
+    z-index: 5;
+
+    width: fit-content;
+    max-width: 70%;
+    padding: 4px 8px;
+
+    overflow: hidden;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+
+    font-size: 18px;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* ---------------------------------------------------------
+   BOTÕES DO PERFIL DO ARTISTA
+   --------------------------------------------------------- */
+
+.artist-edit-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    margin-top: 5px !important;
+    box-sizing: border-box;
+}
+
+.artist-edit-area .hidden,
+.artist-header > .artist-edit-area > .hidden {
+    display: none !important;
+}
+
+.artist-edit-area #editProfileButton,
+.artist-edit-area #statisticsButton,
+.artist-edit-area #adminDashboardButton,
+.artist-edit-area #uploadMusicButton {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-width: 0;
+    max-width: 100%;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+
+    margin: 0 !important;
+    padding: 0 12px !important;
+
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Botão Publicar */
+
+.artist-edit-area #uploadMusicButton {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    padding: 0 12px !important;
+}
+
+.artist-edit-area #uploadMusicButton > h2.dashboard-card-iconn {
+    display: block !important;
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    white-space: nowrap !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+}
+
+/* =========================================================
+   TABLET — ATÉ 1000px
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .artist-page {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .artist-cover {
+        height: 280px;
+    }
+
+    .artist-header {
+        padding-right: 20px;
+        padding-left: 20px;
+        gap: 20px;
+    }
+
+    .artist-avatar {
+        width: 135px;
+        height: 135px;
+    }
+
+    .songs-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* =========================================================
+   TABLET — 701px A 1000px
+   FOTO À ESQUERDA E INFORMAÇÕES À DIREITA
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+
+    .artist-header {
+        display: grid !important;
+        grid-template-columns: 135px minmax(0, 1fr) !important;
+        grid-template-rows: auto auto auto !important;
+
+        align-items: start !important;
+        column-gap: 20px !important;
+        row-gap: 12px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Fotografia */
+
+    .artist-header > .artist-avatar-wrapper {
+        grid-column: 1 !important;
+        grid-row: 1 / 3 !important;
+
+        width: 135px !important;
+        min-width: 135px !important;
+        max-width: 135px !important;
+
+        margin: 100px 0 0 !important;
+        padding: 0 !important;
+
+        align-self: start !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-header > .artist-avatar-wrapper .artist-avatar {
+        display: block !important;
+
+        width: 135px !important;
+        height: 135px !important;
+        max-width: 100% !important;
+
+        object-fit: cover !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Informações */
+
+    .artist-header > .artist-info {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 100px 0 12px !important;
+        padding: 0 !important;
+
+        align-self: start !important;
+        box-sizing: border-box !important;
+        overflow-wrap: anywhere;
+    }
+
+    .artist-name-row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .artist-name-row h1 {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-bio {
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-meta {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 7px 14px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .artist-meta-item {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    /* Estatísticas */
+
+    .artist-stats-actions {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 10px 0 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Área dos botões */
+
+    .artist-header > .artist-edit-area {
+        position: static !important;
+        top: auto !important;
+
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .artist-header > .artist-edit-area > *:not(.hidden) {
+        position: static !important;
+        display: inline-flex !important;
+        flex: 0 1 auto !important;
+        flex-shrink: 1 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        min-height: 36px !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 7px 12px !important;
+
+        writing-mode: horizontal-tb !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-header > .artist-edit-area > .admin-dashboard-button {
+        flex: 0 1 auto !important;
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Cartão Publicar */
+
+    .artist-header > #uploadMusicButton.dashboard-card {
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+
+        display: inline-flex !important;
+        flex: 0 1 auto !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 12px 0 0 !important;
+        padding: 12px 16px !important;
+
+        vertical-align: top !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-header > #uploadMusicButton.dashboard-card > h2.dashboard-card-iconn {
+        display: block !important;
+
+        width: auto !important;
+        min-width: max-content !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 18px;
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+
+        flex-shrink: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Outros cartões do cabeçalho */
+
+    .artist-header > .dashboard-card:not(#uploadMusicButton) {
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 12px 0 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+/* =========================================================
+   TABLET PEQUENO — ATÉ 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .header-inner {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        gap: 12px;
+    }
+
+    .main-nav {
+        gap: 15px;
+        margin-left: 15px;
+    }
+
+    .header-search {
+        width: 320px;
+        max-width: 40%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .artist-page {
+        width: 100%;
+        padding: 15px 12px 50px;
+    }
+
+    .artist-cover {
+        width: 100%;
+        height: 230px;
+        border-radius: 14px;
+    }
+
+    .artist-header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 100%;
+        min-width: 0;
+
+        margin-top: -55px;
+        padding: 0 15px 20px;
+        gap: 12px;
+    }
+
+    .artist-avatar-wrapper {
+        position: relative;
+        align-self: flex-start;
+        flex-shrink: 0;
+
+        width: auto;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .artist-avatar {
+        width: 115px;
+        height: 115px;
+        border-width: 5px;
+    }
+
+    .artist-info {
+        display: block;
+        flex: 1 1 100%;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        padding: 0;
+        overflow: visible;
+    }
+
+    .artist-name-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        margin-bottom: 8px;
+        overflow: visible;
+    }
+
+    .artist-name-row h1 {
+        display: block;
+
+        width: auto;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+
+        font-size: 20px;
+        line-height: 1.2;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+        transform: none !important;
+    }
+
+    .verified-badge {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        font-size: 10px;
+    }
+
+    .artist-bio {
+        display: block;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        margin-bottom: 10px;
+
+        font-size: 18px;
+        line-height: 1.5;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-meta {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 7px;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        margin: 0 0 12px;
+        overflow: visible;
+    }
+
+    .artist-meta-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        font-size: 18px;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+        overflow: visible;
+    }
+
+    .artist-meta-item > span {
+        min-width: 0;
+        max-width: 100%;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-stats-actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        overflow: visible;
+    }
+
+    .stat {
+        flex-shrink: 0;
+        gap: 3px;
+        white-space: nowrap;
+    }
+
+    .stat strong {
+        font-size: 15px;
+    }
+
+    .stat span {
+        font-size: 18px;
+    }
+
+    .follow-button {
+        flex-shrink: 0;
+        margin-left: 2px;
+    }
+
+    .artist-edit-area {
+        position: static !important;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        margin: 0 !important;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .artist-edit-area > * {
+        position: static !important;
+        float: none !important;
+
+        flex: 0 0 auto !important;
+        flex-shrink: 0 !important;
+
+        width: auto !important;
+        min-width: max-content !important;
+        max-width: none !important;
+
+        margin: 0;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-edit-area .action-button,
+    .artist-edit-area .statistics-button,
+    .artist-edit-area .admin-dashboard-button {
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+        min-width: max-content !important;
+        max-width: none !important;
+
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .artist-header > .dashboard-card {
+        position: static !important;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 5px 0 25px;
+        padding-left: 0;
+
+        overflow: visible;
+    }
+
+    .social-link {
+        max-width: 100%;
+        height: 34px;
+        padding: 0 12px;
+
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .artist-songs-section {
+        width: 100%;
+        min-width: 0;
+        margin-top: 25px;
+    }
+
+    .section-header {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 21px;
+    }
+
+    .section-header p {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .songs-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+
+        width: 100%;
+        min-width: 0;
+    }
+
+    .song-card {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .song-card-cover {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+    }
+
+    .song-card-cover img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .song-card-info {
+        width: 100%;
+        min-width: 0;
+        padding: 11px;
+    }
+
+    .song-card-title {
+        display: block;
+
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 4px;
+
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .song-card-description {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 6px;
+
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .song-card-meta {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 7px;
+
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+
+        font-size: 18px;
+    }
+
+    .song-card-meta span {
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .song-card-date {
+        font-size: 15px;
+    }
+
+    .song-play,
+    .song-play-button {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        z-index: 5;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   MOBILE — ATÉ 700px
+   INFORMAÇÕES CENTRADAS; BOTÕES À ESQUERDA
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Cabeçalho do site */
+
+    .site-header {
+        height: auto;
+        min-height: 58px;
+    }
+
+    .header-inner {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-areas: "logo search user";
+        align-items: center;
+
+        width: 100%;
+        height: auto;
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .logo {
+        grid-area: logo;
+
+        min-width: max-content;
+        margin: 0;
+
+        justify-self: start;
+        font-size: 22px;
+    }
+
+    .header-search {
+        grid-area: search;
+
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+
+        margin: 0;
+        justify-self: stretch;
+    }
+
+    .header-search input {
+        width: 100%;
+        min-width: 0;
+        height: 40px;
+    }
+
+    .header-search button {
+        flex-shrink: 0;
+        width: 46px;
+        height: 40px;
+    }
+
+    .main-nav {
+        display: none !important;
+    }
+
+    .header-user {
+        grid-area: user;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: auto;
+        min-width: max-content;
+        margin: 0;
+        gap: 5px;
+
+        justify-self: end;
+    }
+
+    .header-user > *,
+    .notification-container,
+    .user-menu {
+        flex-shrink: 0;
+    }
+
+    .notification-container {
+        margin-right: 2px;
+    }
+
+    .notification-button {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .favorite-button {
+        margin-right: 2px;
+    }
+
+    .user-avatar-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Cabeçalho do perfil */
+
+    .artist-page {
+        width: 100%;
+        padding: 10px 10px 40px;
+    }
+
+    .artist-cover {
+        width: 100%;
+        height: 180px;
+        border-radius: 12px;
+    }
+
+    .artist-header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 100%;
+        min-width: 0;
+
+        margin-top: -45px;
+        padding: 0 12px 18px;
+        gap: 10px;
+    }
+
+    .artist-avatar-wrapper {
+        position: relative;
+        align-self: flex-start;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .artist-avatar {
+        width: 92px;
+        height: 92px;
+        border-width: 4px;
+    }
+
+    .artist-info {
+        display: block;
+        flex: none;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        padding: 0;
+        overflow: visible;
+    }
+
+    /* Centralizar apenas o texto informativo */
+
+    .artist-info .artist-name-row {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .artist-info .artist-name-row h1 {
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: center !important;
+    }
+
+    .artist-info .artist-bio {
+        margin-bottom: 7px;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center !important;
+    }
+
+    .artist-info .artist-meta {
+        align-items: center !important;
+        gap: 7px;
+        margin-bottom: 9px;
+        text-align: center !important;
+    }
+
+    .artist-info .artist-meta-item {
+        justify-content: center !important;
+        font-size: 18px;
+        text-align: center !important;
+    }
+
+    .artist-info .artist-meta-item > span {
+        text-align: center !important;
+    }
+
+    /* Estatísticas centradas, sem centrar a área dos botões */
+
+    .artist-stats-actions {
+        justify-content: center !important;
+        gap: 10px;
+    }
+
+    .stat {
+        gap: 3px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .stat strong {
+        font-size: 18px;
+    }
+
+    .stat span {
+        font-size: 18px;
+    }
+
+    .follow-button {
+        flex-shrink: 0;
+        margin-left: 2px;
+    }
+
+    /* Botões mantidos à esquerda */
+
+    .artist-edit-area {
+        position: static !important;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: flex-start !important;
+        gap: 8px;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        margin: 0 !important;
+        padding: 0;
+        overflow: visible;
+
+        text-align: left !important;
+    }
+
+    .artist-edit-area > * {
+        position: static !important;
+        float: none !important;
+
+        flex: 0 0 auto !important;
+        flex-shrink: 0 !important;
+
+        width: auto !important;
+        min-width: 0;
+        max-width: 100%;
+
+        margin: 0;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-edit-area .action-button,
+    .artist-edit-area .statistics-button,
+    .artist-edit-area .admin-dashboard-button {
+        flex: 0 1 auto !important;
+
+        width: auto !important;
+        min-width: 0;
+        max-width: 100%;
+
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .artist-header > .dashboard-card {
+        position: static !important;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Ligações sociais */
+
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 5px 0 22px;
+        padding-left: 0;
+    }
+
+    .social-link {
+        max-width: 100%;
+        height: 32px;
+        padding: 0 11px;
+
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    /* Secção de músicas */
+
+    .artist-songs-section {
+        width: 100%;
+        min-width: 0;
+        margin-top: 20px;
+    }
+
+    .section-header {
+        width: 100%;
+        margin-bottom: 14px;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .section-header p {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .songs-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   MOBILE — ATÉ 600px
+   UMA MÚSICA POR LINHA
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .songs-container {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+        width: 100% !important;
+    }
+
+    .song-card {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .song-card-cover {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+    }
+
+    .song-card-cover img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .song-card-info {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 14px 15px;
+    }
+
+    .song-card-title {
+        display: block;
+
+        width: 100%;
+        min-width: 0;
+
+        font-size: 20px;
+        line-height: 1.4;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .song-card-artist {
+        display: block;
+
+        width: 100%;
+        min-width: 0;
+
+        font-size: 18px;
+        line-height: 1.4;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        transform: none !important;
+
+        white-space: nowrap;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .song-card-description {
+        width: 100%;
+        min-width: 0;
+
+        font-size: 18px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .song-card-meta {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .song-card-meta span {
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .song-play,
+    .song-play-button {
+        width: 42px;
+        height: 42px;
+        right: 12px;
+        bottom: 12px;
+
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   MOBILE — ATÉ 520px
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .artist-edit-area {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 7px;
+    }
+
+    .artist-edit-area .action-button,
+    .artist-edit-area .statistics-button,
+    .artist-edit-area .admin-dashboard-button {
+        flex: 1 1 auto !important;
+
+        width: auto !important;
+        min-width: 130px;
+        max-width: 100%;
+        height: 38px;
+
+        padding-right: 12px;
+        padding-left: 12px;
+
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .artist-name-row h1 {
+        font-size: 20px;
+        writing-mode: horizontal-tb !important;
+        word-break: normal !important;
+    }
+}
+
+/* =========================================================
+   MOBILE — ATÉ 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .header-inner {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 6px;
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .header-search {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .header-search input {
+        height: 38px;
+        padding-right: 8px;
+        padding-left: 11px;
+        font-size: 18px;
+    }
+
+    .header-search button {
+        width: 42px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .header-user {
+        gap: 3px;
+    }
+
+    .notification-button,
+    .user-avatar-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .artist-page {
+        padding-right: 7px;
+        padding-left: 7px;
+    }
+
+    .artist-cover {
+        height: 180px;
+    }
+
+    .artist-header {
+        margin-top: -45px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .artist-avatar {
+        width: 92px;
+        height: 92px;
+    }
+
+    .artist-name-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+
+        width: 100%;
+    }
+
+    .artist-name-row h1 {
+        width: auto;
+        max-width: 100%;
+
+        font-size: 20px;
+        line-height: 1.2;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere;
+    }
+
+    .artist-bio {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .artist-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .artist-meta-item {
+        display: flex;
+
+        width: 100%;
+        max-width: 100%;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-stats-actions {
+        gap: 8px;
+    }
+
+    .action-button {
+        height: 38px;
+        padding-right: 14px;
+        padding-left: 14px;
+        font-size: 18px;
+    }
+
+    .artist-edit-area {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 7px;
+
+        width: 100%;
+    }
+
+    .artist-edit-area .action-button,
+    .artist-edit-area .statistics-button,
+    .artist-edit-area .admin-dashboard-button {
+        flex: 1 1 auto !important;
+
+        width: auto !important;
+        min-width: 130px;
+        max-width: 100%;
+
+        white-space: nowrap;
+    }
+}
+
+/* =========================================================
+   MOBILE — ATÉ 400px
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .songs-container {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    .song-card {
+        width: 100%;
+    }
+
+    .song-play,
+    .song-play-button {
+        width: 40px;
+        height: 40px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .song-card-info {
+        padding: 11px 12px 13px;
+    }
+
+    .song-card-title {
+        font-size: 18px;
+    }
+
+    .song-card-artist {
+        font-size: 18px;
+        writing-mode: horizontal-tb !important;
+    }
+
+    .artist-info {
+        display: block;
+        overflow: visible;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .artist-name-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .artist-name-row h1 {
+        width: auto;
+        max-width: 100%;
+
+        font-size: 20px;
+        line-height: 1.2;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-bio {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 18px;
+        line-height: 1.5;
+
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .artist-meta-item {
+        display: flex;
+
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 18px;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-edit-area {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 7px;
+
+        width: 100%;
+    }
+
+    .artist-edit-area .action-button,
+    .artist-edit-area .statistics-button,
+    .artist-edit-area .admin-dashboard-button {
+        flex: none !important;
+
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100%;
+        height: 37px;
+
+        font-size: 18px;
+        white-space: nowrap;
+    }
+}
+
+/* =========================================================
+   MOBILE — ATÉ 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .header-inner {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 4px;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .header-search input {
+        height: 36px;
+        padding-left: 8px;
+        font-size: 18px;
+    }
+
+    .header-search button {
+        width: 38px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .notification-button,
+    .user-avatar-button {
+        width: 34px;
+        height: 34px;
+    }
+
+    .artist-page {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .artist-cover {
+        height: 155px;
+    }
+
+    .artist-header {
+        margin-top: -42px;
+        padding-right: 8px;
+        padding-left: 8px;
+        gap: 9px;
+    }
+
+    .artist-avatar {
+        width: 82px;
+        height: 82px;
+    }
+
+    .artist-name-row {
+        width: 100%;
+    }
+
+    .artist-name-row h1 {
+        width: auto;
+        max-width: 100%;
+
+        font-size: 20px;
+        line-height: 1.2;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-bio {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 18px;
+        line-height: 1.5;
+
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .artist-meta-item {
+        display: flex;
+
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 18px;
+
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-stats-actions {
+        gap: 6px;
+    }
+
+    .stat {
+        gap: 2px;
+    }
+
+    .stat strong {
+        font-size: 18px;
+    }
+
+    .stat span {
+        font-size: 18px;
+    }
+
+    .artist-edit-area {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 7px;
+
+        width: 100%;
+    }
+
+    .artist-edit-area .action-button,
+    .artist-edit-area .statistics-button,
+    .artist-edit-area .admin-dashboard-button {
+        flex: none !important;
+
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100%;
+        height: 36px;
+
+        padding-right: 10px;
+        padding-left: 10px;
+
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .songs-container {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+
+    .song-card-info {
+        padding: 8px;
+    }
+
+    .song-play,
+    .song-play-button {
+        width: 36px;
+        height: 36px;
+        right: 7px;
+        bottom: 7px;
+    }
+}
+
+
+
+
+
+.song-delete-button ,.song-edit-button {
+      
+    background-color: white;
+    margin-top: 16px;
+    color: black;
+    border-radius: 16px;
+    font-size: 18px;
+    width: 70px;
+    height: 50px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — CORREÇÃO DO PERFIL ENTRE 1000px E 1050px
+   Evita que os botões se sobreponham às informações
+   ========================================================= */
+
+
+@media (min-width: 995px) and (max-width: 1150px) {
+
+    .artist-header {
+        display: grid !important;
+  
+    grid-template-columns: 155px minmax(0, 1fr) !important;
+    column-gap: 30px !important;
+
+        grid-template-rows: auto auto auto !important;
+        align-items: start !important;
+     
+        row-gap: 12px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-header > .artist-avatar-wrapper {
+        grid-column: 1 !important;
+        grid-row: 1 / 3 !important;
+     width: 155px !important;
+min-width: 155px !important;
+max-width: 155px !important;
+        margin: 100px 0 0 !important;
+    }
+
+    .artist-header > .artist-info {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 100px 0 12px !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-name-row,
+    .artist-meta,
+    .artist-stats-actions {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        flex-wrap: wrap !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-name-row h1,
+    .artist-bio,
+    .artist-meta-item {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-header > .artist-edit-area {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+        position: static !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-header > .artist-edit-area > *:not(.hidden) {
+        position: static !important;
+        flex: 0 1 auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 38px !important;
+        margin: 0 !important;
+        padding: 8px 10px !important;
+        box-sizing: border-box !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .artist-header > #uploadMusicButton.dashboard-card,
+    .artist-header > .dashboard-card:not(#uploadMusicButton) {
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+        position: static !important;
+        width: fit-content !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 12px 0 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .artist-header > #uploadMusicButton.dashboard-card {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .artist-header > #uploadMusicButton.dashboard-card > h2.dashboard-card-iconn {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+}
+
+
+
+
+
+
+
+</style>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+
+<header class="site-header">
+
+<div class="header-inner">
+
+    <a
+        href="./index.html"
+        class="logo"
+    >
+        Yoka
+    </a>
+
+
+<button
+    type="button"
+    id="toggleHeaderSearch"
+    class="toggle-header-search"
+    aria-label="Abrir pesquisa"
+    aria-expanded="false"
+>
+    <span aria-hidden="true">⌕</span>
+</button>
+    <!-- PESQUISA -->
+
+    <div class="header-search">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Pesquisar músicas ou artistas"
+            autocomplete="off"
+        >
+
+        <button
+            id="searchButton"
+            type="button"
+            aria-label="Pesquisar"
+        >
+            🔍
+        </button>
+
+    </div>
+
+
+
+
+    <!-- UTILIZADOR -->
+<div id="headerUser" class="header-user">
+
+    <!-- NOTIFICAÇÕES -->
+    <div id="notificationContainer" class="notification-container">
+
+<a
+    href="./favoritos.html"
+    class="notification-button favorite-button"
+    aria-label="Favoritos"
+    title="Favoritos"
+>
+    <svg
+        class="favorite-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.56l-5.91 3.1 1.13-6.57-4.77-4.65 6.6-.96L12 2.5z"
+        />
+    </svg>
+</a>
+        <button
+            id="notificationButton"
+            class="notification-button"
+            type="button"
+            aria-label="Notificações"
+        >
+            🔔
+            <span
+                id="notificationBadge"
+                class="notification-badge hidden"
+            >
+                0
+            </span>
+        </button>
+
+        <div
+            id="notificationDropdown"
+            class="notification-dropdown hidden"
+        >
+
+            <div class="notification-header">
+                <strong>Notificações</strong>
+
+                <button
+                    id="markAllNotificationsRead"
+                    type="button"
+                >
+                    Marcar todas como lidas
+                </button>
+            </div>
+
+            <div
+                id="notificationList"
+                class="notification-list"
+            >
+                <div class="notification-empty">
+                    Carregando notificações...
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- UTILIZADOR -->
+
+ <a
+    href="./login.html"
+    id="loginButton"
+    class="login-button hidden"
+>
+    Entrar
+</a>
+
+<a
+    href="./register.html"
+    id="registerButton"
+    class="login-button hidden"
+>
+    Criar conta
+</a>
+    
+    <div
+        id="userMenu"
+        class="user-menu hidden"
+    >
+
+        <button
+            id="userAvatarButton"
+            class="user-avatar-button"
+            type="button"
+            aria-label="Abrir menu do utilizador"
+        >
+            <img
+                id="headerAvatar"
+                class="header-avatar"
+                src="./assets/images/default-avatar.svg"
+                alt="Perfil"
+            >
+        </button>
+
+        <div
+            id="userDropdown"
+            class="user-dropdown hidden"
+        >
+
+   
+            <a
+    href="#"
+    id="profileMenuLink"
+    class="user-dropdown-item"
+>
+    Perfil
+</a>
+
+
+            <button
+                id="logoutButton"
+                class="user-dropdown-item logout-item"
+                type="button"
+            >
+                Sair
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</header>
+<!-- =========================================================
+     CONTEÚDO PRINCIPAL
+========================================================= -->
+
+<main class="artist-page">
+
+
+<!-- =====================================================
+     PERFIL DO ARTISTA
+====================================================== -->
+
+<section
+    id="artistContent"
+    class="artist-content hidden"
+>
+
+
+    <!-- =================================================
+         CAPA DO ARTISTA
+    ================================================== -->
+
+    <div class="artist-cover">
+
+        <img
+            id="artistCover"
+            src="./assets/images/default-cover.svg"
+            alt="Capa do artista"
+        >
+
+        <div class="artist-cover-overlay"></div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         BLOCO DO PERFIL
+    ================================================== -->
+
+    <div class="artist-header">
+
+
+        <!-- =============================================
+             AVATAR
+        ============================================== -->
+
+        <div class="artist-avatar-wrapper">
+
+            <img
+                id="artistAvatar"
+                class="artist-avatar"
+                src="./assets/images/default-avatar.svg"
+                alt="Avatar do artista"
+            >
+
+        </div>
+
+
+
+        <!-- =============================================
+             INFORMAÇÕES DO ARTISTA
+        ============================================== -->
+
+        <div class="artist-info">
+
+
+            <!-- NOME + VERIFICADO -->
+
+            <div class="artist-name-row">
+
+                <h1 id="artistName">
+                    Artista
+                </h1>
+
+                <span
+                    id="verifiedBadge"
+                    class="verified-badge hidden"
+                    title="Artista verificado"
+                >
+                    ✓
+                </span>
+
+            </div>
+
+
+
+            <!-- BIO -->
+
+            <p
+                id="artistBio"
+                class="artist-bio"
+            ></p>
+
+
+
+            <!-- GÉNERO / LOCALIZAÇÃO -->
+
+            <div class="artist-meta">
+
+                <span
+                    id="artistGenre"
+                    class="artist-meta-item hidden"
+                >
+
+                    🎵
+
+                    <span></span>
+
+                </span>
+
+
+                <span
+                    id="artistLocation"
+                    class="artist-meta-item hidden"
+                >
+
+                 <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+>
+    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+    <circle cx="12" cy="10" r="2.5"/>
+</svg>
+
+                    <span></span>
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 ESTATÍSTICAS + BOTÃO SEGUIR
+            ========================================== -->
+
+            <div class="artist-stats-actions">
+
+
+                <!-- SEGUIDORES -->
+
+                <div class="stat">
+
+                    <strong id="followersCount">
+                        0
+                    </strong>
+
+                    <span>
+                        seguidores
+                    </span>
+
+                </div>
+
+
+
+                <!-- MÚSICAS -->
+
+                <div class="stat">
+
+                    <strong id="songsCount">
+                        0
+                    </strong>
+
+                    <span>
+                        músicas
+                    </span>
+
+                </div>
+
+
+
+                <!-- SEGUIR -->
+                 <button
+    id="followButton"
+    class="action-button follow-button"
+    type="button"
+>
+    Seguir
+</button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             EDITAR PERFIL
+             FICA ISOLADO À DIREITA
+        ============================================== -->
+<div class="artist-edit-area">
+
+    <button
+        id="editProfileButton"
+        class="action-button edit-button hidden"
+        type="button"
+    >
+        Editar perfil
+    </button>
+
+    <a
+        id="statisticsButton"
+        href="./estatisticas.html"
+        class="statistics"
+    >
+        Estatísticas
+    </a>
+<a
+    id="adminDashboardButton"
+    href="./adm/dashboard.html"
+    class="admin-dashboard-button hidden"
+>
+    Painel Administrativo
+</a>
+
+
+
+
+            <a     id="uploadMusicButton"
+                href="upload.html"
+                class="dashboard-card"
+              
+            >
+
+            
+       <h2   class="dashboard-card-iconn" >
+                 Publicar
+                
+</h2>
+             
+
+            </a>
+</div>
+
+
+    </div>
+
+
+
+
+
+    <!-- =================================================
+         MÚSICAS DO ARTISTA
+    ================================================== -->
+
+    <section class="artist-songs-section">
+
+
+        <!-- CABEÇALHO -->
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    Músicas
+                </h2>
+
+                <p>
+                    Músicas publicadas por este artista.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GRID DE MÚSICAS -->
+
+        <div
+            id="songsContainer"
+            class="songs-container"
+        >
+
+            <!--
+                Os cards das músicas
+                serão inseridos pelo artist.js.
+            -->
+
+        </div>
+
+
+    </section>
+
+
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <p>
+                © <span id="currentYear"></span>
+                Yoka. Todos os direitos reservados.
+            </p>
+
+            <div class="footer-legal">
+                <a href="./termos.html">Termos e Condições</a>
+
+                <span class="footer-separator">|</span>
+
+                <a href="./privacidade.html">Política de Privacidade</a>
+
+                <span class="footer-separator">|</span>
+
+                <a href="./sobre.html">Sobre</a>
+
+                <span class="footer-separator">|</span>
+
+                <a href="./contacto.html">Contacto</a>
+            </div>
+
+        </div>
+    </footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="./js/api.js"></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/artist.js"></script>
+<script src="./js/notifications.js"></script>
+
+<script src="./js/index.js"></script>
+</body>
+
+</html>

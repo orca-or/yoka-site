@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Yoka ADM - Detalhes do Artista</title>
+
+    <link
+        rel="stylesheet"
+        href="./artista-detalhes.css"
+    >
+ <link
+        rel="stylesheet"
+        href="./usuarios.css"
+    >
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- =================================================
+             BARRA LATERAL ADM
+        ================================================== -->
+
+        <aside class="admin-sidebar">
+
+            <div class="admin-sidebar-brand">
+
+                <h1>Yoka</h1>
+
+                <span>ADM</span>
+
+            </div>
+
+
+            <nav class="admin-sidebar-nav">
+
+                <a
+                    href="./dashboard.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="./usuarios.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Usuários</span>
+                </a>
+
+
+                <a
+                    href="./musicas.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Músicas</span>
+                </a>
+
+
+                <a
+                    href="./artistas.html"
+                    class="admin-sidebar-link active"
+                >
+                    <span>Artistas</span>
+                </a>
+
+
+                <a
+                    href="./comentarios.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Comentários</span>
+                </a>
+  <a href="./denuncias.html" class="admin-sidebar-link active">
+                <span>Denúncias</span>
+            </a>
+
+                <a
+                    href="./notificacoes.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Notificações</span>
+                </a>
+
+            </nav>
+
+
+            <div class="admin-sidebar-bottom">
+
+                            <a
+    href="#"
+    id="adminProfileLink"
+    class="admin-sidebar-link"
+>
+    <span>Voltar ao perfil</span>
+</a>
+
+
+                <button
+                    id="logoutButton"
+                    type="button"
+                    class="admin-sidebar-logout"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+        </aside>
+
+    <!-- =================================================
+         ÁREA PRINCIPAL
+    ================================================== -->
+
+    <div class="admin-content">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+       
+            <div>
+
+                <h2>Artista detalhes </h2>
+
+                <p>
+                    Gerencie os detalhes do artista na plataforma.
+                </p>
+
+            </div>
+
+
+
+<div class="admin-global-search">
+    <form id="adminSearchForm" role="search">
+        <span aria-hidden="true">⌕</span>
+
+        <input
+            type="search"
+            id="adminSearchInput"
+            placeholder="Pesquisar no painel ADM..."
+            autocomplete="off"
+            aria-label="Pesquisar no painel administrativo"
+        >
+
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <div
+        id="adminSearchResults"
+        class="admin-search-results"
+        hidden
+        role="status"
+    ></div>
+</div>
+
+<div class="admin-user">
+
+    <div class="admin-notifications">
+        <button
+            type="button"
+            id="adminNotificationButton"
+            class="admin-notification-button"
+            aria-label="Abrir notificações"
+            aria-expanded="false"
+        >
+            <span aria-hidden="true">  🔔</span>
+            <span
+                id="adminNotificationBadge"
+                class="admin-notification-badge"
+                hidden
+            >0</span>
+        </button>
+
+        <div
+            id="adminNotificationDropdown"
+            class="admin-notification-dropdown"
+            hidden
+        >
+            <div class="admin-notification-header">
+                <strong>Notificações</strong>
+                <button
+                    type="button"
+                    id="adminMarkAllRead"
+                >
+                    Marcar todas como lidas
+                </button>
+            </div>
+
+            <div
+                id="adminNotificationList"
+                class="admin-notification-list"
+                aria-live="polite"
+            >
+                A carregar notificações...
+            </div>
+        </div>
+    </div>
+
+    <span id="adminName">Administrador</span>
+
+</div>
+
+
+        </header>
+
+
+          
+
+    <!-- =========================================================
+         CONTEÚDO
+    ========================================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- CABEÇALHO DA PÁGINA -->
+
+        <section class="page-header">
+
+            <div>
+
+                <h2>
+                    Detalhes do artista
+                </h2>
+
+                <p>
+                    Informações e estatísticas do artista.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="backButton"
+                class="back-button"
+            >
+                ← Voltar
+            </button>
+
+        </section>
+
+
+
+        <!-- MENSAGEM -->
+
+        <section
+            id="messageContainer"
+            class="message-container"
+        ></section>
+
+
+
+        <!-- CARREGAMENTO -->
+
+        <section
+            id="loadingContainer"
+            class="loading-container"
+        >
+            Carregando artista...
+        </section>
+
+
+
+        <!-- CONTEÚDO DO ARTISTA -->
+
+        <section
+            id="artistContainer"
+            class="artist-container"
+            hidden
+        >
+
+
+            <!-- =================================================
+                 CAPA
+            ================================================== -->
+
+            <div
+                id="artistCover"
+                class="artist-cover"
+            >
+
+                <div class="cover-overlay"></div>
+
+
+                <div class="artist-avatar-container">
+
+                    <img
+                        id="artistAvatar"
+                        class="artist-avatar"
+                        src=""
+                        alt="Avatar do artista"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 INFORMAÇÕES PRINCIPAIS
+            ================================================== -->
+
+            <div class="artist-main-info">
+
+
+                <div class="artist-title-row">
+
+                 <div class="artist-title-row">
+
+    <h2 id="artistName">
+        —
+    </h2>
+
+    <span
+        id="verifiedBadge"
+        class="verified-badge"
+        hidden
+    >
+        ✓ Verificado
+    </span>
+
+</div>
+
+<div class="artist-verification-action">
+
+    <span
+        id="artistVerificationStatus"
+        class="verification-status"
+    >
+        Não verificado
+    </span>
+
+    <button
+        type="button"
+        id="artistVerificationButton"
+        class="verification-button"
+    >
+        Verificar artista
+    </button>
+
+    <button
+        type="button"
+        id="notifyArtistButton"
+        class="notify-artist-button"
+    >
+        Notificar artista
+    </button>
+
+</div>
+<div
+    id="artistNotificationForm"
+    class="artist-notification-form"
+    hidden
+>
+
+    <h3>Notificar artista</h3>
+
+    <div class="notification-form-group">
+
+        <label for="artistNotificationTitle">
+            Título
+        </label>
+
+        <input
+            type="text"
+            id="artistNotificationTitle"
+            maxlength="150"
+            placeholder="Título da notificação"
+        >
+
+    </div>
+
+
+    <div class="notification-form-group">
+
+        <label for="artistNotificationMessage">
+            Mensagem
+        </label>
+
+        <textarea
+            id="artistNotificationMessage"
+            rows="5"
+            maxlength="1000"
+            placeholder="Escreva a mensagem para o artista..."
+        ></textarea>
+
+    </div>
+
+
+    <div class="artist-notification-actions">
+
+        <button
+            type="button"
+            id="cancelArtistNotificationButton"
+        >
+            Cancelar
+        </button>
+
+        <button
+            type="button"
+            id="sendArtistNotificationButton"
+        >
+            Enviar notificação
+        </button>
+
+    </div>
+
+</div>
+<p
+    id="artistGenre"
+    class="artist-genre"
+>
+    —
+</p>
+
+                <p
+                    id="artistLocation"
+                    class="artist-location"
+                >
+                    —
+                </p>
+
+
+                <p
+                    id="artistBio"
+                    class="artist-bio"
+                >
+                    —
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ESTATÍSTICAS
+            ================================================== -->
+
+            <section class="info-section">
+
+                <h3>
+                    Estatísticas
+                </h3>
+
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Músicas
+                        </span>
+
+                        <strong
+                            id="totalMusicas"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Reproduções
+                        </span>
+
+                        <strong
+                            id="totalReproducoes"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Curtidas
+                        </span>
+
+                        <strong
+                            id="totalCurtidas"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Seguidores
+                        </span>
+
+                        <strong
+                            id="totalSeguidores"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-label">
+                            Comentários
+                        </span>
+
+                        <strong
+                            id="totalComentarios"
+                            class="stat-value"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+<section class="artist-songs-section">
+
+    <div class="section-header">
+        <h2>Músicas do artista</h2>
+        <span id="artistSongsCount">0 músicas</span>
+    </div>
+
+    <div
+        id="artistSongsLoading"
+        class="artist-songs-loading"
+    >
+        Carregando músicas...
+    </div>
+
+    <div
+        id="artistSongsMessage"
+        class="artist-songs-message"
+    ></div>
+
+    <div
+        id="artistSongsContainer"
+        class="artist-songs-container"
+    ></div>
+
+</section>
+            <!-- =================================================
+                 CONTA
+            ================================================== -->
+
+            <section class="info-section">
+
+                <h3>
+                    Conta do utilizador
+                </h3>
+
+
+                <div class="account-grid">
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Nome
+                        </span>
+
+                        <strong id="userName">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Email
+                        </span>
+
+                        <strong id="userEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Função
+                        </span>
+
+                        <strong id="userRole">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Conta
+                        </span>
+
+                        <strong id="userStatus">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Email verificado
+                        </span>
+
+                        <strong id="emailVerified">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Artista verificado
+                        </span>
+
+                        <strong id="artistVerified">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 REDES SOCIAIS
+            ================================================== -->
+
+            <section class="info-section">
+
+                <h3>
+                    Redes e website
+                </h3>
+
+
+                <div class="social-links">
+
+
+                    <a
+                        id="websiteLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+                        Website
+                    </a>
+
+
+                    <a
+                        id="instagramLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+                        Instagram
+                    </a>
+
+
+                    <a
+                        id="facebookLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+                        Facebook
+                    </a>
+
+
+                    <a
+                        id="youtubeLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+                        YouTube
+                    </a>
+
+
+                    <a
+                        id="tiktokLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+                        TikTok
+                    </a>
+
+
+                    <span
+                        id="noSocialLinks"
+                        class="no-social-links"
+                    >
+                        Nenhum link informado.
+                    </span>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 DATAS
+            ================================================== -->
+
+            <section class="info-section">
+
+                <h3>
+                    Informações do perfil
+                </h3>
+
+
+                <div class="account-grid">
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Perfil criado em
+                        </span>
+
+                        <strong id="createdAt">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Última atualização
+                        </span>
+
+                        <strong id="updatedAt">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+        </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    
+  <script src="./js/admin-profile.js" defer></script>
+    <script src="./js/artista-detalhes.js"></script>
+    <script src="./js/admin-search.js"></script>
+
+<script src="./js/admin-notifications.js"></script>
+</body>
+
+</html>

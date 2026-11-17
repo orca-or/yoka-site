@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoka ADM - Denúncias</title>
+    <link rel="stylesheet" href="./usuarios.css">
+
+    <style>
+        .reports-panel {
+            margin-top: 24px;
+            padding: 22px;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            background: var(--card-bg, #fff);
+        }
+
+        .reports-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .reports-header h3 { margin: 0 0 6px; }
+        .reports-header p { margin: 0; color: #777; }
+
+        .reports-filters {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .reports-filters select,
+        .reports-filters button,
+        .report-actions select,
+        .report-actions button {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        .reports-filters button,
+        .report-actions button {
+            cursor: pointer;
+            background: #171717;
+            color: white;
+        }
+
+        .reports-list { display: grid; gap: 16px; }
+
+        .report-card {
+            padding: 18px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow-wrap: anywhere;
+            transition: outline-color .2s;
+        }
+
+        .report-card.report-highlight {
+            outline: 3px solid #2563eb;
+            outline-offset: 3px;
+        }
+
+        .report-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .report-top h4 { margin: 0 0 8px; }
+        .report-top p { margin: 0; }
+
+        .report-status {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #f3f4f6;
+            font-size: 13px;
+        }
+
+        .report-meta {
+            display: grid;
+            gap: 8px;
+            margin-top: 16px;
+            color: #555;
+        }
+
+        .report-description {
+            margin-top: 14px;
+            white-space: pre-wrap;
+        }
+
+        .report-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .reports-message {
+            padding: 16px 0;
+            color: #666;
+        }
+
+        .reports-message.error { color: #b91c1c; }
+
+        [hidden] { display: none !important; }
+
+        @media (max-width: 600px) {
+            .reports-panel { padding: 14px; }
+            .reports-header { align-items: stretch; }
+            .reports-filters { width: 100%; }
+            .reports-filters select { flex: 1; min-width: 0; }
+        }
+    </style>
+</head>
+
+<body>
+<div class="admin-layout">
+    <aside class="admin-sidebar">
+        <div class="admin-sidebar-brand"><h1>Yoka</h1></div>
+
+        <nav class="admin-sidebar-nav">
+            <a href="./dashboard.html" class="admin-sidebar-link">
+                <span>Dashboard</span>
+            </a>
+            <a href="./usuarios.html" class="admin-sidebar-link">
+                <span>Usuários</span>
+            </a>
+            <a href="./musicas.html" class="admin-sidebar-link">
+                <span>Músicas</span>
+            </a>
+            <a href="./artistas.html" class="admin-sidebar-link">
+                <span>Artistas</span>
+            </a>
+            <a href="./comentarios.html" class="admin-sidebar-link">
+                <span>Comentários</span>
+            </a>
+            <a href="./denuncias.html" class="admin-sidebar-link active">
+                <span>Denúncias</span>
+            </a>
+            <a href="./notificacoes.html" class="admin-sidebar-link">
+                <span>Notificações</span>
+            </a>
+        </nav>
+
+        <div class="admin-sidebar-bottom">
+            <a href="#" id="adminProfileLink" class="admin-sidebar-link">
+                <span>Voltar ao perfil</span>
+            </a>
+            <button id="logoutButton" type="button" class="admin-sidebar-logout">
+                Sair
+            </button>
+        </div>
+    </aside>
+
+    <div class="admin-content">
+        <header class="admin-header">
+            <div>
+                <h2>Denúncias</h2>
+                <p>Analisa e gere as denúncias recebidas na Yoka.</p>
+            </div>
+
+            <div class="admin-global-search">
+                <form id="adminSearchForm" role="search">
+                    <span aria-hidden="true">⌕</span>
+                    <input
+                        type="search"
+                        id="adminSearchInput"
+                        placeholder="Pesquisar no painel ADM..."
+                        autocomplete="off"
+                        aria-label="Pesquisar no painel administrativo"
+                    >
+                    <button type="submit">Pesquisar</button>
+                </form>
+                <div
+                    id="adminSearchResults"
+                    class="admin-search-results"
+                    hidden
+                    role="status"
+                ></div>
+            </div>
+
+            <div class="admin-user">
+                <div class="admin-notifications">
+                    <button
+                        type="button"
+                        id="adminNotificationButton"
+                        class="admin-notification-button"
+                        aria-label="Abrir notificações"
+                        aria-expanded="false"
+                    >
+                        <span aria-hidden="true">🔔</span>
+                        <span
+                            id="adminNotificationBadge"
+                            class="admin-notification-badge"
+                            hidden
+                        >0</span>
+                    </button>
+
+                    <div
+                        id="adminNotificationDropdown"
+                        class="admin-notification-dropdown"
+                        hidden
+                    >
+                        <div class="admin-notification-header">
+                            <strong>Notificações</strong>
+                            <button type="button" id="adminMarkAllRead">
+                                Marcar todas como lidas
+                            </button>
+                        </div>
+                        <div
+                            id="adminNotificationList"
+                            class="admin-notification-list"
+                            aria-live="polite"
+                        >A carregar notificações...</div>
+                    </div>
+                </div>
+                <span id="adminName">Administrador</span>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <div id="reportsPageMessage" class="mensagem" hidden></div>
+
+            <section class="reports-panel">
+                <div class="reports-header">
+                    <div>
+                        <h3>Denúncias de músicas</h3>
+                        <p>Consulta as denúncias e acompanha a sua resolução.</p>
+                    </div>
+
+                    <div class="reports-filters">
+                        <label for="reportsStatusFilter">Estado:</label>
+                        <select id="reportsStatusFilter">
+                            <option value="">Todas</option>
+                            <option value="pending">Pendentes</option>
+                            <option value="reviewing">Em análise</option>
+                            <option value="resolved">Resolvidas</option>
+                            <option value="rejected">Rejeitadas</option>
+                        </select>
+                        <button type="button" id="btnAtualizarDenuncias">
+                            Atualizar
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    id="reportsMessage"
+                    class="reports-message"
+                    role="status"
+                    aria-live="polite"
+                >A carregar denúncias...</div>
+
+                <div id="reportsList" class="reports-list"></div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="./js/admin-profile.js" defer></script>
+<script src="./js/admin-search.js"></script>
+<script src="./js/admin-notifications.js"></script>
+<script src="./js/denuncias.js"></script>
+</body>
+</html>

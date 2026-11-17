@@ -1,0 +1,598 @@
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f6f8;
+
+    color: #1f2937;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.admin-header {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    padding: 20px 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.header-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.header-left h1 {
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+
+.header-left p {
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR
+========================================================= */
+
+.btn-voltar {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    border-radius: 8px;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.btn-voltar:hover {
+    background: #e5e7eb;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   BOTÃO LOGOUT
+========================================================= */
+
+.btn-logout {
+    border: none;
+
+    min-height: 40px;
+
+    padding: 0 18px;
+
+    border-radius: 8px;
+
+    background: #ef4444;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.btn-logout:hover {
+    background: #dc2626;
+}
+
+
+.btn-logout:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.admin-container {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 40px 24px 60px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.notification-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+}
+
+
+.card-header {
+    padding: 26px 30px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.card-header h2 {
+    font-size: 20px;
+
+    color: #111827;
+
+    margin-bottom: 7px;
+}
+
+
+.card-header p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+#notificationForm {
+    padding: 30px;
+}
+
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-group input,
+.form-group select {
+    height: 46px;
+
+    padding: 0 13px;
+}
+
+
+.form-group textarea {
+    min-height: 150px;
+
+    padding: 13px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #141416;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CONTADOR
+========================================================= */
+
+.contador {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: -15px;
+
+    margin-bottom: 20px;
+
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   MENSAGEM DE RETORNO
+========================================================= */
+
+.notification-message {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+.notification-message.sucesso {
+    background: #ecfdf5;
+
+    border: 1px solid #a7f3d0;
+
+    color: #047857;
+}
+
+
+.notification-message.erro {
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #b91c1c;
+}
+
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding-top: 5px;
+}
+
+
+.btn-enviar {
+    min-height: 46px;
+
+    padding: 0 24px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #1e1e1f;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.btn-enviar:hover {
+    background: #0a0a0a;
+}
+
+
+.btn-enviar:active {
+    transform: scale(0.98);
+}
+
+
+.btn-enviar:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .admin-header {
+        padding: 18px;
+
+        align-items: flex-start;
+    }
+
+
+    .header-left {
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    .header-left h1 {
+        font-size: 21px;
+    }
+
+
+    .header-left p {
+        font-size: 13px;
+    }
+
+
+    .btn-voltar {
+        padding: 0 11px;
+
+        font-size: 13px;
+    }
+
+
+    .btn-logout {
+        padding: 0 13px;
+
+        font-size: 13px;
+    }
+
+
+    .admin-container {
+        padding: 25px 15px 40px;
+    }
+
+
+    .card-header {
+        padding: 22px;
+    }
+
+
+    #notificationForm {
+        padding: 22px;
+    }
+
+
+    .form-actions {
+        justify-content: stretch;
+    }
+
+
+    .btn-enviar {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .admin-header {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .header-left {
+        width: 100%;
+    }
+
+
+    .btn-logout {
+        width: 100%;
+    }
+
+
+    .header-left h1 {
+        font-size: 19px;
+    }
+
+
+    .card-header h2 {
+        font-size: 18px;
+    }
+
+
+    .form-group input,
+    .form-group select {
+        height: 44px;
+    }
+
+}
+
+
+
+    
+/* Seleção de vários usuários */
+
+.users-selection-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.checkbox-label,
+.user-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+}
+
+.checkbox-label input,
+.user-checkbox-label input {
+    width: 16px;
+    height: 16px;
+    accent-color: #101011;
+    cursor: pointer;
+}
+
+#contadorUsuariosSelecionados {
+    font-size: 13px;
+    color: #777;
+}
+
+.users-checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 320px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px 14px;
+}
+
+.user-checkbox-label {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    overflow-wrap: anywhere;
+}
+
+.user-checkbox-label:last-child {
+    border-bottom: none;
+}
+
+.user-checkbox-label:hover {
+    background: rgba(108, 76, 255, 0.05);
+}

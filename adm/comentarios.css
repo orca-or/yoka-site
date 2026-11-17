@@ -1,0 +1,755 @@
+/* ==========================================================================
+   YOKA ADM — GESTÃO DE COMENTÁRIOS
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f5f7fa;
+    color: #111827;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 22px 32px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-left h1 {
+    margin: 0 0 5px;
+
+    font-size: 25px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.header-left p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+/* ==========================================================================
+   BOTÕES DO CABEÇALHO
+   ========================================================================== */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 13px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.back-button:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.logout-button {
+    padding: 9px 15px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #111827;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #374151;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================================
+   CONTEÚDO
+   ========================================================================== */
+
+.admin-main {
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 36px;
+}
+
+
+
+/* ==========================================================================
+   RESUMO
+   ========================================================================== */
+
+.comments-summary {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 260px);
+
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.summary-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.summary-value {
+    display: block;
+
+    font-size: 30px;
+    line-height: 1;
+
+    color: #111827;
+}
+
+
+/* ==========================================================================
+   LOADING / MENSAGENS
+   ========================================================================== */
+
+.comments-loading {
+    padding: 35px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.comments-message {
+    margin-bottom: 18px;
+
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+.comments-message:empty {
+    display: none;
+}
+
+.comments-message.success {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.comments-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.comments-message.info {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #dbeafe;
+}
+
+
+/* ==========================================================================
+   LISTA DE COMENTÁRIOS
+   ========================================================================== */
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+/* ==========================================================================
+   CARD
+   ========================================================================== */
+
+.comment-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.comment-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ==========================================================================
+   CABEÇALHO DO CARD
+   ========================================================================== */
+
+.comment-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.comment-user {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+.comment-avatar {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+}
+
+.comment-user-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.comment-user-info strong {
+    margin-bottom: 3px;
+
+    font-size: 15px;
+    color: #111827;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment-user-info span {
+    font-size: 12px;
+    color: #6b7280;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ==========================================================================
+   TIPO
+   ========================================================================== */
+
+.comment-type {
+    flex-shrink: 0;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.comment-type.comment {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.comment-type.reply {
+    background: #f3e8ff;
+    color: #7e22ce;
+}
+
+
+/* ==========================================================================
+   CONTEÚDO DO COMENTÁRIO
+   ========================================================================== */
+
+.comment-content {
+    margin-bottom: 18px;
+
+    padding: 15px;
+
+    background: #f9fafb;
+
+    border: 1px solid #f0f1f3;
+    border-radius: 9px;
+}
+
+.comment-content p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.55;
+
+    color: #374151;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==========================================================================
+   MÚSICA
+   ========================================================================== */
+
+.comment-song {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+}
+
+.song-cover {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    background: #f3f4f6;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.song-info strong {
+    margin-bottom: 4px;
+
+    font-size: 14px;
+    color: #111827;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-info span {
+    font-size: 13px;
+    color: #6b7280;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ==========================================================================
+   RODAPÉ DO CARD
+   ========================================================================== */
+
+.comment-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 16px;
+}
+
+.comment-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    font-size: 12px;
+    color: #6b7280;
+}
+
+
+/* ==========================================================================
+   EXCLUIR
+   ========================================================================== */
+
+.delete-comment-button {
+    flex-shrink: 0;
+
+    padding: 8px 13px;
+
+    border: 1px solid #fecaca;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #b91c1c;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.delete-comment-button:hover {
+    background: #fef2f2;
+    border-color: #fca5a5;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================================
+   ESTADO VAZIO
+   ========================================================================== */
+
+.empty-state {
+    padding: 60px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.empty-icon {
+    margin-bottom: 12px;
+
+    font-size: 38px;
+}
+
+.empty-state h2 {
+    margin: 0 0 7px;
+
+    font-size: 20px;
+    color: #111827;
+}
+
+.empty-state p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+/* ==========================================================================
+   MODAL
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(17, 24, 39, 0.55);
+
+    z-index: 1000;
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal {
+    width: 100%;
+    max-width: 450px;
+
+    padding: 26px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 15px;
+
+    border-radius: 50%;
+
+    background: #fee2e2;
+    color: #b91c1c;
+
+    font-size: 22px;
+}
+
+.modal h2 {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+    color: #111827;
+}
+
+.modal > p {
+    margin: 0 0 18px;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #6b7280;
+}
+
+.delete-comment-preview {
+    max-height: 120px;
+
+    overflow-y: auto;
+
+    margin-bottom: 22px;
+
+    padding: 13px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #374151;
+}
+
+
+/* ==========================================================================
+   AÇÕES DO MODAL
+   ========================================================================== */
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+.cancel-button,
+.confirm-delete-button {
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.cancel-button {
+    border: 1px solid #d1d5db;
+
+    background: #ffffff;
+    color: #374151;
+}
+
+.cancel-button:hover {
+    background: #f3f4f6;
+}
+
+.confirm-delete-button {
+    border: 1px solid #dc2626;
+
+    background: #dc2626;
+    color: #ffffff;
+}
+
+.confirm-delete-button:hover {
+    background: #b91c1c;
+}
+
+.confirm-delete-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+
+@media (max-width: 700px) {
+
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+
+        padding: 18px;
+    }
+
+    .header-left {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .admin-content {
+        padding: 20px 15px 40px;
+    }
+
+    .comment-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .comment-type {
+        align-self: flex-start;
+    }
+
+    .comment-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .delete-comment-button {
+        width: 100%;
+    }
+
+    .modal {
+        padding: 20px;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-button,
+    .confirm-delete-button {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Comentários - Yoka ADM</title>
+
+    <link
+        rel="stylesheet"
+        href="./comentarios.css"
+    >
+   <link
+        rel="stylesheet"
+        href="./usuarios.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- =================================================
+             BARRA LATERAL ADM
+        ================================================== -->
+
+        <aside class="admin-sidebar">
+
+            <div class="admin-sidebar-brand">
+
+                <h1>Yoka</h1>
+
+                <span>ADM</span>
+
+            </div>
+
+
+            <nav class="admin-sidebar-nav">
+
+                <a
+                    href="./dashboard.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="./usuarios.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Usuários</span>
+                </a>
+
+
+                <a
+                    href="./musicas.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Músicas</span>
+                </a>
+
+
+                <a
+                    href="./artistas.html"
+                    class="admin-sidebar-link active"
+                >
+                    <span>Artistas</span>
+                </a>
+
+
+                <a
+                    href="./comentarios.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Comentários</span>
+                </a>
+
+                  <a href="./denuncias.html" class="admin-sidebar-link active">
+                <span>Denúncias</span>
+            </a>
+                <a
+                    href="./notificacoes.html"
+                    class="admin-sidebar-link"
+                >
+                    <span>Notificações</span>
+                </a>
+
+            </nav>
+
+
+            <div class="admin-sidebar-bottom">
+
+                          <a
+    href="#"
+    id="adminProfileLink"
+    class="admin-sidebar-link"
+>
+    <span>Voltar ao perfil</span>
+</a>
+
+
+                <button
+                    id="logoutButton"
+                    type="button"
+                    class="admin-sidebar-logout"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+        </aside>
+
+
+    <!-- =================================================
+         ÁREA PRINCIPAL
+    ================================================== -->
+
+    <div class="admin-content">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+       
+            <div>
+
+                <h2>Comentários</h2>
+                <p>
+                    Gerencie os comentários realizados na plataforma.
+                </p>
+
+            </div>
+
+
+
+<div class="admin-global-search">
+    <form id="adminSearchForm" role="search">
+        <span aria-hidden="true">⌕</span>
+
+        <input
+            type="search"
+            id="adminSearchInput"
+            placeholder="Pesquisar no painel ADM..."
+            autocomplete="off"
+            aria-label="Pesquisar no painel administrativo"
+        >
+
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <div
+        id="adminSearchResults"
+        class="admin-search-results"
+        hidden
+        role="status"
+    ></div>
+</div>
+
+<div class="admin-user">
+
+    <div class="admin-notifications">
+        <button
+            type="button"
+            id="adminNotificationButton"
+            class="admin-notification-button"
+            aria-label="Abrir notificações"
+            aria-expanded="false"
+        >
+            <span aria-hidden="true">  🔔</span>
+            <span
+                id="adminNotificationBadge"
+                class="admin-notification-badge"
+                hidden
+            >0</span>
+        </button>
+
+        <div
+            id="adminNotificationDropdown"
+            class="admin-notification-dropdown"
+            hidden
+        >
+            <div class="admin-notification-header">
+                <strong>Notificações</strong>
+                <button
+                    type="button"
+                    id="adminMarkAllRead"
+                >
+                    Marcar todas como lidas
+                </button>
+            </div>
+
+            <div
+                id="adminNotificationList"
+                class="admin-notification-list"
+                aria-live="polite"
+            >
+                A carregar notificações...
+            </div>
+        </div>
+    </div>
+
+    <span id="adminName">Administrador</span>
+
+</div>
+
+
+        </header>
+
+    <!-- =========================================================
+         CONTEÚDO
+    ========================================================== -->
+
+<main class="admin-main">
+
+        <!-- =====================================================
+             RESUMO
+        ====================================================== -->
+
+        <section class="comments-summary">
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    Total de comentários
+                </span>
+
+                <strong
+                    id="totalComments"
+                    class="summary-value"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MENSAGENS
+        ====================================================== -->
+
+        <div
+            id="commentsLoading"
+            class="comments-loading"
+        >
+            Carregando comentários...
+        </div>
+
+
+        <div
+            id="commentsMessage"
+            class="comments-message"
+        ></div>
+
+
+        <!-- =====================================================
+             LISTA
+        ====================================================== -->
+
+        <section
+            id="commentsContainer"
+            class="comments-container"
+        ></section>
+
+    </main>
+
+
+    <!-- =========================================================
+         MODAL DE CONFIRMAÇÃO
+    ========================================================== -->
+
+    <div
+        id="deleteModal"
+        class="modal-overlay"
+        hidden
+    >
+
+        <div class="modal">
+
+            <div class="modal-icon">
+                ⚠
+            </div>
+
+            <h2>Excluir comentário?</h2>
+
+            <p>
+                Esta ação irá remover permanentemente
+                este comentário.
+            </p>
+
+            <div
+                id="deleteCommentPreview"
+                class="delete-comment-preview"
+            ></div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelDeleteButton"
+                    class="cancel-button"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    id="confirmDeleteButton"
+                    class="confirm-delete-button"
+                >
+                    Excluir comentário
+                </button>
+
+            </div>
+
+        </div>
+
+    
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+ <script src="./js/admin-profile.js" defer></script>
+ <script src="./js/admin-notifications.js"></script>
+ 
+    <script src="./js/comentarios.js"></script>
+  <script src="./js/admin-search.js"></script>
+ 
+  
+
+    
+</body>
+
+</html>

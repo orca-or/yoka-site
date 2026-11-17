@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Confirmar email - Yoka</title>
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           background: black;
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: min(90%, 460px);
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .estado {
+            margin: 25px 0;
+            font-size: 16px;
+        }
+
+        .sucesso {
+            color: #16803c;
+        }
+
+        .erro {
+            color: #c62828;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 13px 24px;
+            background: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .botao:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Yoka</h1>
+
+        <h2>Confirmar email</h2>
+
+        <p
+            id="mensagem"
+            class="estado"
+        >
+            A confirmar o seu email...
+        </p>
+
+        <a
+            id="botao"
+            class="botao"
+            href="login.html"
+          
+        >
+            Ir para o login
+        </a>
+
+    </main>
+
+<script src="./js/verificar-email.js"></script>
+
+</body>
+</html>
