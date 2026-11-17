@@ -234,9 +234,12 @@ function criarFavorito(favorito) {
         "favorite-song-card";
 
 
-    const songId =
-        favorito.song_id;
+   
 
+
+const songId =
+    favorito.song_id || favorito.id;
+    
 
     const titulo =
         favorito.title ||
