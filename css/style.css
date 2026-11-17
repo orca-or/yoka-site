@@ -1,0 +1,6934 @@
+/* ============================================================
+   RESET
+============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+/* ============================================================
+   LOGIN
+============================================================ */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: black;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   FORM
+============================================================ */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #111827;
+    box-shadow:
+        0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+
+/* ============================================================
+   BOTÃO LOGIN
+============================================================ */
+
+.btn-login {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    background: #111827;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        opacity 0.2s,
+        transform 0.15s;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+.btn-login:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ============================================================
+   MENSAGEM LOGIN
+============================================================ */
+
+.login-mensagem {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   RODAPÉ LOGIN
+============================================================ */
+
+.login-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-footer p {
+    display: inline;
+    color: #6b7280;
+}
+
+.login-footer a {
+    margin-left: 5px;
+    color: #111827;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.dashboard-header {
+    width: 100%;
+    min-height: 70px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dashboard-logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.dashboard-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#usuarioNome {
+    font-weight: 600;
+}
+
+#btnSair {
+    border: none;
+    background: #111827;
+    color: #ffffff;
+    padding: 9px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   DASHBOARD
+============================================================ */
+
+.dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+.dashboard-welcome {
+    margin-bottom: 30px;
+}
+
+.dashboard-welcome h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.dashboard-welcome p {
+    color: #6b7280;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    display: block;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    padding: 25px;
+
+    text-decoration: none;
+    color: inherit;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.dashboard-card p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.dashboard-status {
+    margin-top: 30px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    padding: 25px;
+}
+
+.dashboard-status h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#estadoConta {
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   PÁGINA DA MÚSICA
+============================================================ */
+
+.song-page {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 30px 25px 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        330px;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* ============================================================
+   COLUNA PRINCIPAL
+============================================================ */
+
+.song-main-column {
+    min-width: 0;
+    width: 100%;
+}
+
+
+/* ============================================================
+   MENSAGENS
+============================================================ */
+
+.song-message {
+    min-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.song-error {
+    color: #dc2626;
+}
+
+
+/* ============================================================
+   LOADING
+============================================================ */
+
+.loading-spinner {
+    width: 32px;
+    height: 32px;
+
+    border: 3px solid #e5e7eb;
+    border-top-color: #111827;
+
+    border-radius: 50%;
+
+    animation:
+        yokaSpin 0.8s linear infinite;
+
+    margin-bottom: 14px;
+}
+
+@keyframes yokaSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   BOTÃO VOLTAR
+============================================================ */
+
+.song-back-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    background: #f3f4f6;
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s,
+        transform 0.15s;
+}
+
+.song-back-button:hover {
+    background: #e5e7eb;
+    transform: translateX(-2px);
+}
+
+
+/* ============================================================
+   CONTEÚDO DA MÚSICA
+============================================================ */
+
+.song-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ============================================================
+   CAPA
+============================================================ */
+/* Contentor da capa do player */
+.song-cover-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #111;
+    margin: 0 auto 22px;
+}
+
+/* Imagem — modelo dos cards do index */
+.song-cover-container .song-cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    border-radius: 12px;
+}
+
+
+
+
+.song-cover-container {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #111;
+    margin: 0 auto 22px;
+}
+
+.song-cover-container::before {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    z-index: -1;
+    background-image: var(--cover-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(25px);
+    opacity: 0.85;
+}
+
+.song-cover {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+/* ============================================================
+   INFORMAÇÕES
+============================================================ */
+
+.song-info {
+    width: 100%;
+
+    text-align: left;
+}
+
+
+/* ============================================================
+   ARTISTA + SEGUIR
+============================================================ */
+
+.song-artist-row {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 5px;
+}
+
+.song-artist-row h2 {
+    margin: 0;
+   
+}
+
+
+/* ============================================================
+   ARTISTA
+============================================================ */
+
+#songArtist {
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 1.3;
+
+    font-weight: 600;
+
+    color: #555;
+width: 300px;
+    word-break: break-word;
+}
+
+
+/* ============================================================
+   BOTÃO SEGUIR
+============================================================ */
+
+.song-follow-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 16px;
+
+    border: 1px solid #111827;
+    border-radius: 8px;
+
+    background: #111827;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        color 0.2s,
+        border-color 0.2s,
+        transform 0.15s;
+}
+
+.song-follow-button:hover {
+    background: #ffffff;
+    color: #111827;
+
+    transform: translateY(-1px);
+}
+
+.song-follow-button.following {
+    background: #e5e7eb;
+    border-color: #e5e7eb;
+    color: #111827;
+}
+
+
+/* ============================================================
+   TÍTULO
+============================================================ */
+
+#songTitle {
+    margin: 5px 0 8px;
+
+    font-size: 30px;
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    color: #111827;
+font-weight: bold;
+    word-break: break-word;
+}
+
+
+/* ============================================================
+   DESCRIÇÃO
+============================================================ */
+
+#songDescription {
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 0 0 18px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #666;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+/* ============================================================
+   LINHA DE AÇÕES
+============================================================ */
+
+.song-actions {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ============================================================
+   REPRODUÇÕES
+============================================================ */
+
+.song-stats {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 40px;
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.song-plays {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 40px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   BOTÕES DE AÇÃO
+============================================================ */
+
+.song-like-button,
+.song-favorite-button,
+.song-comment-button,
+.song-share-button,
+.song-action-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    min-height: 40px;
+
+    padding: 7px 13px;
+
+    border: 1px solid #e1e1e1;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #555;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.song-like-button:hover,
+.song-favorite-button:hover,
+.song-comment-button:hover,
+.song-share-button:hover,
+.song-action-button:hover {
+
+    background: #f5f5f5;
+
+    transform: translateY(-1px);
+}
+
+.song-like-button:active,
+.song-favorite-button:active,
+.song-comment-button:active,
+.song-share-button:active,
+.song-action-button:active {
+
+    transform: scale(0.97);
+}
+
+
+/* ============================================================
+   CURTIR
+============================================================ */
+
+.song-like-icon {
+    font-size: 20px;
+
+    line-height: 1;
+
+    color: #777;
+}
+
+.song-like-button.curtido {
+    color: #e0245e;
+
+    border-color: #f3b3c5;
+
+    background: #fff5f8;
+}
+
+.song-like-button.curtido .song-like-icon {
+    color: #e0245e;
+}
+
+
+/* ============================================================
+   CONTADOR CURTIDAS
+============================================================ */
+
+.song-like-count {
+    min-width: 10px;
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   FAVORITOS
+============================================================ */
+
+.song-favorite-icon {
+    font-size: 19px;
+
+    line-height: 1;
+}
+
+.song-favorite-button.favorito {
+    color: #f59e0b;
+
+    border-color: #f6d58c;
+
+    background: #fffaf0;
+}
+
+.song-favorite-button.favorito
+.song-favorite-icon {
+
+    color: #f59e0b;
+}
+
+
+/* ============================================================
+   PARTILHAR
+============================================================ */
+
+.song-share-button {
+    color: #555;
+}
+
+.song-share-button:hover {
+    color: #111827;
+}
+
+
+/* ============================================================
+   COMENTÁRIO
+============================================================ */
+
+.song-comment-button {
+    color: #555;
+}
+
+
+/* ============================================================
+   DATA DO POST
+============================================================ */
+
+.song-post-date {
+    margin-left: auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 40px;
+
+    color: #999;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   BOTÕES DESABILITADOS
+============================================================ */
+
+.song-like-button:disabled,
+.song-favorite-button:disabled,
+.song-comment-button:disabled,
+.song-share-button:disabled,
+.song-follow-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: wait;
+
+    transform: none;
+}
+
+
+/* ============================================================
+   PLAYER
+============================================================ */
+
+.song-player {
+    width: 100%;
+
+    margin-top: 8px;
+    margin-bottom: 18px;
+}
+
+.song-player audio {
+    display: block;
+
+    width: 100%;
+
+    height: 45px;
+}
+
+
+/* ============================================================
+   STATUS
+============================================================ */
+
+.song-status {
+    width: 100%;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+
+.song-sidebar {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    position: sticky;
+
+    top: 90px;
+
+    align-self: start;
+}
+
+
+/* ============================================================
+   SECÇÃO DA SIDEBAR
+============================================================ */
+
+.song-sidebar-section {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+
+/* ============================================================
+   TÍTULO SIDEBAR
+============================================================ */
+
+.song-sidebar-title {
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #eeeeee;
+ 
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* ============================================================
+   LISTA SIDEBAR
+============================================================ */
+
+.song-sidebar-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* ============================================================
+   ITEM SIDEBAR
+============================================================ */
+
+.sidebar-song {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 12px 15px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    transition:
+        background 0.2s ease;
+}
+
+.sidebar-song:last-child {
+    border-bottom: none;
+    
+}
+
+.sidebar-song:hover {
+    background: #f7f7f7;
+    
+}
+
+
+/* ============================================================
+   CAPA SIDEBAR
+============================================================ */
+
+.sidebar-song-cover {
+    width: 100%;
+    height: 100%;
+
+    flex-shrink: 0;
+margin-top: 15px;
+border-radius: 8px;
+    object-fit: cover;
+
+    background: #eeeeee;
+}
+
+
+/* ============================================================
+   INFORMAÇÕES SIDEBAR
+============================================================ */
+
+.sidebar-song-info {
+    min-width: 0;
+
+    display: flex;
+text-decoration: none;
+    flex-direction: column;
+
+    gap: 4px;
+}
+/* Remover sublinhado dos links da barra lateral */
+.sidebar-song-link,
+.sidebar-song-link:link,
+.sidebar-song-link:visited,
+.sidebar-song-link:hover,
+.sidebar-song-link:active,
+.sidebar-song-link:focus {
+    text-decoration: none !important;
+}
+
+/* Garantir que os títulos também não têm decoração */
+.sidebar-song-title,
+.sidebar-song-artist {
+    text-decoration: none !important;
+    color: white;
+    font-size: 20px;
+}
+.sidebar-song-meta {
+    font-size: 11px;
+
+    color: #999;
+}
+.sidebar-song-artist {
+font-size: 30px;
+    color: #888;
+}
+/* ============================================================
+   SIDEBAR VAZIA
+============================================================ */
+
+.sidebar-empty {
+    padding: 25px 18px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #888;
+}
+
+
+/* ============================================================
+   SIDEBAR LOADING
+============================================================ */
+
+.sidebar-loading {
+    padding: 22px 18px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #888;
+}
+
+
+/* ============================================================
+   COMENTÁRIOS
+============================================================ */
+
+.comments-section {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 35px 0 0;
+
+    padding: 0 0 50px;
+}
+
+
+/* ============================================================
+   HEADER COMENTÁRIOS
+============================================================ */
+
+.comments-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.comments-header h2 {
+    margin: 0;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    color:white;
+}
+
+.comments-count {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 28px;
+    height: 28px;
+
+    margin-left: 8px;
+
+    padding: 0 8px;
+
+    border-radius: 20px;
+
+    background: #eeeeee;
+
+    color: #555;
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+
+/* ============================================================
+   FORMULÁRIO COMENTÁRIO
+============================================================ */
+
+.comment-form {
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.comment-form textarea {
+    display: block;
+
+    width: 100%;
+
+    min-height: 85px;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dcdcdc;
+
+    border-radius: 10px;
+
+    resize: vertical;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    outline: none;
+
+    background: #fafafa;
+
+    color: #222;
+
+    transition:
+        border-color 0.2s,
+        background 0.2s,
+        box-shadow 0.2s;
+}
+
+.comment-form textarea:focus {
+    border-color: #aaa;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ============================================================
+   FOOTER FORMULÁRIO
+============================================================ */
+
+.comment-form-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 12px;
+}
+
+.comment-form-hint {
+    color: #999;
+
+    font-size: 12px;
+}
+
+.comment-form button {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 9px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s,
+        transform 0.15s,
+        opacity 0.2s;
+}
+
+.comment-form button:hover {
+    background: #292f3b;
+}
+
+.comment-form button:active {
+    transform: scale(0.97);
+}
+
+.comment-form button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ============================================================
+   LISTA COMENTÁRIOS
+============================================================ */
+
+.comments-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* ============================================================
+   COMENTÁRIO
+============================================================ */
+
+.comment {
+    padding: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.035);
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.comment:hover {
+    border-color: #dcdcdc;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ============================================================
+   HEADER COMENTÁRIO
+============================================================ */
+
+.comment-header {
+    margin-bottom: 10px;
+}
+
+.comment-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.comment-avatar {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ededed;
+
+    color: #777;
+
+    font-size: 18px;
+}
+
+.comment-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.comment-user-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.comment-user-info strong {
+    font-size: 14px;
+
+    color: #222;
+
+    word-break: break-word;
+}
+
+.comment-date {
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   CONTEÚDO COMENTÁRIO
+============================================================ */
+
+.comment-content {
+    margin: 12px 0 13px;
+
+    color: #333;
+
+    line-height: 1.55;
+
+    font-size: 14px;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+}
+
+
+/* ============================================================
+   AÇÕES COMENTÁRIO
+============================================================ */
+
+.comment-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    flex-wrap: wrap;
+}
+
+.comment-actions button {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    padding: 6px 8px;
+
+    border-radius: 7px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    transition:
+        background 0.15s,
+        color 0.15s;
+}
+
+.comment-actions button:hover {
+    background: #f2f2f2;
+
+    color: #222;
+}
+
+
+/* ============================================================
+   CURTIDA COMENTÁRIO
+============================================================ */
+
+.comment-like-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #777;
+}
+
+.comment-like-icon {
+    font-size: 20px;
+
+    line-height: 1;
+
+    color: #777;
+
+    transition:
+        color 0.2s,
+        transform 0.2s;
+}
+
+.comment-like-button.liked {
+    color: #e0245e;
+}
+
+.comment-like-button.liked .comment-like-icon {
+    color: #e0245e;
+
+    transform: scale(1.05);
+}
+
+.comment-like-button:hover .comment-like-icon {
+    transform: scale(1.08);
+}
+
+.comment-like-button:disabled {
+    opacity: 0.5;
+
+    cursor: wait;
+}
+
+
+/* ============================================================
+   CONTADOR COMENTÁRIO
+============================================================ */
+
+.comment-like-count {
+    min-width: 8px;
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   EXCLUIR COMENTÁRIO
+============================================================ */
+
+.comment-delete-button {
+    color: #d32f2f !important;
+}
+
+.comment-delete-button:hover {
+    background: #fff1f1 !important;
+
+    color: #b91c1c !important;
+}
+
+
+/* ============================================================
+   RESPOSTAS
+============================================================ */
+
+.comment-replies {
+    margin-left: 42px;
+
+    margin-top: 12px;
+
+    padding-left: 15px;
+
+    border-left: 2px solid #eeeeee;
+}
+
+.comment-reply {
+    margin-top: 10px;
+
+    background: #fafafa;
+
+    border-color: #e9e9e9;
+
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   FORMULÁRIO RESPOSTA
+============================================================ */
+
+.comment-reply-form {
+    margin-top: 14px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #f7f7f7;
+}
+
+.comment-reply-form textarea {
+    display: block;
+
+    width: 100%;
+
+    min-height: 65px;
+
+    padding: 10px 11px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    resize: vertical;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    background: #ffffff;
+}
+
+.comment-reply-form textarea:focus {
+    border-color: #aaa;
+}
+
+
+/* ============================================================
+   BOTÕES RESPOSTA
+============================================================ */
+
+.reply-form-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 8px;
+}
+
+.reply-form-actions button {
+    border: none;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.reply-form-actions button:first-child {
+    background: #111827;
+
+    color: #ffffff;
+}
+
+.reply-form-actions button:last-child {
+    background: #e9e9e9;
+
+    color: #555;
+}
+
+
+/* ============================================================
+   MENSAGENS COMENTÁRIOS
+============================================================ */
+
+.comments-message {
+    padding: 20px;
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+.comments-error {
+    color: #d32f2f;
+
+    background: #fff5f5;
+
+    border-radius: 9px;
+}
+
+.comments-empty {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #999;
+
+    border: 1px dashed #d9d9d9;
+
+    border-radius: 12px;
+
+    background: #fafafa;
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   RESPONSIVO — TABLET
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .song-page {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .song-sidebar {
+        position: static;
+
+        width: 100%;
+    }
+
+    .song-sidebar-section {
+        width: 100%;
+    }
+
+    .song-cover-container {
+        height: 400px;
+    }
+
+    .song-cover {
+        height: 400px;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVO — MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .dashboard-header {
+        padding: 0 18px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 25px;
+    }
+
+
+    /* PÁGINA */
+
+    .song-page {
+        padding: 20px 12px 40px;
+
+        display: block;
+    }
+
+
+    /* CONTEÚDO */
+
+    .song-content {
+        padding: 14px;
+
+        border-radius: 13px;
+    }
+
+
+    /* CAPA */
+
+    .song-cover-container {
+        height: 300px;
+
+        border-radius: 10px;
+    }
+
+    .song-cover {
+        height: 300px;
+    }
+
+
+    /* ARTISTA */
+
+    .song-artist-row {
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    #songArtist {
+        font-size: 17px;
+    }
+
+
+    /* SEGUIR */
+
+    .song-follow-button {
+        padding: 7px 12px;
+
+        font-size: 13px;
+    }
+
+
+    /* TÍTULO */
+
+    #songTitle {
+        font-size: 25px;
+    }
+
+
+    /* DESCRIÇÃO */
+
+    #songDescription {
+        font-size: 14px;
+    }
+
+
+    /* AÇÕES */
+
+    .song-actions {
+        gap: 7px;
+
+        align-items: center;
+    }
+
+
+    /* BOTÕES */
+
+    .song-like-button,
+    .song-favorite-button,
+    .song-comment-button,
+    .song-share-button,
+    .song-action-button {
+
+        min-height: 38px;
+
+        padding: 6px 10px;
+
+        font-size: 13px;
+    }
+
+
+    /* DATA */
+
+    .song-post-date {
+        margin-left: auto;
+
+        font-size: 12px;
+
+        min-height: 38px;
+    }
+
+
+    /* SIDEBAR */
+
+    .song-sidebar {
+        margin-top: 30px;
+
+        position: static;
+    }
+
+
+    /* COMENTÁRIOS */
+
+    .comments-section {
+        margin-top: 25px;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .comments-header h2 {
+        font-size: 22px;
+    }
+
+
+    /* FORM */
+
+    .comment-form-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .comment-form button {
+        width: 100%;
+    }
+
+
+    /* RESPOSTAS */
+
+    .comment-replies {
+        margin-left: 12px;
+
+        padding-left: 10px;
+    }
+}
+
+
+
+
+
+
+/* ============================================================
+   PLAYER YOKA — NOVO DESIGN
+============================================================ */
+
+.song-player {
+    width: 100%;
+    max-width: 760px;
+    margin: 14px 0 22px;
+}
+
+
+/* ============================================================
+   PLAYER PRINCIPAL
+============================================================ */
+
+.yoka-player {
+    width: 100%;
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e7e7;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition:
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.yoka-player:hover {
+    border-color: #dcdcdc;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ============================================================
+   BOTÃO PLAY
+============================================================ */
+
+.player-play-button {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    padding-left: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.15s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.player-play-button:hover {
+
+    background: #000000;
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.20);
+}
+
+
+.player-play-button:active {
+
+    transform: scale(0.94);
+}
+
+
+/* ============================================================
+   CENTRO DO PLAYER
+============================================================ */
+
+.player-center {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* ============================================================
+   LINHA DA BARRA
+============================================================ */
+
+.player-progress-container {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* ============================================================
+   TEMPO
+============================================================ */
+
+.player-time {
+
+    flex-shrink: 0;
+
+    width: 36px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    text-align: center;
+
+    user-select: none;
+}
+
+
+/* ============================================================
+   PROGRESSO
+============================================================ */
+
+.player-progress {
+
+    flex: 1;
+
+    width: 100%;
+
+    height: 5px;
+
+    margin: 0;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    background: #e4e4e4;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+/* ============================================================
+   PROGRESSO — CHROME / EDGE
+============================================================ */
+
+.player-progress::-webkit-slider-runnable-track {
+
+    height: 5px;
+
+    background: #e4e4e4;
+
+    border-radius: 20px;
+}
+
+
+.player-progress::-webkit-slider-thumb {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    width: 14px;
+
+    height: 14px;
+
+    margin-top: -4.5px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.15s ease;
+}
+
+
+.player-progress:hover::-webkit-slider-thumb {
+
+    transform: scale(1.18);
+}
+
+
+/* ============================================================
+   PROGRESSO — FIREFOX
+============================================================ */
+
+.player-progress::-moz-range-track {
+
+    height: 5px;
+
+    background: #e4e4e4;
+
+    border-radius: 20px;
+}
+
+
+.player-progress::-moz-range-progress {
+
+    height: 5px;
+
+    background: #111827;
+
+    border-radius: 20px;
+}
+
+
+.player-progress::-moz-range-thumb {
+
+    width: 14px;
+
+    height: 14px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ============================================================
+   VOLUME
+============================================================ */
+
+.player-volume {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+}
+
+
+.player-volume-button {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #555;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.player-volume-button:hover {
+
+    background: #f2f2f2;
+
+    color: #111827;
+}
+
+
+/* ============================================================
+   VOLUME RANGE
+============================================================ */
+
+.player-volume-range {
+
+    width: 65px;
+
+    height: 4px;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    background: #dedede;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+.player-volume-range::-webkit-slider-runnable-track {
+
+    height: 4px;
+
+    background: #dedede;
+
+    border-radius: 20px;
+}
+
+
+.player-volume-range::-webkit-slider-thumb {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    width: 12px;
+
+    height: 12px;
+
+    margin-top: -4px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    cursor: pointer;
+}
+
+
+.player-volume-range::-moz-range-track {
+
+    height: 4px;
+
+    background: #dedede;
+
+    border-radius: 20px;
+}
+
+
+.player-volume-range::-moz-range-thumb {
+
+    width: 12px;
+
+    height: 12px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   ÁUDIO ORIGINAL ESCONDIDO
+============================================================ */
+
+#songAudio {
+    display: none;
+}
+
+
+/* ============================================================
+   ESTADO PLAYING
+============================================================ */
+
+.yoka-player.playing {
+
+    border-color: #dcdcdc;
+}
+
+
+.yoka-player.playing
+.player-play-button {
+
+    background: #111827;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .song-player {
+        margin-top: 10px;
+    }
+
+
+    .yoka-player {
+
+        min-height: 68px;
+
+        gap: 10px;
+
+        padding: 10px 11px;
+
+        border-radius: 13px;
+    }
+
+
+    .player-play-button {
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 15px;
+    }
+
+
+    .player-progress-container {
+
+        gap: 6px;
+    }
+
+
+    .player-time {
+
+        width: 30px;
+
+        font-size: 10px;
+    }
+
+
+    .player-volume-range {
+
+        display: none;
+    }
+
+
+    .player-volume-button {
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 16px;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE PEQUENO
+============================================================ */
+
+@media (max-width: 400px) {
+
+    .yoka-player {
+
+        gap: 7px;
+
+        padding: 9px;
+    }
+
+
+    .player-play-button {
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .player-time {
+
+        width: 27px;
+
+        font-size: 9px;
+    }
+
+
+    .player-progress-container {
+
+        gap: 4px;
+    }
+
+}
+
+
+/* =====================================================
+   YOKA — CORREÇÃO DO MENU DE PARTILHA
+   ===================================================== */
+
+.song-share-wrapper {
+    position: relative;
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.song-share-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    width: max-content;
+    max-width: none;
+    padding: 10px;
+
+    box-sizing: border-box;
+    overflow: visible;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px) scale(0.97);
+    transform-origin: top left;
+
+    transition:
+        opacity 220ms ease,
+        transform 220ms ease,
+        visibility 0s linear 220ms;
+
+    z-index: 9999;
+}
+
+.song-share-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0) scale(1);
+
+    transition:
+        opacity 220ms ease,
+        transform 220ms ease,
+        visibility 0s linear 0s;
+}
+
+.song-share-menu .song-share-icon-button {
+    box-sizing: border-box;
+
+    display: inline-flex;
+    flex: 0 0 42px;
+
+    width: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+
+    height: 42px;
+    min-height: 42px;
+    max-height: 42px;
+
+    padding: 0;
+    margin: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.song-share-menu .song-share-icon-button svg {
+    display: block;
+
+    width: 20px !important;
+    min-width: 20px;
+    max-width: 20px !important;
+
+    height: 20px;
+    min-height: 20px;
+    max-height: 20px;
+
+    flex: 0 0 20px;
+}
+
+/* Em ecrãs pequenos, evitar que o menu saia da tela */
+@media (max-width: 480px) {
+    .song-share-menu {
+        left: 0;
+        right: auto;
+        max-width: calc(100vw - 24px);
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .song-share-menu .song-share-icon-button {
+        flex-basis: 38px;
+        width: 38px !important;
+        min-width: 38px !important;
+        max-width: 38px !important;
+
+        height: 38px;
+        min-height: 38px;
+        max-height: 38px;
+    }
+}
+
+
+.song-share-icon-button:hover {
+
+
+transform:
+    translateY(-3px)
+    scale(1.06);
+
+box-shadow:
+    0 5px 12px
+    rgba(0, 0, 0, .15);
+
+
+}
+
+.song-share-icon-button:active {
+
+
+transform:
+    scale(.92);
+
+
+}
+
+/* ============================================================
+FACEBOOK
+============================================================ */
+
+.song-share-icon-button.facebook {
+
+
+background: #1877F2;
+
+color: #fff;
+
+
+}
+
+/* ============================================================
+WHATSAPP
+============================================================ */
+
+.song-share-icon-button.whatsapp {
+
+
+background: #25D366;
+
+color: #fff;
+
+
+}
+
+/* ============================================================
+X
+============================================================ */
+
+.song-share-icon-button.x {
+
+
+background:white;
+
+color: black;
+
+
+}
+
+.song-share-icon-button.x svg {
+
+color: white;
+width: 18px;
+height: 18px;
+padding: auto;
+
+}
+
+/* ============================================================
+COPIAR LINK
+============================================================ */
+
+.song-share-icon-button.copy {
+
+
+background: #eeeeee;
+
+color: #222;
+
+
+}
+
+
+/* ============================================================
+MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+
+.song-share-menu {
+
+    left: auto;
+
+    right: 0;
+
+    transform:
+        translateY(8px)
+        scale(.95);
+}
+
+
+.song-share-menu.active {
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.song-share-icon-button {
+
+    width: 44px;
+    height: 44px;
+}
+
+
+.song-share-icon-button svg {
+
+    width: 21px;
+    height: 21px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+
+.song-share-menu {
+
+    left: auto;
+
+    right: 0;
+
+    transform:
+        translateY(8px)
+        scale(.95);
+}
+
+
+.song-share-menu.active {
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.song-share-icon-button {
+
+    width: 44px;
+
+    height: 44px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   RESPONSIVO — TELEMÓVEL PEQUENO
+============================================================ */
+
+@media (max-width: 480px) {
+
+    .dashboard-header {
+        min-height: 62px;
+
+        padding: 0 12px;
+    }
+
+    .dashboard-logo {
+        font-size: 23px;
+    }
+
+
+    .song-back-button {
+        padding: 8px 10px;
+
+        font-size: 12px;
+    }
+
+
+    .song-content {
+        padding: 12px;
+
+        border-radius: 11px;
+    }
+
+
+    .song-cover-container {
+        height: 260px;
+
+        border-radius: 9px;
+    }
+
+    .song-cover {
+        height: 260px;
+    }
+
+
+    .song-artist-row {
+        align-items: center;
+    }
+
+    #songArtist {
+        font-size: 16px;
+    }
+
+
+    #songTitle {
+        font-size: 23px;
+    }
+
+
+    #songDescription {
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+
+    .song-actions {
+        gap: 6px;
+    }
+
+
+    .song-like-button,
+    .song-favorite-button,
+    .song-comment-button,
+    .song-share-button,
+    .song-action-button {
+
+        min-height: 37px;
+
+        padding: 6px 9px;
+
+        font-size: 12px;
+    }
+
+
+    .song-like-icon {
+        font-size: 18px;
+    }
+
+    .song-favorite-icon {
+        font-size: 17px;
+    }
+
+
+    .song-post-date {
+        width: 100%;
+
+        margin-left: 0;
+
+        min-height: auto;
+
+        justify-content: flex-end;
+
+        font-size: 11px;
+    }
+
+
+    .comments-header h2 {
+        font-size: 21px;
+    }
+
+
+    .comment {
+        padding: 13px;
+    }
+
+
+    .comment-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .comment-content {
+        font-size: 13px;
+    }
+
+
+    .comment-replies {
+        margin-left: 7px;
+
+        padding-left: 8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — PERFIL DO ARTISTA
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    width: 100%;
+    height: 64px;
+    background: #111;
+    border-bottom: 1px solid #222;
+}
+
+.header-inner {
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-left: 45px;
+}
+
+.main-nav a {
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.main-nav a:hover {
+    color: #fff;
+}
+
+.header-user {
+    margin-left: auto;
+}
+
+.login-button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 9px 18px;
+    border-radius: 20px;
+    border: 1px solid #444;
+    transition: .2s;
+}
+
+.login-button:hover {
+    background: #222;
+}
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.artist-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 20px 60px;
+}
+
+
+/* =========================================================
+   HIDDEN
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.artist-content {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CAPA
+   ========================================================= */
+
+.artist-cover {
+    position: relative;
+
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #1a1a1a;
+}
+
+.artist-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.artist-cover-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.30)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BLOCO DO ARTISTA
+   ========================================================= */
+
+.artist-header {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: -75px;
+
+    padding: 0 30px 25px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 25px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   AVATAR + INFORMAÇÕES
+   ========================================================= */
+
+.artist-avatar-wrapper {
+    flex-shrink: 0;
+margin-top: 100px;
+    align-self: flex-start;
+}
+
+.artist-avatar {
+    width: 155px;
+    height: 155px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #242424;
+
+    border: 6px solid #0f0f0f;
+
+    box-shadow:
+        0 4px 20px rgba(0,0,0,.45);
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.artist-info {
+    flex: 1;
+
+    min-width: 0;
+
+    padding-bottom: 5px;
+}
+
+.artist-name-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+margin-right: 30px;
+    margin-bottom: 7px;
+}
+
+.artist-name-row h1 {
+    font-size: 31px;
+
+    font-weight: 750;
+
+    line-height: 1.2;
+
+   
+}
+
+.verified-badge {
+    width: 21px;
+    height: 21px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(13, 13, 173, 0.986);
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   BIO
+   ========================================================= */
+
+.artist-bio {
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   META
+   ========================================================= */
+
+.artist-meta {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-bottom: 14px;
+}
+
+.artist-meta-item {
+    color: #999;
+
+    font-size: 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   ESTATÍSTICAS + SEGUIR
+   ========================================================= */
+
+.artist-stats-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    width: 200px;
+    
+    white-space: nowrap;
+}
+
+.stat {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+    white-space: nowrap;
+}
+
+.stat strong {
+    font-size: 18px;
+
+    color: #fff;
+}
+
+.stat span {
+    color: #888;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   BOTÃO SEGUIR
+   ========================================================= */
+
+.action-button {
+    height: 42px;
+  
+    border-radius: 22px;
+
+    padding: 0 22px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        all .2s ease;
+}
+
+.follow-button {
+    border: none;
+  margin: auto;
+    background: #fff;
+
+    color: #111;
+
+    
+}
+
+.follow-button:hover {
+    background: #ddd;
+
+    transform: translateY(-1px);
+}
+
+.follow-button.seguindo {
+    background: #292929;
+
+    color: #fff;
+
+    border: 1px solid #444;
+}
+
+
+/* =========================================================
+   EDITAR PERFIL
+   ========================================================= */
+
+.artist-edit-area {
+    flex-shrink: 0;
+
+    align-self: flex-end;
+
+    margin-left: auto;
+
+    padding-bottom: 5px;
+}
+
+.edit-button {
+    background: #242424;
+
+    color: #fff;
+
+    border: 1px solid #444;
+}
+
+.edit-button:hover {
+    background: #333;
+
+    border-color: #555;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+   ========================================================= */
+
+.social-links {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 5px;
+
+    margin-bottom: 30px;
+
+    padding-left: 30px;
+}
+
+.social-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 36px;
+
+    padding: 0 15px;
+
+    border-radius: 18px;
+
+    background: #1c1c1c;
+
+    border: 1px solid #292929;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .2s;
+}
+
+.social-link:hover {
+    background: #292929;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   MÚSICAS
+   ========================================================= */
+
+.artist-songs-section {
+    margin-top: 30px;
+}
+
+.section-header {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: #777;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.songs-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.song-card {
+    min-width: 0;
+
+    background: #181818;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.song-card:hover {
+    background: #202020;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CAPA DA MÚSICA
+   ========================================================= */
+
+.song-card-cover {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.song-card-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.song-card:hover .song-card-cover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   PLAY
+   ========================================================= */
+
+.song-play {
+    position: absolute;
+
+    right: 12px;
+    bottom: 12px;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #111;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.45);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.song-play:hover {
+    transform: scale(1.08);
+
+    background: #eee;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DA MÚSICA
+   ========================================================= */
+
+.song-card-info {
+    padding: 13px 14px 15px;
+}
+
+.song-card-title {
+    color: #fff;
+   white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+    word-break: normal;
+   
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+  
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    
+}
+
+.song-card-description {
+    color: #888;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   META DA MÚSICA
+   ========================================================= */
+
+.song-card-meta {
+    display: flex;
+
+    align-items: center;
+margin-top: 10px;
+    gap: 12px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.song-card-meta span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+.empty-state {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background: #181818;
+
+    color: #777;
+}
+
+.empty-state h3 {
+    color: #aaa;
+
+    margin-bottom: 7px;
+}
+
+.empty-state p {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 200px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ERRO
+   ========================================================= */
+
+.error-message {
+    width: 100%;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: #241616;
+
+    color: #ff8a8a;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    width: 100%;
+
+    border-top: 1px solid #222;
+
+    background: #111;
+}
+
+.footer-inner {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 25px 20px;
+
+    text-align: center;
+}
+
+.footer-inner p {
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .songs-container {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .artist-cover {
+        height: 280px;
+    }
+
+    .artist-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .artist-avatar {
+        width: 135px;
+        height: 135px;
+    }
+
+    .artist-stats-actions {
+        gap: 18px;
+    }
+
+ 
+
+    .artist-info {
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        width: 100%;
+
+        padding: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET PEQUENO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .main-nav {
+        gap: 15px;
+
+        margin-left: 25px;
+    }
+
+    .artist-page {
+        padding: 15px 12px 50px;
+    }
+
+    .artist-cover {
+        height: 230px;
+
+        border-radius: 14px;
+    }
+
+    .artist-header {
+        display: grid;
+
+        grid-template-columns:
+            115px minmax(0, 1fr);
+
+        align-items: start;
+
+        margin-top: -55px;
+
+        gap: 15px;
+
+        padding: 0 15px 20px;
+    }
+
+    .artist-avatar-wrapper {
+        grid-column: 1;
+        grid-row: 1;
+
+        align-self: start;
+    }
+
+    .artist-avatar {
+        width: 115px;
+        height: 115px;
+
+        border-width: 5px;
+    }
+
+    .artist-info {
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        width: 100%;
+
+        padding: 0;
+    }
+
+    .artist-name-row h1 {
+        font-size: 24px;
+    }
+
+    .artist-stats-actions {
+        gap: 18px;
+
+        flex-wrap: nowrap;
+
+        width: 100%;
+    }
+
+    .social-links {
+        padding-left: 15px;
+    }
+
+    .songs-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+    }
+}
+
+
+/* =========================================================
+   TELEMÓVEL
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .site-header {
+        height: 58px;
+    }
+
+    .header-inner {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .login-button {
+        padding: 7px 14px;
+    }
+
+    .artist-page {
+        padding: 10px 8px 40px;
+    }
+
+    .artist-cover {
+        height: 180px;
+
+        border-radius: 12px;
+    }
+
+    .artist-header {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-top: -45px;
+
+        padding: 0 12px 18px;
+
+        gap: 10px;
+    }
+
+    .artist-avatar-wrapper {
+        align-self: flex-start;
+    }
+
+    .artist-avatar {
+        width: 92px;
+        height: 92px;
+
+        border-width: 4px;
+    }
+
+    .artist-info {
+        width: 100%;
+
+        padding: 0;
+    }
+
+    .artist-name-row {
+        margin-bottom: 5px;
+    }
+
+    .artist-name-row h1 {
+        font-size: 20px;
+    }
+
+    .verified-badge {
+        width: 18px;
+        height: 18px;
+
+        font-size: 10px;
+    }
+
+    .artist-bio {
+        font-size: 12px;
+
+        line-height: 1.5;
+
+        margin-bottom: 7px;
+    }
+
+    .artist-meta {
+        gap: 8px;
+
+        margin-bottom: 9px;
+    }
+
+    .artist-meta-item {
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       ESTATÍSTICAS
+       ===================================================== */
+
+    .artist-stats-actions {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        width: 100%;
+
+        flex-wrap: nowrap;
+
+        overflow: hidden;
+    }
+
+    .stat {
+        gap: 3px;
+
+        flex-shrink: 0;
+    }
+
+    .stat strong {
+        font-size: 15px;
+    }
+
+    .stat span {
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       SEGUIR
+       ===================================================== */
+
+    .follow-button {
+        margin-left: 2px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       EDITAR
+       ===================================================== */
+
+    .artist-edit-area {
+        position: absolute;
+
+        top: 49px;
+
+        right: 12px;
+
+        padding: 0;
+    }
+
+    .action-button {
+        height: 38px;
+
+        padding: 0 16px;
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       REDES
+       ===================================================== */
+
+    .social-links {
+        margin-left: 12px;
+
+        margin-bottom: 22px;
+
+        gap: 6px;
+
+        padding-left: 0;
+    }
+
+    .social-link {
+        height: 32px;
+
+        padding: 0 11px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       MÚSICAS
+       ===================================================== */
+
+    .artist-songs-section {
+        margin-top: 20px;
+    }
+
+    .section-header {
+        margin-bottom: 14px;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .section-header p {
+        font-size: 11px;
+    }
+
+    .songs-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .song-card {
+        border-radius: 11px;
+    }
+
+    .song-card-info {
+        padding: 10px;
+    }
+
+    .song-card-title {
+        font-size: 13px;
+
+        margin-bottom: 4px;
+    }
+
+    .song-card-description {
+        font-size: 10px;
+
+        margin-bottom: 6px;
+    }
+
+    .song-card-meta {
+        font-size: 9px;
+
+        gap: 7px;
+    }
+
+    .song-play {
+        width: 38px;
+        height: 38px;
+
+        right: 8px;
+        bottom: 8px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   TELEMÓVEL MUITO PEQUENO
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .artist-cover {
+        height: 155px;
+    }
+
+    .artist-avatar {
+        width: 82px;
+        height: 82px;
+    }
+
+    .artist-name-row h1 {
+        font-size: 18px;
+    }
+
+    .artist-stats-actions {
+        gap: 6px;
+    }
+
+    .stat {
+        gap: 2px;
+    }
+
+    .stat strong {
+        font-size: 13px;
+    }
+
+    .stat span {
+        font-size: 9px;
+    }
+
+    .action-button {
+        height: 34px;
+
+        padding: 0 11px;
+
+        font-size: 10px;
+    }
+
+    .artist-edit-area {
+        right: 10px;
+    }
+
+    .songs-container {
+        gap: 8px;
+    }
+
+    .song-card-info {
+        padding: 8px;
+    }
+
+    .song-play {
+        width: 34px;
+        height: 34px;
+
+        right: 6px;
+        bottom: 6px;
+    }
+}
+
+
+
+
+/* =========================================================
+   CONTA NO HEADER
+========================================================= */
+
+.header-account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-account-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.header-account-avatar {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #242424;
+
+    border: 1px solid #333;
+}
+
+.header-logout-button {
+    border: 1px solid #333;
+
+    background: #1c1c1c;
+
+    color: #aaa;
+
+    padding: 7px 12px;
+
+    border-radius: 16px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.header-logout-button:hover {
+    background: #292929;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* =========================================================
+   UTILIZADOR DO HEADER
+========================================================= */
+
+.user-menu {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   AVATAR DO HEADER
+========================================================= */
+
+.user-avatar-button {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 2px solid #333;
+
+    border-radius: 50%;
+
+    background: #1c1c1c;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.user-avatar-button:hover {
+    border-color: #666;
+
+    transform: scale(1.04);
+}
+
+
+.header-avatar {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================================
+   MENU DROPDOWN
+========================================================= */
+
+.user-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 0;
+
+    width: 170px;
+
+    padding: 7px;
+
+    background: #1b1b1b;
+
+    border: 1px solid #303030;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .45);
+
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   OPÇÕES
+========================================================= */
+
+.user-dropdown-item {
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 0 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.user-dropdown-item:hover {
+    background: #292929;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   SAIR
+========================================================= */
+
+.logout-item {
+    color: #ff8d8d;
+}
+
+.logout-item:hover {
+    background: #301c1c;
+
+    color: #ffaaaa;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .user-avatar-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .user-dropdown {
+        width: 155px;
+
+        top: calc(100% + 8px);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PESQUISA DO HEADER
+========================================================= */
+
+.header-search {
+    display: flex;
+    align-items: center;
+    width: 420px;
+    max-width: 42%;
+    margin: 0 auto;
+}
+
+.header-search input {
+    width: 100%;
+    height: 42px;
+    padding: 0 16px;
+    border: 1px solid #d1d5db;
+    border-right: none;
+    border-radius: 22px 0 0 22px;
+    outline: none;
+    font-size: 14px;
+    background: #ffffff;
+}
+
+.header-search input:focus {
+    border-color: #9ca3af;
+}
+
+.header-search button {
+    width: 52px;
+    height: 42px;
+    border: 1px solid #d1d5db;
+    border-radius: 0 22px 22px 0;
+    background: #f3f4f6;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.header-search button:hover {
+    background: #e5e7eb;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-search {
+        width: 320px;
+        max-width: 40%;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+    }
+
+    .header-search {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        margin: 8px 0 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   PESQUISA GLOBAL
+   ============================================================ */
+
+.search-results {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+
+    width: 100%;
+
+    max-height: 430px;
+
+    overflow-y: auto;
+
+    display: none;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.12);
+
+    z-index: 9999;
+}
+
+
+.search-results.active {
+    display: block;
+}
+
+
+.search-result-item {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px;
+
+    border: 0;
+
+    border-bottom: 1px solid #f1f1f1;
+
+    background: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.15s ease;
+}
+
+
+.search-result-item:last-child {
+    border-bottom: 0;
+}
+
+
+.search-result-item:hover {
+    background: #f8f9fa;
+}
+
+
+.search-result-cover {
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 7px;
+
+    background: #f3f4f6;
+}
+
+
+.search-result-cover img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.search-result-no-cover {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    color: #9ca3af;
+}
+
+
+.search-result-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.search-result-info strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.search-result-info span {
+    display: block;
+
+    overflow: hidden;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.search-no-results {
+    padding: 20px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+@media (max-width: 700px) {
+
+    .search-results {
+        max-height: 350px;
+    }
+
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — NOTIFICAÇÕES
+========================================================= */
+
+.notification-container {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    margin-right: 10px;
+}
+
+
+/* =========================================================
+   BOTÃO NOTIFICAÇÕES
+========================================================= */
+
+.notification-button {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #333;
+
+    border-radius: 50%;
+
+    background: #1c1c1c;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .15s ease;
+}
+
+.notification-button:hover {
+    background: #292929;
+
+    border-color: #555;
+
+    transform: scale(1.04);
+}
+
+.notification-button:active {
+    transform: scale(.96);
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.notification-badge {
+    position: absolute;
+
+    top: -4px;
+    right: -4px;
+
+    min-width: 19px;
+    height: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 5px;
+
+    border-radius: 20px;
+
+    background: #ef4444;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    border: 2px solid #111;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.notification-dropdown {
+    position: absolute;
+
+    top: calc(100% + 12px);
+
+    right: 0;
+
+    width: 370px;
+
+    max-width: calc(100vw - 24px);
+
+    max-height: 520px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #1b1b1b;
+
+    border: 1px solid #303030;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .45);
+
+    z-index: 99999;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.notification-header {
+    min-height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 0 15px;
+
+    border-bottom: 1px solid #303030;
+
+    background: #1b1b1b;
+}
+
+.notification-header strong {
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+.notification-header button {
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s ease;
+}
+
+.notification-header button:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.notification-list {
+    width: 100%;
+
+    max-height: 450px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.notification-item {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    padding: 14px 40px 14px 14px;
+
+    border-bottom: 1px solid #292929;
+
+    background: #1b1b1b;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: #242424;
+}
+
+
+/* =========================================================
+   NÃO LIDA
+========================================================= */
+
+.notification-item.notification-unread {
+    background: #202020;
+}
+
+.notification-item.notification-unread:hover {
+    background: #292929;
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.notification-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #292929;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.notification-content {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.notification-content strong {
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    word-break: break-word;
+}
+
+.notification-content p {
+    margin: 0;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    word-break: break-word;
+}
+
+.notification-content small {
+    color: #666;
+
+    font-size: 10px;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   INDICADOR NÃO LIDA
+========================================================= */
+
+.notification-item.notification-unread::before {
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+
+    top: 20px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #ef4444;
+}
+
+
+/* =========================================================
+   BOTÃO EXCLUIR
+========================================================= */
+
+.notification-delete {
+    position: absolute;
+
+    top: 12px;
+    right: 10px;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 19px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.notification-delete:hover {
+    background: #3a2020;
+
+    color: #ff8b8b;
+}
+
+
+/* =========================================================
+   VAZIO / MENSAGEM
+========================================================= */
+
+.notification-empty {
+    min-height: 130px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.notification-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notification-list::-webkit-scrollbar-track {
+    background: #171717;
+}
+
+.notification-list::-webkit-scrollbar-thumb {
+    background: #444;
+
+    border-radius: 10px;
+}
+
+.notification-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .notification-container {
+        margin-right: 5px;
+    }
+
+    .notification-button {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .notification-dropdown {
+        position: fixed;
+
+        top: 62px;
+
+        left: 10px;
+        right: 10px;
+
+        width: auto;
+
+        max-width: none;
+
+        max-height: calc(100vh - 75px);
+
+        border-radius: 12px;
+    }
+
+    .notification-list {
+        max-height: calc(100vh - 130px);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .notification-dropdown {
+        left: 6px;
+        right: 6px;
+    }
+
+    .notification-header {
+        padding: 0 12px;
+    }
+
+    .notification-item {
+        padding-left: 12px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   AJUSTE — NOTIFICAÇÕES E MENU DO UTILIZADOR
+========================================================= */
+
+.header-user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Sino fica atrás do menu do utilizador */
+.notification-container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Menu do utilizador fica sempre acima */
+.user-menu {
+    position: relative;
+    z-index: 20;
+}
+
+/* Dropdown do utilizador acima de tudo */
+.user-dropdown {
+    z-index: 999999;
+}
+
+/* Dropdown das notificações */
+.notification-dropdown {
+    z-index: 99999;
+}
+
+
+
+.notification-dropdown {
+    right: auto;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   DESTAQUE DE COMENTÁRIO ABERTO POR NOTIFICAÇÃO
+============================================================ */
+
+
+.notification-comment-highlight {
+
+    animation:
+        yokaCommentHighlight
+        3s ease;
+
+    border-radius:
+        12px;
+
+    scroll-margin-top:
+        120px;
+
+}
+
+
+@keyframes yokaCommentHighlight {
+
+    0% {
+
+       border: 5px solid red;
+
+    }
+
+
+    30% {
+
+  border: 5px solid red;
+
+    }
+
+
+    100% {
+
+    border: 5px solid red;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.notification-avatar {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.notification-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.song-card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+}
+
+.song-card-title {
+   
+    flex: 1;
+    min-width: 0;
+    color: white;
+   margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.song-card-date {
+    flex-shrink: 0;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0.65;
+}
+
+
+
+.song-card-artist-link {
+    display: inline-block;
+    color: #888;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.song-card-artist-link:hover {
+    color: gainsboro;
+    text-decoration: underline;
+    margin-top:10px ;
+   
+}
+
+.song-card-cover {
+    position: relative;
+}
+
+.song-card-genre {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+
+    display: inline-block;
+    max-width: calc(100% - 20px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    padding: 5px 9px;
+    border-radius: 6px;
+
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    pointer-events: none;
+}
+
+
+
+.song-card-cover {
+    position: relative;
+}
+
+.song-card-stats {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 6px 9px;
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    pointer-events: none;
+}
+
+.song-card-plays,
+.song-card-likes {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.song-card-stat-icon {
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.song-card-cover {
+    position: relative;
+}
+
+.song-play-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 18px;
+    line-height: 1;
+
+    z-index: 5;
+
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.song-play-button:hover {
+    transform: scale(1.08);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.song-play-button:active {
+    transform: scale(0.96);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.song-card-cover {
+    position: relative;
+}
+
+.song-card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+}
+
+.song-card-title {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.song-card-date {
+    flex-shrink: 0;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0.65;
+}
+
+.song-play {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+
+    font-size: 18px;
+    line-height: 1;
+
+    z-index: 5;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.song-play:hover {
+    transform: scale(1.08);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.song-play:active {
+    transform: scale(0.96);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.comment-user-name {
+    cursor: pointer;
+}
+
+.comment-user-name:hover {
+    text-decoration: underline;
+}
+
+.comment-avatar-image {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.song-description-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.song-description {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.song-publication-date {
+    flex-shrink: 0;
+    font-size: 13px;
+    opacity: 0.65;
+    white-space: nowrap;
+    text-align: right;
+    color: black;
+}
+
+
+.song-artist-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.song-artist-link:hover {
+    text-decoration: underline;
+}
+
+.song-artist-link h2 {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.favorite-button:hover .favorite-icon {
+    transform: scale(1.1);
+}
+
+
+
+.favorite-button {
+    margin-right: 10px;
+    color: #FFD700;
+     margin-right: 10px;
+}
+
+.favorite-icon {
+    width: 21px;
+    height: 21px;
+    fill: #FFD700;
+    stroke: #FFD700;
+    display: block;
+}
+
+
+
+
+
+
+
+/* =========================================================
+   DASHBOARD ADM
+   Mesmo estilo do botão Seguir
+   ========================================================= */
+
+.admin-dashboard-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 10px;
+    padding: 10px 16px;
+
+    color: #000000;
+    background: #ffffff;
+
+    border: 1px solid #000000;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.admin-dashboard-button:hover {
+    color: #ffffff;
+    background: #000000;
+    transform: translateY(-1px);
+}
+
+.admin-dashboard-button:active {
+    transform: translateY(0);
+}
+
+.admin-dashboard-button.hidden {
+    display: none;
+}
+
+
+/* RECUPERAR PALAVRA-PASSE */
+
+.login-forgot-password {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.login-forgot-password a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+}
+
+
+.login-forgot-password a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  color: #aa0f0f;
+}
+
+
+ .login-header  h1{
+    margin-bottom: 20px;
+    text-align: center;
+    color: black;
+
+}
+
+
+.login-mensagem.sucesso {
+    display: block;
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 500;
+
+    color: #1a7f37 !important;
+    background: #eaf7ee !important;
+    border: 1px solid #b7e4c2 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.login-mensagem.sucesso::before {
+    content: "✓";
+    display: block;
+    margin-bottom: 8px;
+
+    color: #1a7f37 !important;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.register-terms {
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+
+.register-terms-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.register-terms-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.register-terms-label a {
+    text-decoration: none;
+}
+
+.register-terms-label a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+.register-terms {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.register-terms-label {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    color: inherit !important;
+    font-size: 13px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.register-terms-label span {
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: inherit !important;
+}
+
+.register-terms-label input[type="checkbox"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 16px;
+    height: 16px;
+    margin: 2px 0 0 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.register-terms-label a {
+    color: inherit !important;
+    text-decoration: underline;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.register-terms-label a:hover {
+    opacity: 0.7 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — REENVIAR CONFIRMAÇÃO DE EMAIL
+   ========================================================= */
+
+#reenviarConfirmacao {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 11px 16px;
+
+    border: 1px solid #16a34a;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #16a34a;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+#reenviarConfirmacao:hover {
+    background: #16a34a;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+#reenviarConfirmacao:focus-visible {
+    outline: 2px solid #16a34a;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   DESATIVADO
+   ========================================================= */
+
+#reenviarConfirmacao:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* =========================================================
+   YOKA — REENVIAR CONFIRMAÇÃO DE EMAIL
+   ========================================================= */
+
+#reenviarConfirmacao {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 11px 16px;
+
+    border: 1px solid #16a34a;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #16a34a;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#reenviarConfirmacao:hover {
+    background: #16a34a;
+    color: #ffffff;
+}
+
+#reenviarConfirmacao:focus-visible {
+    outline: 2px solid #16a34a;
+    outline-offset: 2px;
+}
+
+#reenviarConfirmacao:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ANÚNCIO — ÁREA DA CAPA
+   ========================================================= */
+
+.song-cover-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Área do anúncio */
+.song-ad {
+    position: absolute;
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+}
+
+/* Conteúdo interno do anúncio */
+.song-ad-content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+/* Texto "Publicidade" */
+.song-ad-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* Área onde futuramente entrará o anúncio real */
+.song-ad-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — NOTIFICAÇÕES ACIMA DAS PUBLICIDADES
+   ========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 10000 !important;
+}
+
+.header-inner {
+    position: relative;
+    z-index: 10000 !important;
+}
+
+.header-user {
+    position: relative;
+    z-index: 10001 !important;
+}
+
+.notification-container {
+    position: relative;
+    z-index: 10002 !important;
+}
+
+/* Dropdown das notificações */
+.notification-dropdown {
+    position: absolute !important;
+    z-index: 10003 !important;
+}
+
+/* Garantir que elementos de publicidade não cubram o dropdown */
+.yoka-ad,
+.ad-container,
+.advertisement,
+.ads,
+.ad,
+.ad-slot,
+.top-ad,
+.corner-ad {
+    z-index: 100 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   YOKA — MODAL DE NOTIFICAÇÃO ADMINISTRATIVA
+   ============================================================ */
+
+.yoka-admin-notification-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.yoka-admin-notification-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+.yoka-admin-notification-box {
+    position: relative;
+    z-index: 1;
+    width: min(520px, 100%);
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 28px;
+    border-radius: 18px;
+    background: #ffffff;
+    color: #111111;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.yoka-admin-notification-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #666;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.yoka-admin-notification-close:hover {
+    background: #f1f1f1;
+}
+
+.yoka-admin-notification-icon {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.yoka-admin-notification-box h2 {
+    margin: 0 45px 18px 0;
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.yoka-admin-notification-message {
+    font-size: 16px;
+    line-height: 1.7;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.yoka-admin-notification-date {
+    display: block;
+    margin-top: 22px;
+    color: #777;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+
+    .yoka-admin-notification-modal {
+        padding: 15px;
+    }
+
+    .yoka-admin-notification-box {
+        width: 100%;
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .yoka-admin-notification-box h2 {
+        font-size: 20px;
+    }
+
+    .yoka-admin-notification-message {
+        font-size: 15px;
+    }
+
+}
+
+
+
+
+.yoka-admin-notification-sender {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — MENU DE PERFIL RESPONSIVO
+========================================================= */
+
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 20000;
+}
+
+.user-avatar-button {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 2px solid #333;
+    border-radius: 50%;
+
+    background: #1c1c1c;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.user-avatar-button:hover {
+    border-color: #666;
+    transform: scale(1.04);
+}
+
+.user-avatar-button:active {
+    transform: scale(0.97);
+}
+
+.header-avatar {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.user-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 170px;
+    max-width: calc(100vw - 20px);
+
+    padding: 7px;
+
+    background: #1b1b1b;
+
+    border: 1px solid #303030;
+    border-radius: 12px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.45);
+
+    z-index: 999999;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ITENS
+========================================================= */
+
+.user-dropdown-item {
+    width: 100%;
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 13px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #ddd;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    text-align: left;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.user-dropdown-item:hover {
+    background: #292929;
+    color: #fff;
+}
+
+.user-dropdown-item:active {
+    background: #333;
+}
+
+
+/* =========================================================
+   SAIR
+========================================================= */
+
+.user-dropdown .logout-item {
+    color: #ff8d8d;
+}
+
+.user-dropdown .logout-item:hover {
+    background: #301c1c;
+    color: #ffaaaa;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .user-menu {
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .user-avatar-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .user-dropdown {
+        top: calc(100% + 8px);
+        right: 0;
+
+        width: 160px;
+        max-width: calc(100vw - 16px);
+    }
+
+}
+
+
+/* =========================================================
+   TELEMÓVEL PEQUENO
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .user-avatar-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .user-dropdown {
+        width: 150px;
+
+        top: calc(100% + 7px);
+        right: 0;
+
+        max-width: calc(100vw - 12px);
+    }
+
+    .user-dropdown-item {
+        min-height: 40px;
+
+        padding: 0 11px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+.notification-container {
+    position: relative;
+    z-index: 10002;
+}
+
+.notification-dropdown {
+    position: absolute !important;
+    top: calc(100% + 12px) !important;
+    right: 0 !important;
+    left: auto !important;
+    width: 370px;
+    max-width: calc(100vw - 24px);
+    z-index: 10003 !important;
+}
+
+@media (max-width: 520px) {
+    .notification-dropdown {
+        position: fixed !important;
+        top: 62px !important;
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
+        max-width: none !important;
+        max-height: calc(100vh - 75px);
+        border-radius: 12px;
+        z-index: 10003 !important;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — LINKS LEGAIS NO RODAPÉ
+   ========================================================= */
+
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.footer-legal a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-legal .footer-separator {
+    color: #555555;
+}
+
+/* Telemóveis */
+@media (max-width: 600px) {
+    .footer-legal {
+        gap: 8px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PESQUISA RECOLHIDA — ECRÃS ATÉ 704px */
+
+@media (max-width: 704px) {
+
+    .toggle-header-search {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+
+        margin-left: 0px;
+        padding: 0;
+
+        border: 0;
+        background: transparent;
+        color: inherit;
+
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .header-search {
+        display: flex;
+
+        width: 0;
+        min-width: 0;
+        max-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            width 0.3s ease,
+            max-width 0.3s ease,
+            opacity 0.2s ease,
+            margin 0.3s ease;
+    }
+
+    .header-search.search-open {
+        width: 220px;
+        min-width: 180px;
+        max-width: 220px;
+
+        margin-left: 20px;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+/* DESKTOP: O BOTÃO NÃO É NECESSÁRIO */
+
+@media (min-width: 705px) {
+    .toggle-header-search {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   YOKA — CORREÇÃO DA PESQUISA EM ECRÃS PEQUENOS
+   Não deslocar notificações, favoritos ou avatar
+   ========================================================= */
+
+@media (max-width: 704px) {
+
+    .header-search {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+
+        z-index: 1001;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        box-sizing: border-box;
+        width: 0;
+        min-width: 0;
+        max-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        background: var(--header-bg, #ffffff);
+        border: 1px solid transparent;
+        border-radius: 10px;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+
+        transition:
+            width 0.25s ease,
+            opacity 0.2s ease,
+            padding 0.25s ease;
+    }
+
+    .header-search.search-open {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+
+        width: min(300px, calc(100vw - 32px));
+        min-width: 0;
+        max-width: calc(100vw - 32px);
+
+        padding: 8px;
+
+        overflow: visible;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+
+        border-color: rgba(0, 0, 0, 0.12);
+    }
+}
+
+
+/* Em ecrãs maiores, manter a pesquisa normal no cabeçalho */
+@media (min-width: 705px) {
+
+    #toggleHeaderSearch {
+        display: none;
+    }
+
+    .header-search {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+
+/* =========================================================
+   YOKA — MARGENS DO CABEÇALHO EM ECRÃS PEQUENOS
+   ========================================================= */
+
+@media (max-width: 704px) {
+
+    /* Margem à esquerda para o título/logótipo */
+    .header-inner .logo {
+        margin-left: 12px;
+    }
+
+    /* Margem à direita para o grupo de ícones */
+    .header-inner .header-actions {
+        margin-right: 12px;
+    }
+
+    /* Espaço entre o título e os elementos seguintes */
+    .header-inner {
+        box-sizing: border-box;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   YOKA — CABEÇALHO RESPONSIVO
+   ECRÃS ATÉ 1500px
+   MARGENS, DIMENSÕES E LEGIBILIDADE
+   ========================================================= */
+
+@media (max-width: 1300px) {
+
+    .site-header {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .header-inner {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: clamp(16px, 2.5vw, 36px) !important;
+        padding-right: clamp(16px, 2.5vw, 36px) !important;
+
+        gap: clamp(12px, 1.5vw, 24px);
+    }
+
+    /* Logótipo e título */
+
+    .logo {
+        flex-shrink: 0;
+        max-width: 100%;
+
+        font-size: clamp(20px, 1.6vw, 26px);
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+
+    /* Menu principal */
+
+    .main-nav {
+        flex-shrink: 1;
+        min-width: 0;
+
+        gap: clamp(12px, 1.5vw, 24px);
+        margin-left: clamp(8px, 1vw, 16px);
+    }
+
+    .main-nav a {
+        font-size: clamp(13px, 0.95vw, 15px);
+        line-height: 1.4;
+        white-space: nowrap;
+    }
+
+    /* Pesquisa */
+
+    .header-search {
+        min-width: 0;
+        max-width: 360px;
+        flex: 1 1 220px;
+    }
+
+    .header-search input {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        min-height: 40px;
+        font-size: 14px;
+    }
+
+    .header-search button {
+        flex-shrink: 0;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    /* Avatar, notificações e menu do utilizador */
+
+    .header-user {
+        flex-shrink: 0;
+        min-width: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: clamp(6px, 0.8vw, 12px);
+        margin-left: auto;
+    }
+
+    .notification-container,
+    .user-menu,
+    .header-user > * {
+        flex-shrink: 0;
+    }
+
+    .notification-button,
+    .user-avatar-button {
+        width: clamp(36px, 2.7vw, 42px);
+        height: clamp(36px, 2.7vw, 42px);
+    }
+}
+
+

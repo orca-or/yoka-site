@@ -1,0 +1,761 @@
+
+
+
+/* ============================================================
+   YOKA — PÁGINA ENVIAR MÚSICA
+============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #f5f6f8;
+
+    color:
+        #18181b;
+}
+
+
+/* ============================================================
+   CABEÇALHO
+============================================================ */
+
+.upload-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 40px;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* ============================================================
+   LOGO
+============================================================ */
+
+.upload-logo {
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    color: #111827;
+
+    letter-spacing: -1px;
+
+    transition:
+        opacity 0.2s ease;
+}
+
+.upload-logo:hover {
+    opacity: 0.75;
+}
+
+
+/* ============================================================
+   UTILIZADOR
+============================================================ */
+
+.upload-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    font-size: 14px;
+
+    color: #4b5563;
+}
+
+.upload-user span {
+    font-weight: 600;
+
+    color: #111827;
+}
+
+
+/* ============================================================
+   VOLTAR / MEU PERFIL
+============================================================ */
+
+.upload-back {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius:
+        8px;
+
+    background:
+        #ffffff;
+
+    color:
+        #111827;
+
+    text-decoration:
+        none;
+
+    font-size:
+        14px;
+
+    font-weight:
+        600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.upload-back:hover {
+    background:
+        #f3f4f6;
+
+    border-color:
+        #9ca3af;
+}
+
+.upload-back:active {
+    transform:
+        scale(0.98);
+}
+
+
+/* ============================================================
+   CONTAINER
+============================================================ */
+
+.upload-container {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin:
+        0 auto;
+
+    padding:
+        50px 20px 70px;
+}
+
+
+/* ============================================================
+   CARD
+============================================================ */
+
+.upload-card {
+    width: 100%;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius:
+        16px;
+
+    padding:
+        35px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ============================================================
+   CABEÇALHO DO FORMULÁRIO
+============================================================ */
+
+.upload-card > .upload-header {
+    display: block;
+
+    padding: 0;
+
+    margin:
+        0 0 30px;
+
+    background:
+        transparent;
+
+    border:
+        0;
+}
+
+.upload-card > .upload-header h1 {
+    margin:
+        0 0 8px;
+
+    font-size:
+        30px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        750;
+
+    color:
+        #111827;
+
+    letter-spacing:
+        -0.5px;
+}
+
+.upload-card > .upload-header p {
+    margin:
+        0;
+
+    color:
+        #6b7280;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.6;
+}
+
+
+/* ============================================================
+   FORMULÁRIO
+============================================================ */
+
+#uploadForm {
+    width: 100%;
+}
+
+
+/* ============================================================
+   GRUPO DO FORMULÁRIO
+============================================================ */
+
+.form-group {
+    width: 100%;
+
+    margin-bottom:
+        24px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        #111827;
+
+    font-size:
+        14px;
+
+    font-weight:
+        650;
+}
+
+
+/* ============================================================
+   INPUTS
+============================================================ */
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius:
+        9px;
+
+    background:
+        #ffffff;
+
+    color:
+        #111827;
+
+    font-family:
+        inherit;
+
+    font-size:
+        15px;
+
+    outline:
+        none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    height:
+        46px;
+
+    padding:
+        0 14px;
+}
+
+.form-group textarea {
+    min-height:
+        120px;
+
+    padding:
+        13px 14px;
+
+    resize:
+        vertical;
+
+    line-height:
+        1.5;
+}
+
+
+/* ============================================================
+   PLACEHOLDER
+============================================================ */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color:
+        #9ca3af;
+}
+
+
+/* ============================================================
+   FOCUS
+============================================================ */
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+    border-color:
+        #111827;
+
+    box-shadow:
+        0 0 0 3px rgba(17, 24, 39, 0.08);
+
+    background:
+        #ffffff;
+}
+
+
+/* ============================================================
+   INPUT DE ARQUIVO
+============================================================ */
+
+.form-group input[type="file"] {
+    width: 100%;
+
+    min-height:
+        48px;
+
+    padding:
+        8px;
+
+    border:
+        1px dashed #cbd5e1;
+
+    border-radius:
+        9px;
+
+    background:
+        #f8fafc;
+
+    color:
+        #374151;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-group input[type="file"]:hover {
+    border-color:
+        #9ca3af;
+
+    background:
+        #f3f4f6;
+}
+
+.form-group input[type="file"]:focus {
+    outline:
+        none;
+
+    border-color:
+        #111827;
+
+    box-shadow:
+        0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+
+/* ============================================================
+   BOTÃO INTERNO DO INPUT FILE
+============================================================ */
+
+.form-group input[type="file"]::file-selector-button {
+    margin-right:
+        12px;
+
+    padding:
+        8px 14px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius:
+        7px;
+
+    background:
+        #ffffff;
+
+    color:
+        #111827;
+
+    font-family:
+        inherit;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+    background:
+        #f3f4f6;
+}
+
+
+/* ============================================================
+   SMALL / AJUDA
+============================================================ */
+
+.form-group small {
+    display:
+        block;
+
+    margin-top:
+        7px;
+
+    color:
+        #6b7280;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+}
+
+
+/* ============================================================
+   MENSAGEM
+============================================================ */
+
+.upload-mensagem {
+    width: 100%;
+
+    margin:
+        5px 0 20px;
+
+    padding:
+        12px 14px;
+
+    border-radius:
+        8px;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.5;
+}
+
+
+/* ============================================================
+   PROGRESSO
+============================================================ */
+
+#uploadProgressContainer {
+    width: 100%;
+
+    margin:
+        20px 0 24px;
+}
+
+
+/* ============================================================
+   BARRA
+============================================================ */
+
+.upload-progress {
+    width: 100%;
+
+    height:
+        10px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        #e5e7eb;
+}
+
+.upload-progress-bar {
+    width:
+        0%;
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        #111827;
+
+    transition:
+        width 0.2s ease;
+}
+
+
+/* ============================================================
+   TEXTO DO PROGRESSO
+============================================================ */
+
+.upload-progress-text {
+    margin-top:
+        8px;
+
+    text-align:
+        right;
+
+    color:
+        #4b5563;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+}
+
+
+/* ============================================================
+   BOTÃO ENVIAR
+============================================================ */
+
+.btn-upload {
+    width: 100%;
+
+    min-height:
+        50px;
+
+    padding:
+        0 20px;
+
+    border:
+        0;
+
+    border-radius:
+        9px;
+
+    background:
+        #111827;
+
+    color:
+        #ffffff;
+
+    font-family:
+        inherit;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.btn-upload:hover {
+    background:
+        #000000;
+}
+
+.btn-upload:active {
+    transform:
+        scale(0.99);
+}
+
+.btn-upload:disabled {
+    opacity:
+        0.6;
+
+    cursor:
+        not-allowed;
+}
+
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .upload-header {
+        padding:
+            15px 18px;
+    }
+
+    .upload-logo {
+        font-size:
+            25px;
+    }
+
+    .upload-user {
+        gap:
+            10px;
+    }
+
+    .upload-user span {
+        display:
+            none;
+    }
+
+    .upload-back {
+        min-height:
+            36px;
+
+        padding:
+            0 12px;
+
+        font-size:
+            13px;
+    }
+
+    .upload-container {
+        padding:
+            25px 14px 50px;
+    }
+
+    .upload-card {
+        padding:
+            25px 20px;
+
+        border-radius:
+            12px;
+    }
+
+    .upload-card > .upload-header {
+        margin-bottom:
+            25px;
+    }
+
+    .upload-card > .upload-header h1 {
+        font-size:
+            26px;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .upload-header {
+        padding:
+            14px;
+    }
+
+    .upload-card {
+        padding:
+            22px 16px;
+    }
+
+    .upload-card > .upload-header h1 {
+        font-size:
+            24px;
+    }
+
+    .form-group {
+        margin-bottom:
+            20px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
