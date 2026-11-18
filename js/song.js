@@ -5487,7 +5487,7 @@ if (playerAudio.readyState >= 1) {
     ============================================================ */
 
     const API_BASE =
-        "/api/v1";
+        "https://wairujyynjohterkqort.supabase.co/functions/v1/yoka";
 
 
     /* ============================================================
