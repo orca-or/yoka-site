@@ -8,7 +8,7 @@
 */
 
 
-const API_BASE_URL = "https://yoka-d1e1.onrender.com/api/v1";
+const API_BASE_URL = "https://wairujyynjohterkqort.supabase.co/functions/v1/yoka";
 
 
 /*
