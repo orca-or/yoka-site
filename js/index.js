@@ -1,7 +1,7 @@
 
 "use strict";
 
-const API_BASE = "https://yoka-d1e1.onrender.com/api/v1";
+const API_BASE = "https://wairujyynjohterkqort.supabase.co/functions/v1/yoka";
 
 const DEFAULT_COVER = "./assets/images/default-cover.svg";
 const DEFAULT_AVATAR = "./assets/images/default-avatar.svg";
