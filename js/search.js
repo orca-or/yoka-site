@@ -2,7 +2,7 @@
 "use strict";
 
 (function () {
-    const SEARCH_API_BASE = "/api/v1";
+    const SEARCH_API_BASE = "https://wairujyynjohterkqort.supabase.co/functions/v1/yoka";
 
     // =========================================================
     // ELEMENTOS
