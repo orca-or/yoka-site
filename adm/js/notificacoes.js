@@ -4,7 +4,7 @@
    CONFIGURAÇÃO
 ========================================================= */
 
-const API_BASE = "/api/v1";
+const API_BASE = "https://wairujyynjohterkqort.supabase.co/functions/v1/yoka";
 
 /* =========================================================
    ELEMENTOS
