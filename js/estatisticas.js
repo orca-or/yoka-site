@@ -614,7 +614,7 @@ console.error("[Yoka] Erro ao carregar estatísticas:", {
         }
 
         try {
-            const resposta = await fetch("/api/v1/auth/me", {
+            const resposta = await fetch("https://wairujyynjohterkqort.supabase.co/functions/v1/yoka/auth/me", {
                 method: "GET",
                 headers: obterHeadersAvatar()
             });
@@ -685,7 +685,7 @@ console.error("[Yoka] Erro ao carregar estatísticas:", {
             }
 
             try {
-                const resposta = await fetch("/api/v1/artists/me", {
+                const resposta = await fetch("https://wairujyynjohterkqort.supabase.co/functions/v1/yoka/artists/me", {
                     method: "GET",
                     headers: obterHeadersAvatar()
                 });
