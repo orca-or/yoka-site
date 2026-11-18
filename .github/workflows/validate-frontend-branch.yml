@@ -1,0 +1,27 @@
+name: Validar frontend Yoka Supabase
+
+on:
+  push:
+    branches:
+      - migracao-completa-supabase
+    paths:
+      - "js/**"
+      - "adm/js/**"
+      - ".github/workflows/validate-frontend-branch.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verificar sintaxe JavaScript
+        shell: bash
+        run: |
+          find js adm/js -type f -name '*.js' ! -name '*.backup' -print0 | xargs -0 -n1 node --check
