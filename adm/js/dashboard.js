@@ -6,7 +6,7 @@
    Estatísticas, administradores, permissões e denúncias
    ============================================================ */
 
-const API_BASE = "https://yoka-d1e1.onrender.com/api/v1";
+const API_BASE = "https://wairujyynjohterkqort.supabase.co/functions/v1/yoka";
 
 /* ============================================================
    ELEMENTOS — ESTATÍSTICAS
