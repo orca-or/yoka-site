@@ -672,6 +672,10 @@ body {
     #yokaIndexAd2 {
         display: block;
     }
+    .yoka-most-played {
+        width: 100%;
+        flex: 1 1 100%;
+    }
 }
 
 /* TELEMÓVEL */
@@ -984,7 +988,96 @@ body {
 
 
 
+/* =========================================================
+   MAIS OUVIDAS — RANKING
+========================================================= */
 
+.yoka-most-played {
+    width: 100%;
+    padding: 14px;
+    background: #171717;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.yoka-most-played-category {
+    margin-top: 14px;
+}
+
+.yoka-most-played-category h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #f5c542;
+}
+
+.yoka-most-played-category ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.most-played-item {
+    border-bottom: 1px solid #333;
+}
+
+.most-played-item a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.most-played-item a:hover {
+    color: #f5c542;
+}
+
+.most-played-position {
+    font-weight: bold;
+    color: #f5c542;
+    min-width: 23px;
+}
+
+.most-played-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.most-played-info strong,
+.most-played-info small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.most-played-info strong {
+    font-size: 12px;
+}
+
+.most-played-info small {
+    margin-top: 3px;
+    color: #aaa;
+    font-size: 11px;
+}
+
+.most-played-count {
+    color: #bbb;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.most-played-empty {
+    color: #aaa;
+    font-size: 12px;
+    padding: 8px 0;
+}
 
 
 </style>
@@ -1248,11 +1341,40 @@ body {
             src="./assets/images/bantu.png"
             alt="Publicidade da Kubeta"
         >
-    </a>
+     </a>
 </div>
 
+<!-- MAIS OUVIDAS -->
+<section class="yoka-most-played" id="yokaMostPlayed">
+
+    <h2 class="yoka-index-ads-title">Mais Ouvidas</h2>
+
+    <div class="yoka-most-played-category">
+        <h3>🎵 Música</h3>
+        <ol id="mostPlayedMusic">
+            <li class="loading-message">A carregar...</li>
+        </ol>
+    </div>
+
+    <div class="yoka-most-played-category">
+        <h3>📝 Poesia</h3>
+        <ol id="mostPlayedPoetry">
+            <li class="loading-message">A carregar...</li>
+        </ol>
+    </div>
+
+    <div class="yoka-most-played-category">
+        <h3>⚔️ Batalhas / Gladiadores</h3>
+        <ol id="mostPlayedBattles">
+            <li class="loading-message">A carregar...</li>
+        </ol>
+    </div>
+
+</section>
 
 </div>
+<!-- =========================================================
+     CONTEÚDO PRINCIPAL
 <!-- =========================================================
      CONTEÚDO PRINCIPAL
 ========================================================= -->
